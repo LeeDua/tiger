@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/src/slp/Main.java" line="78" />
+    <bookmark url="file://$PROJECT_DIR$/src/slp/Main.java" line="84" />
+    <bookmark url="file://$PROJECT_DIR$/src/slp/Main.java" line="153" />
+    <bookmark url="file://$PROJECT_DIR$/src/slp/Main.java" line="135" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e9e47e04-c7dc-4a75-a034-2c9d95c4882e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tiger.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/slp/Linklist.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/slp/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/slp/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/slp/Slp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/slp/Slp.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/bin/" />
@@ -30,7 +29,7 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/lexer/Lexer.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="285">
+                <state relative-caret-position="-34">
                   <caret line="20" column="71" selection-start-line="20" selection-start-column="71" selection-end-line="20" selection-end-column="71" />
                   <folding>
                     <element signature="imports" expanded="true" />
@@ -42,14 +41,25 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/slp/Main.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="202">
-                  <caret line="75" column="10" selection-start-line="75" selection-start-column="10" selection-end-line="75" selection-end-column="10" />
+                <state relative-caret-position="249">
+                  <caret line="309" column="7" selection-start-line="309" selection-start-column="7" selection-end-line="309" selection-end-column="7" />
                   <folding>
                     <element signature="imports" expanded="true" />
-                    <element signature="e#1034#1035#0" expanded="true" />
-                    <element signature="e#1054#1055#0" expanded="true" />
-                    <element signature="e#1403#1404#0" expanded="true" />
-                    <element signature="e#1426#1427#0" expanded="true" />
+                    <element signature="e#4694#4695#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/slp/Linklist.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="209">
+                  <caret line="23" column="14" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                    <element signature="e#115#116#0" expanded="true" />
+                    <element signature="e#160#161#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -58,7 +68,7 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/lexer/Token.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="38">
+                <state relative-caret-position="-1212">
                   <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
                 </state>
               </provider>
@@ -129,7 +139,7 @@
             <entry file="file://$PROJECT_DIR$/src/slp/Slp.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="282">
-                  <caret line="145" column="23" selection-start-line="145" selection-start-column="16" selection-end-line="145" selection-end-column="23" />
+                  <caret line="83" column="22" selection-start-line="83" selection-start-column="19" selection-end-line="83" selection-end-column="22" />
                   <folding>
                     <element signature="e#333#334#0" expanded="true" />
                     <element signature="e#363#364#0" expanded="true" />
@@ -142,13 +152,31 @@
       </split-second>
     </splitter>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="FindInProjectRecents">
     <findStrings>
       <find>Assi</find>
       <find>ExpList</find>
       <find>string</find>
-      <find>main</find>
       <find>compou</find>
+      <find>ompou</find>
+      <find>assign</find>
+      <find>Linklist</find>
+      <find>mem</find>
+      <find>exp</find>
+      <find>Id</find>
+      <find>Num</find>
+      <find>return -</find>
+      <find>main</find>
+      <find>interpStm</find>
+      <find>System</find>
+      <find>print</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -159,6 +187,7 @@
       <list>
         <option value="$PROJECT_DIR$/src/slp/Samples.java" />
         <option value="$PROJECT_DIR$/src/slp/Slp.java" />
+        <option value="$PROJECT_DIR$/src/slp/Linklist.java" />
         <option value="$PROJECT_DIR$/src/slp/Main.java" />
       </list>
     </option>
@@ -240,7 +269,7 @@
       <option name="INCLUDE_PROVIDED_SCOPE" value="true" />
       <option name="MAIN_CLASS_NAME" value="Tiger" />
       <module name="tiger" />
-      <option name="PROGRAM_PARAMETERS" value="-slp args" />
+      <option name="PROGRAM_PARAMETERS" value="-slp interp" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -262,18 +291,18 @@
       <option name="presentableId" value="Default" />
       <updated>1558581078562</updated>
       <workItem from="1558581087443" duration="6527000" />
-      <workItem from="1558591187137" duration="4875000" />
+      <workItem from="1558591187137" duration="14022000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11402000" />
+    <option name="totallyTimeSpent" value="20549000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13739946" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13739946" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -283,7 +312,7 @@
       <window_info id="Learn" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49932975" visible="true" weight="0.23654391" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49932975" visible="true" weight="0.28045326" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -307,6 +336,18 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/slp/Main.java</url>
+          <line>136</line>
+          <properties />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/.classpath">
@@ -341,16 +382,6 @@
     <entry file="file://$PROJECT_DIR$/test/BinarySearch.java">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/lexer/Lexer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="20" column="71" selection-start-line="20" selection-start-column="71" selection-end-line="20" selection-end-column="71" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bin/Tiger.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="608">
@@ -382,9 +413,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/lexer/Lexer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-34">
+          <caret line="20" column="71" selection-start-line="20" selection-start-column="71" selection-end-line="20" selection-end-column="71" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/lexer/Token.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
+        <state relative-caret-position="-1212">
           <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
         </state>
       </provider>
@@ -403,16 +444,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/slp/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/slp/Linklist.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="75" column="10" selection-start-line="75" selection-start-column="10" selection-end-line="75" selection-end-column="10" />
+        <state relative-caret-position="209">
+          <caret line="23" column="14" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1034#1035#0" expanded="true" />
-            <element signature="e#1054#1055#0" expanded="true" />
-            <element signature="e#1403#1404#0" expanded="true" />
-            <element signature="e#1426#1427#0" expanded="true" />
+            <element signature="e#115#116#0" expanded="true" />
+            <element signature="e#160#161#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/slp/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="249">
+          <caret line="309" column="7" selection-start-line="309" selection-start-column="7" selection-end-line="309" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#4694#4695#0" expanded="true" />
           </folding>
         </state>
       </provider>
