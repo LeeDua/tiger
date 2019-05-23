@@ -22,8 +22,43 @@ public class Main
 
   private int maxArgsExp(Exp.T exp)
   {
-    new Todo();
-    return -1;
+    /*if (exp instanceof Exp.Id){
+        return 0;
+      }
+    else if (exp instanceof Exp.Num){
+        return 0;
+      }
+    else if (exp instanceof Exp.Op) {
+      Exp.Op e = (Exp.Op) exp;
+      int n1 = maxArgsExp(e.left);
+      int n2 = maxArgsExp(e.right);
+      return n1+n2;
+    }*/
+    if (exp instanceof Exp.Eseq){
+      Exp.Eseq e = (Exp.Eseq) exp;
+      int n1 = maxArgsStm(e.stm);
+      int n2 = maxArgsExp(e.exp);
+      return n1>n2 ? n1 : n2;
+    }
+    else{
+      return 1;
+    }
+  }
+
+  private int maxArgExpList(ExpList.T expList){
+    if (expList instanceof ExpList.Pair){
+      ExpList.Pair elist= (ExpList.Pair) expList;
+      int n1 = maxArgsExp(elist.exp);
+      int n2 = maxArgExpList(elist.list);
+      return n1 + n2;
+    }
+    if (expList instanceof ExpList.Last){
+      ExpList.Last last= (ExpList.Last) expList;
+      return maxArgsExp(last.exp);
+    }
+    else{
+      throw new java.lang.Error("unmatched explist");
+    }
   }
 
   private int maxArgsStm(Stm.T stm)
@@ -32,24 +67,22 @@ public class Main
       Stm.Compound s = (Stm.Compound) stm;
       int n1 = maxArgsStm(s.s1);
       int n2 = maxArgsStm(s.s2);
-
       return n1 >= n2 ? n1 : n2;
     } else if (stm instanceof Stm.Assign) {
-      new Todo();
-      return -1;
+        Stm.Assign s = (Stm.Assign) stm;
+        return maxArgsExp(s.exp);
     } else if (stm instanceof Stm.Print) {
-      new Todo();
-      return -1;
-    } else
-      new Bug();
-    return 0;
+        Stm.Print s = (Stm.Print) stm;
+        //System.out.println(maxArgExpList(s.explist));
+        return maxArgExpList(s.explist);
+    } else{
+      throw new java.lang.Error("unmatchend stm");
+    }
   }
 
   // ////////////////////////////////////////
   // interpreter
-
-  private void interpExp(Exp.T exp)
-  {
+private void interpExp(Exp.T exp) {
     new Todo();
   }
 
@@ -177,7 +210,7 @@ public class Main
       compileStm(s2);
     } else if (prog instanceof Stm.Assign) {
       Stm.Assign s = (Stm.Assign) prog;
-      String id = s.id;
+      String id = s.id.id;
       Exp.T exp = s.exp;
 
       ids.add(id);
