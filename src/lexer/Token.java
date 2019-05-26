@@ -10,50 +10,59 @@ public class Token
   // It's highly recommended that these token names are
   // alphabetically ordered, if you add new ones.
   public enum Kind {
+    TOKEN_EOF, // EOF
+
     TOKEN_ADD, // "+"
-    TOKEN_AND, // "&&"
+    TOKEN_SUB, // "-"
+    TOKEN_TIMES, // "*"
+    TOKEN_LT, // "<"
     TOKEN_ASSIGN, // "="
-    TOKEN_BOOLEAN, // "boolean"
-    TOKEN_CLASS, // "class"
     TOKEN_COMMER, // ","
     TOKEN_DOT, // "."
-    TOKEN_ELSE, // "else"
-    TOKEN_EOF, // EOF
-    TOKEN_EXTENDS, // "extends"
-    TOKEN_FALSE, // "false"
-    TOKEN_ID, // Identifier
-    TOKEN_IF, // "if"
-    TOKEN_INT, // "int"
     TOKEN_LBRACE, // "{"
     TOKEN_LBRACK, // "["
-    TOKEN_LENGTH, // "length"
     TOKEN_LPAREN, // "("
-    TOKEN_LT, // "<"
+    TOKEN_NOT, // "!"
+    TOKEN_RBRACE, // "}"
+    TOKEN_RBRACK, // "]"
+    TOKEN_RPAREN, // ")"
+    TOKEN_SEMI, // ";"
+    TOKEN_AND, // "&&"
+
+    TOKEN_COMMENT_LINE,
+    TOKEN_COMMENT_BLOCK_START,
+    TOKEN_COMMENT_BLOCK_END,
+
+    TOKEN_ID, // Identifier
+    TOKEN_NUM, // IntegerLiteral
+
+    TOKEN_BOOLEAN, // "boolean"
+    TOKEN_CLASS, // "class"
+    TOKEN_ELSE, // "else"
+    TOKEN_EXTENDS, // "extends"
+    TOKEN_FALSE, // "false"
+    TOKEN_IF, // "if"
+    TOKEN_INT, // "int"
+    TOKEN_LENGTH, // "length"
     TOKEN_MAIN, // "main"
     TOKEN_NEW, // "new"
-    TOKEN_NOT, // "!"
-    TOKEN_NUM, // IntegerLiteral
+    TOKEN_PUBLIC, // "public"
+    TOKEN_RETURN, // "return"
+    TOKEN_STATIC, // "static"
+    TOKEN_THIS, // "this"
+    TOKEN_TRUE, // "true"
+    TOKEN_VOID, // "void"
+    TOKEN_WHILE, // "while"
+
     // "out" is not a Java key word, but we treat it as
     // a MiniJava keyword, which will make the
     // compilation a little easier. Similar cases apply
     // for "println", "System" and "String".
     TOKEN_OUT, // "out"
     TOKEN_PRINTLN, // "println"
-    TOKEN_PUBLIC, // "public"
-    TOKEN_RBRACE, // "}"
-    TOKEN_RBRACK, // "]"
-    TOKEN_RETURN, // "return"
-    TOKEN_RPAREN, // ")"
-    TOKEN_SEMI, // ";"
-    TOKEN_STATIC, // "static"
     TOKEN_STRING, // "String"
-    TOKEN_SUB, // "-"
     TOKEN_SYSTEM, // "System"
-    TOKEN_THIS, // "this"
-    TOKEN_TIMES, // "*"
-    TOKEN_TRUE, // "true"
-    TOKEN_VOID, // "void"
-    TOKEN_WHILE, // "while"
+
   }
 
   public Kind kind; // kind of the token

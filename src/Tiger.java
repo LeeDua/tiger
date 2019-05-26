@@ -22,9 +22,12 @@ public class Tiger
 
     // /////////////////////////////////////////////
     // the straight-line interpreter (and compiler)    
+
+
     switch (Control.ConSlp.action){
     case NONE:
-      System.exit(0);
+      //System.exit(0);
+      System.out.println("NONE ACTION");
       break;
     default:
       slp.Main slpmain = new slp.Main();
@@ -35,6 +38,7 @@ public class Tiger
       slpmain.doit(slp.Samples.prog);
       System.exit(0);
     }
+
 
     
     if (fname == null) {
@@ -47,6 +51,7 @@ public class Tiger
     // independently.
     if (Control.ConLexer.test) {
       System.out.println("Testing the lexer. All tokens:");
+      long startTime = System.currentTimeMillis();
       try {
         fstream = new BufferedInputStream(new FileInputStream(fname));
         Lexer lexer = new Lexer(fname, fstream);
@@ -59,6 +64,8 @@ public class Tiger
       } catch (Exception e) {
         e.printStackTrace();
       }
+      long endTime = System.currentTimeMillis();
+      System.out.println("Lexer conversion done in：" + (endTime - startTime) + "ms");
       System.exit(1);
     }
 

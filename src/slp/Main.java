@@ -222,6 +222,11 @@ public class Main
         emit("\tpopl\t%edx\n");
         emit("\tmovl\t%eax, %ecx\n");
         emit("\tmovl\t%edx, %eax\n");
+
+        //deal with div-0 problem
+        emit("\tcmp\t$0, %ecx\n");
+        emit("\tjz END\n");
+
         emit("\tcltd\n");
         emit("\tdiv\t%ecx\n");
         break;
@@ -336,12 +341,13 @@ public class Main
         writer.write("\tpushl\t%ebp\n");
         writer.write("\tmovl\t%esp, %ebp\n");
         writer.write(buf.toString());
+        writer.write("END:");
         writer.write("\tleave\n\tret\n\n");
         writer.close();
         Process child = Runtime.getRuntime().exec("gcc slp_gen.s");
         child.waitFor();
-        if (!Control.ConSlp.keepasm)
-          Runtime.getRuntime().exec("rm -rf slp_gen.s");
+        if (!Control.ConSlp.keepasm);
+          //Runtime.getRuntime().exec("rm -rf slp_gen.s");
       } catch (Exception e) {
         e.printStackTrace();
         System.exit(0);

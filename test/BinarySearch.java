@@ -7,6 +7,14 @@ class BinarySearch{
 // methods to initialize, print and search the array
 // using Binary Search
 
+/*
+
+hey this is a test block comment i add
+*** test my block comment here
+
+abac
+ */
+
 class BS{
     int[] number ;
     int size ;
