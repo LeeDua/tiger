@@ -75,6 +75,7 @@ public class Token
   {
     this.kind = kind;
     this.lineNum = lineNum;
+    this.lexeme = null;
   }
 
   public Token(Kind kind, Integer lineNum, String lexeme)
@@ -96,4 +97,5 @@ public class Token
         + this.lineNum.toString();
     return this.kind.toString() + s;
   }
+
 }

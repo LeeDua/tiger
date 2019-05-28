@@ -78,6 +78,7 @@ public class Tiger
       parser.parse();
 
       fstream.close();
+      System.out.println("Parser test passed!!");
     } catch (Exception e) {
       e.printStackTrace();
       System.exit(1);

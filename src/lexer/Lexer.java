@@ -2,9 +2,12 @@ package lexer;
 
 import static control.Control.ConLexer.dump;
 
+import java.awt.desktop.SystemEventListener;
+import java.awt.desktop.SystemSleepEvent;
 import java.io.InputStream;
 import java.io.PushbackInputStream;
 
+import java.util.Stack;
 import java.util.function.ToDoubleBiFunction;
 
 import lexer.Token.Kind;
@@ -16,6 +19,7 @@ public class Lexer
   private String fname; // the input file name to be compiled
   private PushbackInputStream fstream;
   private int current_line_num = 1;
+  private Stack<Token> rollBackStack = new Stack<>();
 
   private Token current_line_token(Kind kind){
       return new Token(kind, this.current_line_num);
@@ -188,9 +192,16 @@ public class Lexer
   {
     Token t = null;
 
+    if(!rollBackStack.empty()){
+        return rollBackStack.pop();
+    }
+
     try {
         do{
             t = this.nextTokenInternal();
+            if(t != null){
+                System.out.println(t.toString());
+            }
         }
         while(t == null);
     } catch (Exception e) {
@@ -200,5 +211,10 @@ public class Lexer
     if (dump)
       System.out.println(t.toString());
     return t;
+  }
+
+  public void rollBackToken(Token t)
+  {
+      rollBackStack.push(t);
   }
 }
