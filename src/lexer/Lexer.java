@@ -4,6 +4,8 @@ import static control.Control.ConLexer.dump;
 
 import java.awt.desktop.SystemEventListener;
 import java.awt.desktop.SystemSleepEvent;
+import java.awt.image.TileObserver;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.PushbackInputStream;
 
@@ -16,24 +18,39 @@ import util.Todo;
 
 public class Lexer
 {
-  private String fname; // the input file name to be compiled
+  public String fname; // the input file name to be compiled
   private PushbackInputStream fstream;
   private int current_line_num = 1;
+  private int index_in_line = 0;
   private Stack<Token> rollBackStack = new Stack<>();
 
-  private Token current_line_token(Kind kind){
-      return new Token(kind, this.current_line_num);
-  }
-
-  private boolean is_char_legal(int c){
-      return ( c == '_' || (c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z') || (c >= '0'  && c <= '9'));
-  }
 
   public Lexer(String fname, InputStream fstream)
   {
     this.fname = fname;
     this.fstream = new PushbackInputStream(fstream);
   }
+
+  private Token current_line_token(Kind kind){
+      this.index_in_line += 1;
+      return new Token(kind, this.current_line_num, this.index_in_line);
+  }
+
+  private Token current_line_token(Kind kind, String lexeme){
+    this.index_in_line += 1;
+    return new Token(kind, this.current_line_num, lexeme, this.index_in_line);
+  }
+
+  private void new_line(){
+      this.index_in_line = 0;
+      this.current_line_num += 1;
+  }
+
+  private boolean is_char_legal(int c){
+      return ( c == '_' || (c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z') || (c >= '0'  && c <= '9'));
+  }
+
+
 
   // When called, return the next token (refer to the code "Token.java")
   // from the input stream.
@@ -45,12 +62,12 @@ public class Lexer
       // The value for "lineNum" is now "null",
       // you should modify this to an appropriate
       // line number for the "EOF" token.
-      return new Token(Kind.TOKEN_EOF, this.current_line_num);
+      return new Token(Kind.TOKEN_EOF, this.current_line_num, this.index_in_line);
 
     // skip all kinds of "blanks"
     while (' ' == c || '\t' == c || '\n' == c) {
         if(c == '\n'){
-            this.current_line_num += 1;
+            new_line();
         }
         c = this.fstream.read();
     }
@@ -61,20 +78,24 @@ public class Lexer
             do{
                 c = this.fstream.read();
             }while(c != '\n');
-            this.current_line_num += 1;
+            new_line();
             return null;
             //return new Token(Kind.TOKEN_COMMENT_LINE, this.current_line_num-1);
         }
         else if( c == '*' ){
             //System.out.println(new Token(Kind.TOKEN_COMMENT_BLOCK_START,this.current_line_num).toString());
             c = fstream.read();
-            if(c == '\n')this.current_line_num += 1;
+            if(c == '\n'){
+                new_line();
+            }
             int prev_c = 0;
             while(!((c=='/')&&(prev_c=='*'))){
                 prev_c = c;
                 c = fstream.read();
                 if(c == -1) return current_line_token(Kind.TOKEN_EOF);
-                if(c == '\n')this.current_line_num += 1;
+                if(c == '\n'){
+                    new_line();
+                }
             }
             //return current_line_token(Kind.TOKEN_COMMENT_BLOCK_END);
             return null;
@@ -174,11 +195,11 @@ public class Lexer
               default:
                   if (((whole_token_string.charAt(0) >= 'a' && whole_token_string.charAt(0) <= 'z')
                           || (whole_token_string.charAt(0) >= 'A' && whole_token_string.charAt(0) <= 'Z'))) {
-                      return new Token(Kind.TOKEN_ID, this.current_line_num, whole_token_string);
+                      return current_line_token(Kind.TOKEN_ID, whole_token_string);
                   } else {
                       try {
                           Integer.parseInt(whole_token_string);
-                          return new Token(Kind.TOKEN_NUM, this.current_line_num, whole_token_string);
+                          return current_line_token(Kind.TOKEN_ID, whole_token_string);
                       } catch (NumberFormatException e) {
                           throw new java.lang.Error("Illegal IDENTIFIER: " + whole_token_string);
                       }
@@ -217,4 +238,71 @@ public class Lexer
   {
       rollBackStack.push(t);
   }
+
+  public String find_code(Token t) throws Exception {
+      StringBuilder source_code = new StringBuilder();
+      Token temp = null;
+
+      int c = -1;
+      int line_cnt = 1;
+      while(line_cnt < t.lineNum){
+          c = this.fstream.read();
+          if(c == '\n'){
+              line_cnt += 1;
+          }
+      }
+      do{
+          c = this.fstream.read();
+      }while(c == ' ' || c == '\t');
+      this.fstream.unread(c);
+
+
+      do{
+          c = this.fstream.read();
+          source_code.append((char)c);
+        }while( c != '\n');
+      return source_code.toString();
+  }
+
+    public String find_token_pos(Token t) throws Exception {
+        StringBuilder pos_marker_string = new StringBuilder();
+        Token temp = null;
+        int c = -1;
+        int line_cnt = 1;
+        while(line_cnt < t.lineNum){
+            c = this.fstream.read();
+            if(c == '\n'){
+                line_cnt += 1;
+            }
+        }
+        do{
+            c = this.fstream.read();
+        }while(c == ' ' || c == '\t');
+        this.fstream.unread(c);
+
+
+        Integer line_start_pos = -1;
+        Integer token_pos = -1;
+        line_start_pos = this.fstream.available();
+        if(t.indexInLine > 1){
+            do{
+                temp = this.nextTokenInternal();
+            }
+            while(!temp.indexInLine.equals(t.indexInLine - 1));
+            token_pos = this.fstream.available();
+        }
+        else{
+            return "^";
+        }
+
+        for(int i=0;i < line_start_pos - token_pos + 1; i++){
+            pos_marker_string.append(" ");
+        }
+        pos_marker_string.append("^");
+        return pos_marker_string.toString();
+
+
+
+    }
+
 }

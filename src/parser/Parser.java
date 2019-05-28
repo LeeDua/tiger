@@ -5,11 +5,16 @@ import lexer.Token;
 import lexer.Token.Kind;
 
 import javax.swing.*;
+import java.awt.desktop.SystemSleepEvent;
+import java.io.BufferedInputStream;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
 
 public class Parser
 {
-  Lexer lexer;
-  Token current;
+  private Lexer lexer;
+  private Token current;
 
   public Parser(String fname, java.io.InputStream fstream)
   {
@@ -34,14 +39,34 @@ public class Parser
       System.out.println("Expects: " + kind.toString());
       System.out.println("But got: " + current.kind.toString());
       error();
-      System.exit(1);
     }
   }
 
   private void error()
   {
-    System.out.println("Syntax error: compilation aborting...\n" +
+    System.out.println("Syntax error: compilation abort\n" +
+            "Filename: " + lexer.fname + "\n" +
             "Illegal token: " + current.toString());
+    System.out.println("Source code:");
+    try {
+      InputStream source_code_fstream = new BufferedInputStream(new FileInputStream(lexer.fname));
+      Lexer lexer_to_find_source = new Lexer(lexer.fname,source_code_fstream);
+      System.out.print(lexer_to_find_source.find_code(current));
+    } catch (FileNotFoundException e) {
+      e.printStackTrace();
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+    try {
+      InputStream source_code_pos_fstream = new BufferedInputStream(new FileInputStream(lexer.fname));
+      Lexer lexer_to_find_source_pos = new Lexer(lexer.fname,source_code_pos_fstream);
+      System.out.print(lexer_to_find_source_pos.find_token_pos(current));
+    } catch (FileNotFoundException e) {
+      e.printStackTrace();
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+
     System.exit(1);
     return;
   }
