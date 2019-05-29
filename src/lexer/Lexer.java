@@ -221,7 +221,7 @@ public class Lexer
         do{
             t = this.nextTokenInternal();
             if(t != null){
-                System.out.println(t.toString());
+                //System.out.println(t.toString());
             }
         }
         while(t == null);
@@ -300,8 +300,6 @@ public class Lexer
         }
         pos_marker_string.append("^");
         return pos_marker_string.toString();
-
-
 
     }
 

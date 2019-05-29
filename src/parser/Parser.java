@@ -15,6 +15,7 @@ public class Parser
 {
   private Lexer lexer;
   private Token current;
+  private boolean abortOnFirstError = false;
 
   public Parser(String fname, java.io.InputStream fstream)
   {
@@ -39,6 +40,9 @@ public class Parser
       System.out.println("Expects: " + kind.toString());
       System.out.println("But got: " + current.kind.toString());
       error();
+      if(!abortOnFirstError){
+        eatToken(kind);
+      }
     }
   }
 
@@ -67,7 +71,15 @@ public class Parser
       e.printStackTrace();
     }
 
-    System.exit(1);
+    if(abortOnFirstError){
+      System.exit(1);
+    }
+    else{
+      System.out.println("\n");
+      advance();
+    }
+
+
     return;
   }
 

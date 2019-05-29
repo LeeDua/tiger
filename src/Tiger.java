@@ -27,7 +27,7 @@ public class Tiger
     switch (Control.ConSlp.action){
     case NONE:
       //System.exit(0);
-      System.out.println("NONE ACTION");
+      //System.out.println("NONE ACTION");
       break;
     default:
       slp.Main slpmain = new slp.Main();
