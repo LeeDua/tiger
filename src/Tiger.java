@@ -6,6 +6,7 @@ import java.io.FileInputStream;
 import java.io.InputStream;
 
 import ast.Ast.Program;
+import ast.Fac;
 import lexer.Lexer;
 import lexer.Token;
 import parser.Parser;
@@ -30,6 +31,7 @@ public class Tiger
       System.out.println("Testing the Tiger compiler on Fac.java starting:");
       ast.PrettyPrintVisitor pp = new ast.PrettyPrintVisitor();
       ast.Fac.prog.accept(pp);
+      Fac.prog_sum.accept(pp);
       System.out.println("Testing the Tiger compiler on Fac.java finished.");
       System.exit(1);
     }

@@ -187,7 +187,7 @@ public class Parser
     return;
   }
 
-  //TODO：TimesExp既然能相乘，它的值难道不是必须为一个整数吗？为什么还能!呢？
+  //TODO：TimesExp既然能相乘，它的值难道不是必须为一个整数吗？为什么还能!呢？ 在语法分析再做类型分析吗？
 
   // TimesExp -> ! NotExp
   // -> NotExp

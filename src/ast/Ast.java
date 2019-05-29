@@ -224,6 +224,8 @@ public class Ast
     }
 
     // Call
+    //TODO: UNDERSTAND
+    //GUESS: A method call? exp.method_id(args)
     public static class Call extends T
     {
       public T exp;
@@ -231,7 +233,7 @@ public class Ast
       public java.util.LinkedList<T> args;
       public String type; // type of first field "exp"
       public java.util.LinkedList<Type.T> at; // arg's type
-      public Type.T rt;
+      public Type.T rt; //Guess: return type of the method?
 
       public Call(T exp, String id, java.util.LinkedList<T> args)
       {
@@ -683,6 +685,9 @@ public class Ast
       public String arg;
       public Stm.T stm;
 
+
+      //TODO: arg should be String[]? according to parser limit
+      // Only allow 1 statement?
       public MainClassSingle(String id, String arg, Stm.T stm)
       {
         this.id = id;

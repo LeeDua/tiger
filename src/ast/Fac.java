@@ -10,6 +10,7 @@ import ast.Ast.Exp.Num;
 import ast.Ast.Exp.Sub;
 import ast.Ast.Exp.This;
 import ast.Ast.Exp.Times;
+import ast.Ast.Exp.Add;
 import ast.Ast.MainClass;
 import ast.Ast.MainClass.MainClassSingle;
 import ast.Ast.Method;
@@ -18,6 +19,8 @@ import ast.Ast.Program.ProgramSingle;
 import ast.Ast.Stm;
 import ast.Ast.Stm.Assign;
 import ast.Ast.Stm.If;
+import ast.Ast.Stm.Block;
+import ast.Ast.Stm.While;
 import ast.Ast.Stm.Print;
 import ast.Ast.Type;
 
@@ -31,10 +34,19 @@ public class Fac
   // this is for demonstration purpose only, and
   // no one would want to do this in reality (boring and error-prone).
   /*
-   * class Factorial { public static void main(String[] a) {
-   * System.out.println(new Fac().ComputeFac(10)); } } class Fac { public int
-   * ComputeFac(int num) { int num_aux; if (num < 1) num_aux = 1; else num_aux =
-   * num * (this.ComputeFac(num-1)); return num_aux; } }
+   * class Factorial {
+   *  public static void main(String[] a) {
+   *    System.out.println(new Fac().ComputeFac(10));
+   *    }
+   * }
+   * class Fac {
+   *  public int ComputeFac(int num) {
+   *   int num_aux;
+   *  if (num < 1) num_aux = 1;
+   *  else num_aux = num * (this.ComputeFac(num-1));
+   *  return num_aux;
+   *   }
+   * }
    */
 
   // // main class: "Factorial"
@@ -67,6 +79,39 @@ public class Fac
   // Lab2, exercise 2: you should write some code to
   // represent the program "test/Sum.java".
   // Your code here:
-  
+  static MainClass.T sum_main = new MainClassSingle(
+          "Sum","a",
+          new Print(
+                  new Call(
+                          new NewObject("Doit"), "doit",
+                          new util.Flist<Exp.T>().list(new Num(101)))
+          )
+  );
+  static ast.Ast.Class.T Doit_class = new ast.Ast.Class.ClassSingle(
+          "Doit", null,
+          new util.Flist<Dec.T>().list(),
+          new util.Flist<Method.T>().list(
+                  new Method.MethodSingle(
+                          new Type.Int(), "doit", new util.Flist<Dec.T>()
+                          .list(new Dec.DecSingle(new Type.Int(), "n")),
+                          new util.Flist<Dec.T>().list(new Dec.DecSingle(
+                                  new Type.Int(), "sum"
+                          ), new Dec.DecSingle(new Type.Int(), "i")),
+                          new util.Flist<Stm.T>().list(
+                                  new Assign("i", new Num(0)),
+                                  new Assign("sum", new Num(0)),
+                                  new While(new Lt(new Id("i"),new Id("n")),
+                                          new Block(new util.Flist<Stm.T>().list(
+                                                  new Assign("sum", new Add(new Id("sum"),new Id("i"))),
+                                                  new Assign("i", new Add(new Id("i"), new Num(1)))
+                                          )          )
+                                  )
+                          ),
+                          new Id("sum")
+                  )
+          )
+  );
+  public static Program.T prog_sum = new ProgramSingle(sum_main,
+          new util.Flist<ast.Ast.Class.T>().list(Doit_class));
   
 }
