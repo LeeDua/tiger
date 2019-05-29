@@ -6,7 +6,70 @@
     <bookmark url="file://$PROJECT_DIR$/src/slp/Main.java" line="135" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e9e47e04-c7dc-4a75-a034-2c9d95c4882e" name="Default Changelist" comment="" />
+    <list default="true" id="e9e47e04-c7dc-4a75-a034-2c9d95c4882e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/META-INF/tiger.kotlin_module" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/MonsterGen.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/Tiger$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/Tiger.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/control/CommandLine$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/control/CommandLine$Arg.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/control/CommandLine$F.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/control/CommandLine$Kind.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/control/CommandLine.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/control/Control$ConLexer.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/control/Control$ConSlp$T.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/control/Control$ConSlp.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/control/Control.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/lexer/Lexer.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/lexer/Token$Kind.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/lexer/Token.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/parser/Parser$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/parser/Parser.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/slp/Linklist$Node.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/slp/Linklist.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/slp/Main$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/slp/Main.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/slp/Samples.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/slp/Slp$Exp$Eseq.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/slp/Slp$Exp$Id.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/slp/Slp$Exp$Num.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/slp/Slp$Exp$OP_T.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/slp/Slp$Exp$Op.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/slp/Slp$Exp$T.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/slp/Slp$Exp.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/slp/Slp$ExpList$Last.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/slp/Slp$ExpList$Pair.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/slp/Slp$ExpList$T.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/slp/Slp$ExpList.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/slp/Slp$Stm$Assign.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/slp/Slp$Stm$Compound.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/slp/Slp$Stm$Print.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/slp/Slp$Stm$T.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/slp/Slp$Stm.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/slp/Slp.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/util/Bug.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/util/Flist.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/util/Label.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/util/Todo.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/result" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/MonsterGen.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/slp/Linklist.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tiger.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tiger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tiger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lexer/Lexer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lexer/Lexer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lexer/Token.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lexer/Token.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/parser/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/Parser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/slp/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/slp/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/slp/Slp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/slp/Slp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/BinarySearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/BinarySearch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Factorial.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/Factorial.java" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/bin/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -38,7 +101,7 @@
         <entry file="file://$PROJECT_DIR$/src/lexer/Lexer.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="424">
-              <caret line="230" column="5" lean-forward="true" selection-start-line="230" selection-start-column="5" selection-end-line="230" selection-end-column="5" />
+              <caret line="230" column="5" selection-start-line="230" selection-start-column="5" selection-end-line="230" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#8405#8406#0" expanded="true" />
@@ -52,7 +115,7 @@
         <entry file="file://$PROJECT_DIR$/src/parser/Parser.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="231">
-              <caret line="38" column="10" lean-forward="true" selection-start-line="38" selection-start-column="10" selection-end-line="38" selection-end-column="10" />
+              <caret line="38" column="10" selection-start-line="38" selection-start-column="10" selection-end-line="38" selection-end-column="10" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -111,7 +174,6 @@
       <find>COMMER</find>
       <find>RETURN</find>
       <find>TOKEN_RETURN</find>
-      <find>id =</find>
       <find>adva</find>
       <find>line_num</find>
       <find>-1</find>
@@ -252,18 +314,17 @@
       <workItem from="1558591187137" duration="14022000" />
       <workItem from="1558703347150" duration="26861000" />
       <workItem from="1558843099004" duration="5261000" />
-      <workItem from="1559047493347" duration="22527000" />
+      <workItem from="1559047493347" duration="23116000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="75198000" />
+    <option name="totallyTimeSpent" value="75787000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-4" y="34" width="1928" height="1050" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1307364" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1307364" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -273,7 +334,7 @@
       <window_info id="Learn" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49932975" visible="true" weight="0.27252987" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49932975" weight="0.27252987" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.29967427" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -283,7 +344,7 @@
       <window_info anchor="bottom" id="Messages" order="9" weight="0.32790446" />
       <window_info anchor="bottom" id="Database Changes" order="10" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.3129771" />
-      <window_info anchor="bottom" id="Version Control" order="12" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="12" visible="true" weight="0.6883822" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Database" order="1" weight="0.32977587" />
       <window_info anchor="right" id="Ant Build" order="2" weight="0.2497332" />
@@ -597,7 +658,7 @@
     <entry file="file://$PROJECT_DIR$/src/lexer/Lexer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="424">
-          <caret line="230" column="5" lean-forward="true" selection-start-line="230" selection-start-column="5" selection-end-line="230" selection-end-column="5" />
+          <caret line="230" column="5" selection-start-line="230" selection-start-column="5" selection-end-line="230" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#8405#8406#0" expanded="true" />
@@ -627,7 +688,7 @@
     <entry file="file://$PROJECT_DIR$/src/parser/Parser.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="231">
-          <caret line="38" column="10" lean-forward="true" selection-start-line="38" selection-start-column="10" selection-end-line="38" selection-end-column="10" />
+          <caret line="38" column="10" selection-start-line="38" selection-start-column="10" selection-end-line="38" selection-end-column="10" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
