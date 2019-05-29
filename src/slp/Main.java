@@ -1,8 +1,11 @@
 package slp;
 
+import java.util.ArrayList;
 import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.util.HashSet;
+import java.util.List;
+import java.util.ListIterator;
 
 import slp.Slp.Exp;
 import slp.Slp.Exp.Eseq;
@@ -15,15 +18,53 @@ import util.Bug;
 import util.Todo;
 import control.Control;
 
+import slp.Linklist;
+
 public class Main
 {
   // ///////////////////////////////////////////
   // maximum number of args
+  private Linklist mem = new Linklist();
 
   private int maxArgsExp(Exp.T exp)
   {
-    new Todo();
-    return -1;
+    /*if (exp instanceof Exp.Id){
+        return 0;
+      }
+    else if (exp instanceof Exp.Num){
+        return 0;
+      }
+    else if (exp instanceof Exp.Op) {
+      Exp.Op e = (Exp.Op) exp;
+      int n1 = maxArgsExp(e.left);
+      int n2 = maxArgsExp(e.right);
+      return n1+n2;
+    }*/
+    if (exp instanceof Exp.Eseq){
+      Exp.Eseq e = (Exp.Eseq) exp;
+      int n1 = maxArgsStm(e.stm);
+      int n2 = maxArgsExp(e.exp);
+      return n1>n2 ? n1 : n2;
+    }
+    else{
+      return 1;
+    }
+  }
+
+  private int maxArgExpList(ExpList.T expList){
+    if (expList instanceof ExpList.Pair){
+      ExpList.Pair elist= (ExpList.Pair) expList;
+      int n1 = maxArgsExp(elist.exp);
+      int n2 = maxArgExpList(elist.list);
+      return n1 + n2;
+    }
+    if (expList instanceof ExpList.Last){
+      ExpList.Last last= (ExpList.Last) expList;
+      return maxArgsExp(last.exp);
+    }
+    else{
+      throw new java.lang.Error("unmatched explist");
+    }
   }
 
   private int maxArgsStm(Stm.T stm)
@@ -32,37 +73,95 @@ public class Main
       Stm.Compound s = (Stm.Compound) stm;
       int n1 = maxArgsStm(s.s1);
       int n2 = maxArgsStm(s.s2);
-
       return n1 >= n2 ? n1 : n2;
     } else if (stm instanceof Stm.Assign) {
-      new Todo();
-      return -1;
+        Stm.Assign s = (Stm.Assign) stm;
+        return maxArgsExp(s.exp);
     } else if (stm instanceof Stm.Print) {
-      new Todo();
-      return -1;
-    } else
-      new Bug();
-    return 0;
+        Stm.Print s = (Stm.Print) stm;
+        //System.out.println(maxArgExpList(s.explist));
+        return maxArgExpList(s.explist);
+    } else{
+      throw new java.lang.Error("unmatchend stm");
+    }
   }
 
   // ////////////////////////////////////////
   // interpreter
-
-  private void interpExp(Exp.T exp)
-  {
-    new Todo();
+  private int interpExp(Exp.T exp) {
+    if (exp instanceof Exp.Op){
+      Exp.Op e = (Exp.Op) exp;
+      switch (e.op){
+        case ADD:
+          return interpExp(e.left) + interpExp(e.right);
+        case SUB:
+          return interpExp(e.left) - interpExp(e.right);
+        case TIMES:
+          return interpExp(e.left) * interpExp(e.right);
+        case DIVIDE:
+          if (interpExp(e.right) == 0){
+            throw new java.lang.Error("divided by zero");
+          }
+          return interpExp(e.left) / interpExp(e.right);
+      }
+    }
+    else if (exp instanceof Exp.Num){
+      return ((Num) exp).num;
+    }
+    else if (exp instanceof Exp.Id){
+      Exp.Id e = (Exp.Id) exp;
+      return this.mem.lookup(e.id);
+    }
+    else if (exp instanceof Exp.Eseq){
+      Exp.Eseq e = (Exp.Eseq) exp;
+      interpStm(e.stm);
+      return interpExp(e.exp);
+    }
+    throw new java.lang.Error("unmatched Exp class");
   }
 
-  private void interpStm(Stm.T prog)
+  private void interpStm(Stm.T stm)
   {
-    if (prog instanceof Stm.Compound) {
-      new Todo();
-    } else if (prog instanceof Stm.Assign) {
-      new Todo();
-    } else if (prog instanceof Stm.Print) {
-      new Todo();
-    } else
-      new Bug();
+    if (stm instanceof Stm.Compound) {
+      Stm.Compound s = (Stm.Compound) stm;
+      interpStm(s.s1);
+      interpStm(s.s2);
+    } else if (stm instanceof Stm.Assign) {
+      Stm.Assign s = (Stm.Assign) stm;
+      int value = interpExp(s.exp);
+      this.mem.update(s.id.id, value);
+    } else if (stm instanceof Stm.Print) {
+      Stm.Print s = (Stm.Print) stm;
+      ArrayList<Integer> valueList = interpExpList(s.explist);
+      ListIterator<Integer> iter = valueList.listIterator();
+      //System.out.println("start explist print out");
+      while(iter.hasNext()){
+        System.out.print(iter.next().toString());
+        System.out.print(" ");
+      }
+      if(valueList.size() != 0){
+        System.out.println();
+      }
+      //System.out.println("end explist print out");
+    }
+
+  }
+
+  private ArrayList<Integer> interpExpList(ExpList.T expList){
+    ArrayList<Integer> list = new ArrayList();
+    if (expList instanceof  ExpList.Pair){
+      ExpList.Pair pair = (ExpList.Pair) expList;
+      list.add(interpExp((pair.exp)));
+      ListIterator<Integer>iter = interpExpList(pair.list).listIterator();
+      while(iter.hasNext()){
+        list.add(iter.next());
+      }
+    }
+    else if (expList instanceof ExpList.Last){
+      ExpList.Last last = (ExpList.Last) expList;
+      list.add(interpExp(last.exp));
+    }
+    return list;
   }
 
   // ////////////////////////////////////////
@@ -123,6 +222,11 @@ public class Main
         emit("\tpopl\t%edx\n");
         emit("\tmovl\t%eax, %ecx\n");
         emit("\tmovl\t%edx, %eax\n");
+
+        //deal with div-0 problem
+        emit("\tcmp\t$0, %ecx\n");
+        emit("\tjz END\n");
+
         emit("\tcltd\n");
         emit("\tdiv\t%ecx\n");
         break;
@@ -177,7 +281,7 @@ public class Main
       compileStm(s2);
     } else if (prog instanceof Stm.Assign) {
       Stm.Assign s = (Stm.Assign) prog;
-      String id = s.id;
+      String id = s.id.id;
       Exp.T exp = s.exp;
 
       ids.add(id);
@@ -206,7 +310,9 @@ public class Main
 
     // interpret a given program
     if (Control.ConSlp.action == Control.ConSlp.T.INTERP) {
+     // System.out.print("Start Interpret");
       interpStm(prog);
+     // System.out.print("End Interpret");
     }
 
     // compile a given SLP program to x86
@@ -235,12 +341,13 @@ public class Main
         writer.write("\tpushl\t%ebp\n");
         writer.write("\tmovl\t%esp, %ebp\n");
         writer.write(buf.toString());
+        writer.write("END:");
         writer.write("\tleave\n\tret\n\n");
         writer.close();
         Process child = Runtime.getRuntime().exec("gcc slp_gen.s");
         child.waitFor();
-        if (!Control.ConSlp.keepasm)
-          Runtime.getRuntime().exec("rm -rf slp_gen.s");
+        if (!Control.ConSlp.keepasm);
+          //Runtime.getRuntime().exec("rm -rf slp_gen.s");
       } catch (Exception e) {
         e.printStackTrace();
         System.exit(0);

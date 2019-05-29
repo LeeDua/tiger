@@ -130,12 +130,12 @@ public class Slp
     // x := e
     public static class Assign extends T
     {
-      public String id;
+      public Exp.Id id;
       public Exp.T exp;
 
       public Assign(String id, Exp.T exp)
       {
-        this.id = id;
+        this.id = new Exp.Id(id);
         this.exp = exp;
       }
     }
