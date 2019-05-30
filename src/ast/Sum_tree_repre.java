@@ -23,6 +23,9 @@ import ast.Ast.Stm.Block;
 import ast.Ast.Stm.While;
 import ast.Ast.Stm.Print;
 import ast.Ast.Type;
+import util.Flist;
+
+import java.util.LinkedList;
 
 
 /*
@@ -50,12 +53,13 @@ class Doit {
 
 public class Sum_tree_repre {
     static MainClass.T sum_main = new MainClassSingle(
+
             "Sum","a",
-            new Print(
-                 new Call(
-                         new NewObject("Doit"), "doit",
-                                 new util.Flist<Exp.T>().list(new Num(101)))
-                 )
+            new Flist<Stm.T>().list(new Print(
+                    new Call(
+                            new NewObject("Doit"), "doit",
+                            new util.Flist<Exp.T>().list(new Num(101)))
+            ))
             );
     static ast.Ast.Class.T Doit_class = new ast.Ast.Class.ClassSingle(
             "Doit", null,

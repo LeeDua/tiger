@@ -23,6 +23,7 @@ import ast.Ast.Stm.Block;
 import ast.Ast.Stm.While;
 import ast.Ast.Stm.Print;
 import ast.Ast.Type;
+import util.Flist;
 
 public class Fac
 {
@@ -51,9 +52,11 @@ public class Fac
 
   // // main class: "Factorial"
   static MainClass.T factorial = new MainClassSingle(
-      "Factorial", "a", new Print(new Call(
-          new NewObject("Fac"), "ComputeFac",
-          new util.Flist<Exp.T>().list(new Num(10)))));
+      "Factorial", "a",
+				  new Flist<Stm.T>().list(new Print(new Call(
+								  new NewObject("Fac"), "ComputeFac",
+								  new util.Flist<Exp.T>().list(new Num(10)))))
+				  );
 
   // // class "Fac"
   static ast.Ast.Class.T fac = new ast.Ast.Class.ClassSingle("Fac", null,
@@ -81,11 +84,11 @@ public class Fac
   // Your code here:
   static MainClass.T sum_main = new MainClassSingle(
           "Sum","a",
-          new Print(
-                  new Call(
-                          new NewObject("Doit"), "doit",
-                          new util.Flist<Exp.T>().list(new Num(101)))
-          )
+          new Flist<Stm.T>().list(new Print(
+				          new Call(
+								          new NewObject("Doit"), "doit",
+								          new util.Flist<Exp.T>().list(new Num(101)))
+          ))
   );
   static ast.Ast.Class.T Doit_class = new ast.Ast.Class.ClassSingle(
           "Doit", null,

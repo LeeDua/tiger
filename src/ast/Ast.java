@@ -233,7 +233,7 @@ public class Ast
       public java.util.LinkedList<T> args;
       public String type; // type of first field "exp"
       public java.util.LinkedList<Type.T> at; // arg's type
-      public Type.T rt; //Guess: return type of the method?
+      public Type.T rt; //Guess: return type of the method? Not yet included in the token? BUild a table to store?
 
       public Call(T exp, String id, java.util.LinkedList<T> args)
       {
@@ -617,6 +617,7 @@ public class Ast
       public String id;
       public LinkedList<Dec.T> formals;
       public LinkedList<Dec.T> locals;
+      //public LinkedList<Stm.T> stms;
       public LinkedList<Stm.T> stms;
       public Exp.T retExp;
 
@@ -683,16 +684,16 @@ public class Ast
     {
       public String id;
       public String arg;
-      public Stm.T stm;
+      public LinkedList<Stm.T> stms;
 
 
       //TODO: arg should be String[]? according to parser limit
       // Only allow 1 statement?
-      public MainClassSingle(String id, String arg, Stm.T stm)
+      public MainClassSingle(String id, String arg, LinkedList<Stm.T> stms)
       {
         this.id = id;
         this.arg = arg;
-        this.stm = stm;
+        this.stms = stms;
       }
 
       @Override

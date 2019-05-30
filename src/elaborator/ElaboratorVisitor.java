@@ -304,6 +304,7 @@ public class ElaboratorVisitor implements ast.Visitor
 
     for (Stm.T s : m.stms)
       s.accept(this);
+
     m.retExp.accept(this);
     return;
   }
@@ -328,7 +329,10 @@ public class ElaboratorVisitor implements ast.Visitor
     // "main" has an argument "arg" of type "String[]", but
     // one has no chance to use it. So it's safe to skip it...
 
-    c.stm.accept(this);
+    for (Stm.T s:c.stms
+         ) {
+      s.accept(this);
+    }
     return;
   }
 

@@ -14,4 +14,5 @@ public class Flist<X>
       list.addLast(arg);
     return list;
   }
+
 }

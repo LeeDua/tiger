@@ -199,7 +199,7 @@ public class Lexer
                   } else {
                       try {
                           Integer.parseInt(whole_token_string);
-                          return current_line_token(Kind.TOKEN_ID, whole_token_string);
+                          return current_line_token(Kind.TOKEN_NUM, whole_token_string);
                       } catch (NumberFormatException e) {
                           throw new java.lang.Error("Illegal IDENTIFIER: " + whole_token_string);
                       }
