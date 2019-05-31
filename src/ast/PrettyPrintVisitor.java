@@ -164,6 +164,13 @@ public class PrettyPrintVisitor implements Visitor
   public void visit(Not e)
   {
     this.say("!");
+    if(! (e.exp instanceof Not)){
+      this.say("(");
+    }
+    e.exp.accept(this);
+    if(! (e.exp instanceof Not)){
+      this.say(")");
+    }
   }
 
   @Override
@@ -229,10 +236,16 @@ public class PrettyPrintVisitor implements Visitor
   @Override
   public void visit(Block s)
   {
+    this.printSpaces();
+    this.sayln("{");
+    this.indent();
     for (Stm.T stm: s.stms
          ) {
       stm.accept(this);
     }
+    this.unIndent();
+    this.printSpaces();
+    this.sayln("}");
   }
 
   @Override
@@ -242,16 +255,27 @@ public class PrettyPrintVisitor implements Visitor
     this.say("if (");
     s.condition.accept(this);
     this.sayln(")");
-    this.indent();
+    if(!(s.thenn instanceof Stm.Block)){
+      this.indent();
+    }
     s.thenn.accept(this);
-    this.unIndent();
+    if(!(s.thenn instanceof Stm.Block)){
+      this.unIndent();
+    }
     //this.sayln("");
     this.printSpaces();
     this.sayln("else");
-    this.indent();
+    if(!(s.elsee instanceof Stm.Block)){
+      this.indent();
+    }
+    /*if(!(s.elsee instanceof Stm.Block)){
+      this.indent();
+    }else;*/
     s.elsee.accept(this);
     //this.sayln("");
-    this.unIndent();
+    if(!(s.elsee instanceof Stm.Block)){
+      this.unIndent();
+    }
     return;
   }
 
@@ -259,7 +283,7 @@ public class PrettyPrintVisitor implements Visitor
   public void visit(Print s)
   {
     this.printSpaces();
-    this.say("System.out.println (");
+    this.say("System.out.println(");
     s.exp.accept(this);
     this.sayln(");");
     return;
@@ -269,14 +293,10 @@ public class PrettyPrintVisitor implements Visitor
   public void visit(While s)
   {
     this.printSpaces();
-  	this.say("while ( ");
-    this.indent();
+  	this.say("while (");
     s.condition.accept(this);
-    this.sayln(" ){");
+    this.sayln(")");
     s.body.accept(this);
-	  this.unIndent();
-    this.printSpaces();
-    this.sayln("}");
 
   }
 
@@ -290,7 +310,7 @@ public class PrettyPrintVisitor implements Visitor
   @Override
   public void visit(ClassType t)
   {
-    this.say(t.id + " ");
+    this.say(t.id);
   }
 
   @Override
@@ -310,14 +330,15 @@ public class PrettyPrintVisitor implements Visitor
   public void visit(Dec.DecSingle d)
   {
     d.type.accept(this);
-    this.say(d.id);
+    this.sayln(" " + d.id + ";");
   }
 
   // method
   @Override
   public void visit(MethodSingle m)
   {
-    this.say("  public ");
+    this.printSpaces();
+    this.say("public ");
     m.retType.accept(this);
     this.say(" " + m.id + "(");
     int count = 0;
@@ -331,21 +352,26 @@ public class PrettyPrintVisitor implements Visitor
       }
     }
     this.sayln(")");
-    this.sayln("  {");
-
+    this.printSpaces();
+    this.sayln("{");
+    this.indent();
     for (Dec.T d : m.locals) {
-      Dec.DecSingle dec = (Dec.DecSingle) d;
-      this.say("    ");
-      dec.type.accept(this);
-      this.say(" " + dec.id + ";\n");
+      this.printSpaces();
+      d.accept(this);
     }
-    this.sayln("");
+    if(m.locals.size() != 0){
+      this.sayln("");
+    }
     for (Stm.T s : m.stms)
       s.accept(this);
-    this.say("    return ");
+    this.sayln("");
+    this.printSpaces();
+    this.say("return ");
     m.retExp.accept(this);
     this.sayln(";");
-    this.sayln("  }");
+    this.unIndent();
+    this.printSpaces();
+    this.sayln("}");
     return;
   }
 
@@ -380,13 +406,18 @@ public class PrettyPrintVisitor implements Visitor
   {
     this.sayln("class " + c.id);
     this.sayln("{");
-    this.sayln("  public static void main (String [] " + c.arg + ")");
-    this.sayln("  {");
+    this.printSpaces();
+    this.sayln("public static void main (String [] " + c.arg + ")");
+    this.printSpaces();
+    this.sayln("{");
+    this.indent();
 	  for (Stm.T stm:c.stms
 	       ) {
 		  stm.accept(this);
 	  }
-    this.sayln("  }");
+    this.unIndent();
+    this.printSpaces();
+	  this.sayln("}");
     this.sayln("}");
     return;
   }
