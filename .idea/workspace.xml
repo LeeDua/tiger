@@ -7,12 +7,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e9e47e04-c7dc-4a75-a034-2c9d95c4882e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/elaborator/SingleMethodTable.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ast/Ast.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/Ast.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/elaborator/ClassBinding.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/elaborator/ClassBinding.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/elaborator/ClassTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/elaborator/ClassTable.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/elaborator/ElaboratorVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/elaborator/ElaboratorVisitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elaborator/MethodTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/elaborator/MethodTable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elaborator/MethodTable.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/elaborator/MethodType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/elaborator/MethodType.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/classes/" />
@@ -41,117 +41,90 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.53831893">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/elaborator/ClassTable.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="714">
-                  <caret line="37" column="49" selection-start-line="37" selection-start-column="39" selection-end-line="37" selection-end-column="49" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                    <element signature="e#2045#2046#0" expanded="true" />
-                    <element signature="e#2088#2089#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/elaborator/MethodType.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="210">
-                  <caret line="13" column="3" lean-forward="true" selection-start-line="13" selection-start-column="3" selection-end-line="13" selection-end-column="3" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/ast/Ast.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="357">
-                  <caret line="26" selection-start-line="26" selection-end-line="26" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/elaborator/ElaboratorVisitor.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="153">
-                  <caret line="50" column="27" selection-start-line="50" selection-start-column="27" selection-end-line="50" selection-end-column="27" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                    <element signature="e#1486#1487#0" expanded="true" />
-                    <element signature="e#1538#1539#0" expanded="true" />
-                    <element signature="e#1586#1587#0" expanded="true" />
-                    <element signature="e#1630#1631#0" expanded="true" />
-                    <element signature="e#2154#2162#0" expanded="true" />
-                    <element signature="e#3920#3921#0" expanded="true" />
-                    <element signature="e#3959#3960#0" expanded="true" />
-                    <element signature="e#4005#4006#0" expanded="true" />
-                    <element signature="e#4044#4045#0" expanded="true" />
-                    <element signature="e#9258#9259#0" expanded="true" />
-                    <element signature="e#9281#9282#0" expanded="true" />
-                    <element signature="e#9336#9337#0" expanded="true" />
-                    <element signature="e#9359#9360#0" expanded="true" />
-                    <element signature="e#9430#9431#0" expanded="true" />
-                    <element signature="e#9485#9486#0" expanded="true" />
-                    <element signature="e#9508#9509#0" expanded="true" />
-                    <element signature="e#12052#12053#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/elaborator/MethodTable.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="273">
-                  <caret line="19" column="30" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="30" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                    <element signature="e#1073#1074#0" expanded="true" />
-                    <element signature="e#1116#1117#0" expanded="true" />
-                    <element signature="e#1160#1161#0" expanded="true" />
-                    <element signature="e#1198#1199#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/elaborator/ClassBinding.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="336">
-                  <caret line="37" column="40" selection-start-line="37" selection-start-column="30" selection-end-line="37" selection-end-column="40" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/ast/Ast.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="177">
-                  <caret line="645" column="2" selection-start-line="645" selection-start-column="2" selection-end-line="645" selection-end-column="2" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/elaborator/ClassTable.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="514">
+              <caret line="79" column="17" selection-start-line="79" selection-start-column="17" selection-end-line="79" selection-end-column="17" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#2045#2046#0" expanded="true" />
+                <element signature="e#2088#2089#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ast/Ast.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="281">
+              <caret line="133" column="25" selection-start-line="133" selection-start-column="22" selection-end-line="133" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/elaborator/ElaboratorVisitor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="531">
+              <caret line="56" column="39" lean-forward="true" selection-start-line="56" selection-start-column="39" selection-end-line="56" selection-end-column="39" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1486#1487#0" expanded="true" />
+                <element signature="e#1538#1539#0" expanded="true" />
+                <element signature="e#1586#1587#0" expanded="true" />
+                <element signature="e#1630#1631#0" expanded="true" />
+                <element signature="e#2154#2162#0" expanded="true" />
+                <element signature="e#3920#3921#0" expanded="true" />
+                <element signature="e#3959#3960#0" expanded="true" />
+                <element signature="e#4005#4006#0" expanded="true" />
+                <element signature="e#4044#4045#0" expanded="true" />
+                <element signature="e#9258#9259#0" expanded="true" />
+                <element signature="e#9281#9282#0" expanded="true" />
+                <element signature="e#9336#9337#0" expanded="true" />
+                <element signature="e#9359#9360#0" expanded="true" />
+                <element signature="e#9384#9385#0" expanded="true" />
+                <element signature="e#9485#9486#0" expanded="true" />
+                <element signature="e#9508#9509#0" expanded="true" />
+                <element signature="e#12006#12007#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/elaborator/SingleMethodTable.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1081">
+              <caret line="56" column="3" lean-forward="true" selection-start-line="56" selection-start-column="3" selection-end-line="56" selection-end-column="3" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1360#1361#0" expanded="true" />
+                <element signature="e#1373#1374#0" expanded="true" />
+                <element signature="e#1436#1437#0" expanded="true" />
+                <element signature="e#1464#1465#0" expanded="true" />
+                <element signature="e#1073#1074#0" expanded="true" />
+                <element signature="e#1116#1117#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/elaborator/ClassBinding.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="550">
+              <caret line="45" selection-start-line="45" selection-end-line="45" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -162,7 +135,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>ClassTy</find>
       <find>Int</find>
       <find>ClassType</find>
       <find>else{</find>
@@ -172,7 +144,6 @@
       <find>this.classTable.put(c.id, d.id, d.type);</find>
       <find>current</find>
       <find>currentClass</find>
-      <find>Method</find>
       <find>retEx</find>
       <find>visit(Type</find>
       <find>TYPE</find>
@@ -188,10 +159,12 @@
       <find>DecSingle</find>
       <find>TODO</find>
       <find>method</find>
-      <find>Dec</find>
       <find>currentCla</find>
       <find>ClassType curr</find>
+      <find>Method</find>
       <find>getm</find>
+      <find>SingleMethodTable</find>
+      <find>Dec</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -220,12 +193,13 @@
         <option value="$PROJECT_DIR$/test/BinaryTree.java" />
         <option value="$PROJECT_DIR$/test/Factorial.java" />
         <option value="$PROJECT_DIR$/src/ast/PrettyPrintVisitor.java" />
-        <option value="$PROJECT_DIR$/src/elaborator/ClassBinding.java" />
-        <option value="$PROJECT_DIR$/src/elaborator/MethodTable.java" />
-        <option value="$PROJECT_DIR$/src/elaborator/ClassTable.java" />
-        <option value="$PROJECT_DIR$/src/elaborator/MethodType.java" />
-        <option value="$PROJECT_DIR$/src/elaborator/ElaboratorVisitor.java" />
         <option value="$PROJECT_DIR$/src/ast/Ast.java" />
+        <option value="$PROJECT_DIR$/src/elaborator/MethodTable.java" />
+        <option value="$PROJECT_DIR$/src/elaborator/MethodType.java" />
+        <option value="$PROJECT_DIR$/src/elaborator/SingleMethodTable.java" />
+        <option value="$PROJECT_DIR$/src/elaborator/ClassBinding.java" />
+        <option value="$PROJECT_DIR$/src/elaborator/ClassTable.java" />
+        <option value="$PROJECT_DIR$/src/elaborator/ElaboratorVisitor.java" />
       </list>
     </option>
   </component>
@@ -366,12 +340,12 @@
       <workItem from="1559128992433" duration="36932000" />
       <workItem from="1559268607564" duration="16225000" />
       <workItem from="1559612291458" duration="4308000" />
-      <workItem from="1559632611949" duration="12548000" />
+      <workItem from="1559632611949" duration="16557000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="149971000" />
+    <option name="totallyTimeSpent" value="153980000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-4" y="34" width="1928" height="1050" extended-state="6" />
@@ -890,20 +864,53 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/elaborator/ClassBinding.java">
+    <entry file="file://$PROJECT_DIR$/src/elaborator/MethodType.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="336">
-          <caret line="37" column="40" selection-start-line="37" selection-start-column="30" selection-end-line="37" selection-end-column="40" />
+          <caret line="16" column="24" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/elaborator/SingleMethodTable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1081">
+          <caret line="56" column="3" lean-forward="true" selection-start-line="56" selection-start-column="3" selection-end-line="56" selection-end-column="3" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1360#1361#0" expanded="true" />
+            <element signature="e#1373#1374#0" expanded="true" />
+            <element signature="e#1436#1437#0" expanded="true" />
+            <element signature="e#1464#1465#0" expanded="true" />
+            <element signature="e#1073#1074#0" expanded="true" />
+            <element signature="e#1116#1117#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/elaborator/ClassBinding.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="550">
+          <caret line="45" selection-start-line="45" selection-end-line="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ast/Ast.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="281">
+          <caret line="133" column="25" selection-start-line="133" selection-start-column="22" selection-end-line="133" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/elaborator/ClassTable.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="714">
-          <caret line="37" column="49" selection-start-line="37" selection-start-column="39" selection-end-line="37" selection-end-column="49" />
+        <state relative-caret-position="514">
+          <caret line="79" column="17" selection-start-line="79" selection-start-column="17" selection-end-line="79" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#2045#2046#0" expanded="true" />
@@ -912,20 +919,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/elaborator/MethodType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="13" column="3" lean-forward="true" selection-start-line="13" selection-start-column="3" selection-end-line="13" selection-end-column="3" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/elaborator/ElaboratorVisitor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="50" column="27" selection-start-line="50" selection-start-column="27" selection-end-line="50" selection-end-column="27" />
+        <state relative-caret-position="531">
+          <caret line="56" column="39" lean-forward="true" selection-start-line="56" selection-start-column="39" selection-end-line="56" selection-end-column="39" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1486#1487#0" expanded="true" />
@@ -941,32 +938,11 @@
             <element signature="e#9281#9282#0" expanded="true" />
             <element signature="e#9336#9337#0" expanded="true" />
             <element signature="e#9359#9360#0" expanded="true" />
-            <element signature="e#9430#9431#0" expanded="true" />
+            <element signature="e#9384#9385#0" expanded="true" />
             <element signature="e#9485#9486#0" expanded="true" />
             <element signature="e#9508#9509#0" expanded="true" />
-            <element signature="e#12052#12053#0" expanded="true" />
+            <element signature="e#12006#12007#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/elaborator/MethodTable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="19" column="30" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1073#1074#0" expanded="true" />
-            <element signature="e#1116#1117#0" expanded="true" />
-            <element signature="e#1160#1161#0" expanded="true" />
-            <element signature="e#1198#1199#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ast/Ast.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="645" column="2" selection-start-line="645" selection-start-column="2" selection-end-line="645" selection-end-column="2" />
         </state>
       </provider>
     </entry>

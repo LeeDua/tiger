@@ -8,18 +8,18 @@ public class ClassBinding
 {
   public String extendss; // null for non-existing extends
   public java.util.Hashtable<String, Type.T> fields;
-  public java.util.Hashtable<String, MethodType> methods;
+  public java.util.Hashtable<String, SingleMethodTable> methods;
 
   public ClassBinding(String extendss)
   {
     this.extendss = extendss;
     this.fields = new Hashtable<String, Type.T>();
-    this.methods = new Hashtable<String, MethodType>();
+    this.methods = new Hashtable<String,SingleMethodTable>();
   }
 
   public ClassBinding(String extendss,
       java.util.Hashtable<String, Type.T> fields,
-      java.util.Hashtable<String, MethodType> methods)
+      java.util.Hashtable<String, SingleMethodTable> methods)
   {
     this.extendss = extendss;
     this.fields = fields;
@@ -35,13 +35,13 @@ public class ClassBinding
     this.fields.put(xid, type);
   }
 
-  public void put(String mid, MethodType mt)
+  public void put(String mid, MethodType method)
   {
     if (this.methods.get(mid) != null) {
       System.out.println("duplicated class method: " + mid);
       System.exit(1);
     }
-    this.methods.put(mid, mt);
+    this.methods.put(mid, new SingleMethodTable(method));
   }
 
   @Override

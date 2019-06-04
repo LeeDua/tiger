@@ -643,7 +643,7 @@ public class Ast
       }
     }
   }
-  
+
   // class
   public static class Class
   {

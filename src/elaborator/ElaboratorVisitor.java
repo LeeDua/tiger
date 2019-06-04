@@ -40,15 +40,14 @@ import control.Control.ConAst;
 
 public class ElaboratorVisitor implements ast.Visitor
 {
+  //TODO: need a global method table for non-in-class methods
   public ClassTable classTable; // symbol table for class
-  public MethodTable methodTable; // symbol table for each method
   public String currentClass; // the class name being elaborated
   public Type.T type; // type of the expression being elaborated
 
   public ElaboratorVisitor()
   {
     this.classTable = new ClassTable();
-    this.methodTable = new MethodTable();
     this.currentClass = null;
     this.type = null;
   }
