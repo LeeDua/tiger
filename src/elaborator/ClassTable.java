@@ -82,12 +82,12 @@ public class ClassTable
 
   public void dump()
   {
-    new Todo();
+    System.out.print(this.toString());
   }
 
   @Override
   public String toString()
   {
-    return this.table.toString();
+    return "Class table\n" + this.table.toString();
   }
 }

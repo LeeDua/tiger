@@ -53,10 +53,19 @@ public class ElaboratorVisitor implements ast.Visitor
     this.type = null;
   }
 
+  private void error(String message)
+  {
+    throw new java.lang.Error(message);
+  }
+
   private void error()
   {
-    System.out.println("type mismatch");
-    System.exit(1);
+    throw new java.lang.Error("Type miss match");
+  }
+
+  private void error(Type.T type_1, Type.T type_2)
+  {
+    throw new java.lang.Error(type_1.toString() + " does not match " + type_2.toString());
   }
 
   // /////////////////////////////////////////////////////
@@ -64,16 +73,40 @@ public class ElaboratorVisitor implements ast.Visitor
   @Override
   public void visit(Add e)
   {
+    //check left and right are both int
+    e.left.accept(this);
+    Type.T leftty = this.type;
+    e.right.accept(this);
+    Type.T rightty = this.type;
+    if (!(leftty instanceof Type.Int && rightty instanceof Type.Int)){
+      error("Add operator type error:" + leftty.toString() + "~" + rightty.toString());
+    }
+    this.type = new Type.Int();
   }
 
   @Override
   public void visit(And e)
   {
+    e.left.accept(this);
+    Type.T leftty = this.type;
+    e.right.accept(this);
+    Type.T rightty = this.type;
+    if(!(leftty instanceof Type.Boolean && rightty instanceof Type.Boolean)){
+      error("And operator type error: " + leftty.toString() + "~" + rightty.toString());
+    }
+    this.type = new Type.Boolean();
   }
 
   @Override
   public void visit(ArraySelect e)
   {
+    e.array.accept(this);
+    e.index.accept(this);
+    Type.T index_type = this.type;
+    if(!(index_type instanceof Type.Int)){
+      error("ArraySelect operator index type error");
+    }
+    this.type = new Type.Int();
   }
 
   @Override
@@ -87,8 +120,10 @@ public class ElaboratorVisitor implements ast.Visitor
     if (leftty instanceof ClassType) {
       ty = (ClassType) leftty;
       e.type = ty.id;
+      //如果exp是class type, call的type设置为class type
+      //TODO: WHAT'S Call.type for?
     } else
-      error();
+      error("Call operator exp.method_id(args) :: 'exp' should be of class type!");
     MethodType mty = this.classTable.getm(ty.id, e.id);
     java.util.LinkedList<Type.T> argsty = new LinkedList<Type.T>();
     for (Exp.T a : e.args) {
@@ -96,7 +131,7 @@ public class ElaboratorVisitor implements ast.Visitor
       argsty.addLast(this.type);
     }
     if (mty.argsType.size() != argsty.size())
-      error();
+      error("method call args type miss match:\n" + mty.toString()+ "\n" + argsty.toString());
     for (int i = 0; i < argsty.size(); i++) {
       Dec.DecSingle dec = (Dec.DecSingle) mty.argsType.get(i);
       if (dec.type.toString().equals(argsty.get(i).toString()))
@@ -113,6 +148,13 @@ public class ElaboratorVisitor implements ast.Visitor
   @Override
   public void visit(False e)
   {
+    this.type = new Type.Boolean();
+  }
+
+  @Override
+  public void visit(True e)
+  {
+    this.type = new Type.Boolean();
   }
 
   @Override
@@ -138,16 +180,26 @@ public class ElaboratorVisitor implements ast.Visitor
   @Override
   public void visit(Length e)
   {
+    //array must be int[]
+    e.array.accept(this);
+    if(! (this.type instanceof Type.IntArray)){
+      error(".length operator must be applied on int array");
+    }
+    this.type = new Type.Int();
   }
 
   @Override
   public void visit(Lt e)
   {
+    //should be the same type, but does not need to be both int?
     e.left.accept(this);
     Type.T ty = this.type;
     e.right.accept(this);
-    if (!this.type.toString().equals(ty.toString()))
-      error();
+    /*if (!this.type.toString().equals(ty.toString()))
+      error();*/
+    if(!(this.type instanceof Type.Int && ty instanceof Type.Int)){
+      error("Lt operator should only apply on two ints");
+    }
     this.type = new Type.Boolean();
     return;
   }
@@ -155,6 +207,12 @@ public class ElaboratorVisitor implements ast.Visitor
   @Override
   public void visit(NewIntArray e)
   {
+    //int[e] e should be int
+    e.exp.accept(this);
+    if(!(this.type instanceof Type.Int)){
+      error("New int array size should be integer");
+    }
+    this.type = new Type.IntArray();
   }
 
   @Override
@@ -167,6 +225,12 @@ public class ElaboratorVisitor implements ast.Visitor
   @Override
   public void visit(Not e)
   {
+    //! exp should be boolean
+    e.exp.accept(this);
+    if((this.type instanceof Type.Boolean)){
+      error("Not operation should only apply on boolean");
+    }
+    this.type = new Type.Boolean();
   }
 
   @Override
@@ -182,8 +246,11 @@ public class ElaboratorVisitor implements ast.Visitor
     e.left.accept(this);
     Type.T leftty = this.type;
     e.right.accept(this);
-    if (!this.type.toString().equals(leftty.toString()))
-      error();
+    /*if (!this.type.toString().equals(leftty.toString()))
+      error("sub operator should apply on two int");*/
+    if(!(this.type instanceof Type.Int && leftty instanceof Type.Int)){
+      error("sub operator should apply on two int");
+    }
     this.type = new Type.Int();
     return;
   }
@@ -201,16 +268,14 @@ public class ElaboratorVisitor implements ast.Visitor
     e.left.accept(this);
     Type.T leftty = this.type;
     e.right.accept(this);
-    if (!this.type.toString().equals(leftty.toString()))
+    //if (!this.type.toString().equals(leftty.toString()))
+    if(!(this.type instanceof Type.Int && leftty instanceof Type.Int))
       error();
     this.type = new Type.Int();
     return;
   }
 
-  @Override
-  public void visit(True e)
-  {
-  }
+
 
   // statements
   @Override
@@ -218,25 +283,55 @@ public class ElaboratorVisitor implements ast.Visitor
   {
     // first look up the id in method table
     Type.T type = this.methodTable.get(s.id);
-    // if search failed, then s.id must
+    // if search failed, then s.id must be a class field
     if (type == null)
       type = this.classTable.get(this.currentClass, s.id);
     if (type == null)
-      error();
+      error("Cant assign to var that has not declared");
     s.exp.accept(this);
-    s.type = type;
-    this.type.toString().equals(type.toString());
+    if(!this.type.toString().equals(type.toString())){
+      error("Assign statement type miss match");
+    }
     return;
   }
 
   @Override
   public void visit(AssignArray s)
   {
+    Type.T type = this.methodTable.get(s.id);
+    if(type == null){
+      type = this.classTable.get(this.currentClass, s.id);
+    }
+    if(type == null){
+      error("Cant assign int array to var that has not declared");
+    }
+    else{
+      if(!(type instanceof Type.IntArray)){
+        error("Assign array should operates only on int array var");
+      }
+      else{
+        //check index of type Int
+        s.index.accept(this);
+        if(!(this.type instanceof Type.Int))
+          error("Assign array index should be int");
+        //check exp is of IntArray type
+        s.exp.accept(this);
+        if(!(this.type instanceof Type.IntArray))
+          error("Assign array value should be int array");
+      }
+    }
   }
 
   @Override
   public void visit(Block s)
   {
+    //TODO: how do i deal with block ?
+    //when enter block, should build a new class table
+    //when exit, should determine what inblock modification on class table to keep
+    LinkedList<Stm.T> stms = s.stms;
+    for (Stm.T stm : stms) {
+      stm.accept(this);
+    }
   }
 
   @Override
@@ -244,7 +339,7 @@ public class ElaboratorVisitor implements ast.Visitor
   {
     s.condition.accept(this);
     if (!this.type.toString().equals("@boolean"))
-      error();
+      error("If clause condition should be boolean");
     s.thenn.accept(this);
     s.elsee.accept(this);
     return;
@@ -253,6 +348,7 @@ public class ElaboratorVisitor implements ast.Visitor
   @Override
   public void visit(Print s)
   {
+    //TODO: can support string also
     s.exp.accept(this);
     if (!this.type.toString().equals("@int"))
       error();
@@ -262,34 +358,79 @@ public class ElaboratorVisitor implements ast.Visitor
   @Override
   public void visit(While s)
   {
+    s.condition.accept(this);
+    if(!(this.type instanceof Type.Boolean)){
+      error("While clause condition should be boolean");
+    }
+    s.body.accept(this);
   }
 
   // type
   @Override
   public void visit(Type.Boolean t)
   {
+    this.type = t;
   }
 
   @Override
   public void visit(Type.ClassType t)
   {
+    this.type = t;
   }
 
   @Override
   public void visit(Type.Int t)
   {
-    System.out.println("aaaa");
+    this.type = t;
   }
 
   @Override
   public void visit(Type.IntArray t)
   {
+    this.type = t;
+  }
+
+  private void visit(Type.T t){
+    if(t instanceof Type.Boolean){
+      this.visit(t);
+    }
+    else if(t instanceof Type.ClassType){
+      this.visit(t);
+    }
+    else if(t instanceof Type.Int){
+      this.visit(t);
+    }
+    else if(t instanceof Type.IntArray){
+      this.visit(t);
+    }
+    else{
+      System.out.println("reach undefined Type");
+      System.exit(-1);
+    }
   }
 
   // dec
   @Override
   public void visit(Dec.DecSingle d)
   {
+    //TODO: Class field 和 method filed有同名变量时怎么处理？默认没有吗
+    //TODO:should not declare again for the same id either in class field or method field
+    //if dec is used in formals? should this be considered the same?
+    /*
+    Type.T type = this.methodTable.get(d.id);
+    if(type != null){
+      error("Error: Var " + d.id + " redeclared");
+    }
+    else{
+      this.classTable.get(this.currentClass,d.id);
+      if(type != null){
+        error("Error: Var " + d.id + " redeclared");
+      }
+      else{
+        this.type = d.type;
+      }
+    }*/
+
   }
 
   // method
@@ -297,15 +438,24 @@ public class ElaboratorVisitor implements ast.Visitor
   public void visit(Method.MethodSingle m)
   {
     // construct the method table
-    this.methodTable.put(m.formals, m.locals);
+    //do not allow method overloading
+    //but should check whether formals are exactly the same
+    MethodType method = this.classTable.getm(this.currentClass, m.id);
+    if(method != null){
 
-    if (ConAst.elabMethodTable)
-      this.methodTable.dump();
+    }
+    else{
+      this.methodTable.put(m.formals, m.locals);
 
-    for (Stm.T s : m.stms)
-      s.accept(this);
+      if (ConAst.elabMethodTable)
+        this.methodTable.dump();
 
-    m.retExp.accept(this);
+      for (Stm.T s : m.stms)
+        s.accept(this);
+
+      m.retExp.accept(this);
+    }
+
     return;
   }
 
@@ -314,6 +464,17 @@ public class ElaboratorVisitor implements ast.Visitor
   public void visit(Class.ClassSingle c)
   {
     this.currentClass = c.id;
+    for (Dec.T dec: c.decs) {
+      DecSingle d = (DecSingle) dec;
+      Type.T type = this.classTable.get(this.currentClass,d.id);
+      if(type!=null){
+        error("Error: class field " + d.id + " redeclared");
+      }
+      else{
+
+      }
+    }
+
 
     for (Method.T m : c.methods) {
       m.accept(this);

@@ -47,6 +47,7 @@ public class ClassBinding
   @Override
   public String toString()
   {
+    System.out.println("-----------------");
     System.out.print("extends: ");
     if (this.extendss != null)
       System.out.println(this.extendss);
@@ -56,6 +57,7 @@ public class ClassBinding
     System.out.println(fields.toString());
     System.out.println("\nmethods:\n  ");
     System.out.println(methods.toString());
+    System.out.println("-----------------");
 
     return "";
   }

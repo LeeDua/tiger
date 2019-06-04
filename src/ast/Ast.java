@@ -24,6 +24,7 @@ public class Ast
     {
       public Boolean()
       {
+
       }
 
       @Override
@@ -224,8 +225,7 @@ public class Ast
     }
 
     // Call
-    //TODO: UNDERSTAND
-    //GUESS: A method call? exp.method_id(args)
+    // A method call? exp.method_id(args)
     public static class Call extends T
     {
       public T exp;
@@ -241,6 +241,7 @@ public class Ast
         this.id = id;
         this.args = args;
         this.type = null;
+        //return type is set in Elaborator, first read from method table then set to this call
       }
 
       @Override
@@ -272,6 +273,8 @@ public class Ast
       public String id; // name of the id
       public Type.T type; // type of the id
       public boolean isField; // whether or not this is a class field
+	    //is field set in Elaborator, first look up method table
+	    // if null, lookup in class table and set to true if found
 
       public Id(String id)
       {
@@ -640,7 +643,7 @@ public class Ast
       }
     }
   }
-
+  
   // class
   public static class Class
   {
@@ -650,7 +653,7 @@ public class Ast
 
     public static class ClassSingle extends T
     {
-      public String id;
+    	public String id;
       public String extendss; // null for non-existing "extends"
       public java.util.LinkedList<Dec.T> decs;
       public java.util.LinkedList<ast.Ast.Method.T> methods;
