@@ -47,19 +47,19 @@ public class ClassBinding
   @Override
   public String toString()
   {
-    System.out.println("-----------------");
-    System.out.print("extends: ");
+    String class_info = "";
+    class_info += "extends: ";
     if (this.extendss != null)
-      System.out.println(this.extendss);
+      class_info += this.extendss;
     else
-      System.out.println("<>");
-    System.out.println("\nfields:\n  ");
-    System.out.println(fields.toString());
-    System.out.println("\nmethods:\n  ");
-    System.out.println(methods.toString());
-    System.out.println("-----------------");
+      class_info += "<>";
+    class_info += "\nfields:";
+    class_info += fields.toString();
+    class_info += "\nmethods:";
+    class_info += methods.toString();
+    class_info += "\n\n";
 
-    return "";
+    return class_info;
   }
 
 }

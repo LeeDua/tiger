@@ -41,14 +41,18 @@ import control.Control.ConAst;
 public class ElaboratorVisitor implements ast.Visitor
 {
   //TODO: need a global method table for non-in-class methods
+  //According to Program build logic, not supporting is fine now
+
   public ClassTable classTable; // symbol table for class
   public String currentClass; // the class name being elaborated
+  public String currentMethod; //the method name being elaborated
   public Type.T type; // type of the expression being elaborated
 
   public ElaboratorVisitor()
   {
     this.classTable = new ClassTable();
     this.currentClass = null;
+    this.currentMethod = null;
     this.type = null;
   }
 
@@ -103,7 +107,7 @@ public class ElaboratorVisitor implements ast.Visitor
     e.index.accept(this);
     Type.T index_type = this.type;
     if(!(index_type instanceof Type.Int)){
-      error("ArraySelect operator index type error");
+      error("ArraySelect operator index should only be int");
     }
     this.type = new Type.Int();
   }
@@ -116,31 +120,57 @@ public class ElaboratorVisitor implements ast.Visitor
 
     e.exp.accept(this);
     leftty = this.type;
+    //exp should be of classType to have method
     if (leftty instanceof ClassType) {
       ty = (ClassType) leftty;
       e.type = ty.id;
-      //如果exp是class type, call的type设置为class type
-      //TODO: WHAT'S Call.type for?
+      //check whether class exists
+      if(this.classTable.get(ty.id)==null)
+        error("Method call error: Class "+ ty.id + " do not exists");
+      else{
+        SingleMethodTable remote_method = this.classTable.getm(ty.id, e.id);
+        // Should check whether method exists
+        if(remote_method == null)
+          error("Method call error: Class" + ty.id + "do not have method named '"+ e.id + "'");
+        java.util.LinkedList<Type.T> remote_formals = remote_method.getFormals();
+        LinkedList<Type.T> formals = new LinkedList<>();
+        for (Exp.T a : e.args) {
+          a.accept(this);
+          formals.addLast(this.type);
+        }
+        //check whether formals match exactly the same
+        if (remote_formals.size() != formals.size())
+          error("method call args type miss match:\n" + formals.toString()+ "\n" + remote_formals.toString());
+        for (int i = 0; i < formals.size(); i++) {
+          //should support extend class type
+	        //e.g
+	        //B extends A
+	        //B b;
+	        //func (A a) can be called by fun(b)
+        	if(!formals.get(i).toString().equals(remote_formals.get(i).toString())){
+        		if(remote_formals.get(i) instanceof ClassType && formals.get(i) instanceof ClassType){
+        			String remote_type = ((ClassType) remote_formals.get(i)).id;
+			        String _type = ((ClassType) formals.get(i)).id;
+			        //search up in extend class until extend linklist ends
+			        while(!(remote_type.equals(_type)) && _type != null){
+			        	_type = this.classTable.get(_type).extendss;
+			        }
+			        if(!remote_type.equals(_type)){
+				        error("method formal arg miss match");
+			        }
+		        }
+        		else
+			        error("method formal arg miss match");
+	        }
+
+        }
+        this.type = remote_method.getRetType();
+        e.at = formals;
+        e.rt = this.type;
+      }
     } else
       error("Call operator exp.method_id(args) :: 'exp' should be of class type!");
-    MethodType mty = this.classTable.getm(ty.id, e.id);
-    java.util.LinkedList<Type.T> argsty = new LinkedList<Type.T>();
-    for (Exp.T a : e.args) {
-      a.accept(this);
-      argsty.addLast(this.type);
-    }
-    if (mty.argsType.size() != argsty.size())
-      error("method call args type miss match:\n" + mty.toString()+ "\n" + argsty.toString());
-    for (int i = 0; i < argsty.size(); i++) {
-      Dec.DecSingle dec = (Dec.DecSingle) mty.argsType.get(i);
-      if (dec.type.toString().equals(argsty.get(i).toString()))
-        ;
-      else
-        error();
-    }
-    this.type = mty.retType;
-    e.at = argsty;
-    e.rt = this.type;
+
     return;
   }
 
@@ -160,16 +190,20 @@ public class ElaboratorVisitor implements ast.Visitor
   public void visit(Id e)
   {
     // first look up the id in method table
-    Type.T type = this.methodTable.get(e.id);
+    ClassBinding cb = this.classTable.get(this.currentClass);
+    SingleMethodTable method = cb.methods.get(this.currentMethod);
+    if(method == null)
+      error("Reach Id expression outside of method");
+    Type.T type = method.get(e.id);
     // if search failed, then s.id must be a class field.
     if (type == null) {
-      type = this.classTable.get(this.currentClass, e.id);
+      type = this.classTable.get(this.currentClass,e.id);
       // mark this id as a field id, this fact will be
       // useful in later phase.
       e.isField = true;
     }
     if (type == null)
-      error();
+      error(e.id + " not declared");
     this.type = type;
     // record this type on this node for future use.
     e.type = type;
@@ -181,7 +215,7 @@ public class ElaboratorVisitor implements ast.Visitor
   {
     //array must be int[]
     e.array.accept(this);
-    if(! (this.type instanceof Type.IntArray)){
+    if(!(this.type instanceof Type.IntArray)){
       error(".length operator must be applied on int array");
     }
     this.type = new Type.Int();
@@ -217,6 +251,9 @@ public class ElaboratorVisitor implements ast.Visitor
   @Override
   public void visit(NewObject e)
   {
+    if(this.classTable.get(e.id)== null){
+      error("NewObject error: Class " + e.id + " does not exist");
+    }
     this.type = new Type.ClassType(e.id);
     return;
   }
@@ -226,7 +263,7 @@ public class ElaboratorVisitor implements ast.Visitor
   {
     //! exp should be boolean
     e.exp.accept(this);
-    if((this.type instanceof Type.Boolean)){
+    if(!(this.type instanceof Type.Boolean)){
       error("Not operation should only apply on boolean");
     }
     this.type = new Type.Boolean();
@@ -269,7 +306,7 @@ public class ElaboratorVisitor implements ast.Visitor
     e.right.accept(this);
     //if (!this.type.toString().equals(leftty.toString()))
     if(!(this.type instanceof Type.Int && leftty instanceof Type.Int))
-      error();
+      error("Times operator do not operates on two ints: " + this.type.toString() + "~" + leftty.toString());
     this.type = new Type.Int();
     return;
   }
@@ -280,11 +317,15 @@ public class ElaboratorVisitor implements ast.Visitor
   @Override
   public void visit(Assign s)
   {
-    // first look up the id in method table
-    Type.T type = this.methodTable.get(s.id);
-    // if search failed, then s.id must be a class field
-    if (type == null)
-      type = this.classTable.get(this.currentClass, s.id);
+    ClassBinding cb = this.classTable.get(this.currentClass);
+    SingleMethodTable method = cb.methods.get(this.currentMethod);
+    if(method == null)
+      error("Reach assign statement outside of method");
+    Type.T type = method.get(s.id);
+    // if search failed, then s.id must be a class field.
+    if (type == null) {
+      type = this.classTable.get(this.currentClass,s.id);
+    }
     if (type == null)
       error("Cant assign to var that has not declared");
     s.exp.accept(this);
@@ -297,9 +338,15 @@ public class ElaboratorVisitor implements ast.Visitor
   @Override
   public void visit(AssignArray s)
   {
-    Type.T type = this.methodTable.get(s.id);
-    if(type == null){
-      type = this.classTable.get(this.currentClass, s.id);
+	  //id[index] = exp
+    ClassBinding cb = this.classTable.get(this.currentClass);
+    SingleMethodTable method = cb.methods.get(this.currentMethod);
+    if(method == null)
+      error("Reach assign array statement outside of method");
+    Type.T type = method.get(s.id);
+    // if search failed, then s.id must be a class field.
+    if (type == null) {
+      type = this.classTable.get(this.currentClass,s.id);
     }
     if(type == null){
       error("Cant assign int array to var that has not declared");
@@ -315,8 +362,8 @@ public class ElaboratorVisitor implements ast.Visitor
           error("Assign array index should be int");
         //check exp is of IntArray type
         s.exp.accept(this);
-        if(!(this.type instanceof Type.IntArray))
-          error("Assign array value should be int array");
+        if(!(this.type instanceof Type.Int))
+          error("Assign array value should be int");
       }
     }
   }
@@ -324,7 +371,7 @@ public class ElaboratorVisitor implements ast.Visitor
   @Override
   public void visit(Block s)
   {
-    //TODO: how do i deal with block ?
+    //TODO: how do i deal with block ? do not support yet
     //when enter block, should build a new class table
     //when exit, should determine what inblock modification on class table to keep
     LinkedList<Stm.T> stms = s.stms;
@@ -350,7 +397,7 @@ public class ElaboratorVisitor implements ast.Visitor
     //TODO: can support string also
     s.exp.accept(this);
     if (!this.type.toString().equals("@int"))
-      error();
+      error("Print statement do not support exp type of " + this.type.toString() + "yet");
     return;
   }
 
@@ -412,48 +459,30 @@ public class ElaboratorVisitor implements ast.Visitor
   @Override
   public void visit(Dec.DecSingle d)
   {
-    //TODO: Class field 和 method filed有同名变量时怎么处理？默认没有吗
-    //TODO:should not declare again for the same id either in class field or method field
-    //if dec is used in formals? should this be considered the same?
-    /*
-    Type.T type = this.methodTable.get(d.id);
-    if(type != null){
-      error("Error: Var " + d.id + " redeclared");
-    }
-    else{
-      this.classTable.get(this.currentClass,d.id);
-      if(type != null){
-        error("Error: Var " + d.id + " redeclared");
-      }
-      else{
-        this.type = d.type;
-      }
-    }*/
-
+    //Class decl and method decl should be dealt with differently
+    error("Should not reach single decl visit method");
   }
 
   // method
   @Override
   public void visit(Method.MethodSingle m)
   {
-    // construct the method table
-    //do not allow method overloading
-    //but should check whether formals are exactly the same
-    MethodType method = this.classTable.getm(this.currentClass, m.id);
-    if(method != null){
+    //do not allow method overloading (has check duplicated in class binding putm)
+    this.currentMethod = m.id;
 
+    if (ConAst.elabMethodTable){
+	    System.out.print("\n------Method table start: " + this.currentClass + "." + m.id + "----\n");
+	    System.out.print(m.id + ": ");
+    	this.classTable.getm(this.currentClass,m.id).dump();
+    	System.out.println("------Method table end-------");
     }
-    else{
-      this.methodTable.put(m.formals, m.locals);
 
-      if (ConAst.elabMethodTable)
-        this.methodTable.dump();
+    for (Stm.T s : m.stms)
+      s.accept(this);
 
-      for (Stm.T s : m.stms)
-        s.accept(this);
+    m.retExp.accept(this);
+    this.currentMethod = null;
 
-      m.retExp.accept(this);
-    }
 
     return;
   }
@@ -462,22 +491,16 @@ public class ElaboratorVisitor implements ast.Visitor
   @Override
   public void visit(Class.ClassSingle c)
   {
+    //Check class redeclare
+    //check class field redeclare
+    //check class method redeclare
+    //都在class table里做了
     this.currentClass = c.id;
-    for (Dec.T dec: c.decs) {
-      DecSingle d = (DecSingle) dec;
-      Type.T type = this.classTable.get(this.currentClass,d.id);
-      if(type!=null){
-        error("Error: class field " + d.id + " redeclared");
-      }
-      else{
 
-      }
-    }
-
-
-    for (Method.T m : c.methods) {
+    for (Method.T m:c.methods) {
       m.accept(this);
     }
+
     return;
   }
 
@@ -507,15 +530,20 @@ public class ElaboratorVisitor implements ast.Visitor
   // class table for normal classes
   private void buildClass(ClassSingle c)
   {
+
     this.classTable.put(c.id, new ClassBinding(c.extendss));
-    for (Dec.T dec : c.decs) {
-      Dec.DecSingle d = (Dec.DecSingle) dec;
-      this.classTable.put(c.id, d.id, d.type);
+    this.currentClass = c.id;
+
+    for (Dec.T class_dec: c.decs) {
+      DecSingle d = (DecSingle) class_dec;
+      this.classTable.put(c.id,d.id,d.type);
     }
+
     for (Method.T method : c.methods) {
       MethodSingle m = (MethodSingle) method;
-      this.classTable.put(c.id, m.id, new MethodType(m.retType, m.formals));
+      this.classTable.put(this.currentClass, m.id, new MethodType(m.retType,m.formals,m.locals));
     }
+
   }
 
   // step 1: end

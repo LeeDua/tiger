@@ -3,6 +3,8 @@ package elaborator;
 import ast.Ast.Type;
 import util.Todo;
 
+import java.util.Enumeration;
+
 public class ClassTable
 {
   // map each class name (a string), to the class bindings.
@@ -73,7 +75,6 @@ public class ClassTable
     while (method == null) { // search all parent classes until found or fail
       if (cb.extendss == null)
         return method;
-
       cb = this.table.get(cb.extendss);
       method = cb.methods.get(mid);
     }
@@ -88,6 +89,14 @@ public class ClassTable
   @Override
   public String toString()
   {
-    return "Class table\n" + this.table.toString();
+    String table_info =  "-----Class table start---------\n\n";
+    Enumeration iterator = this.table.keys();
+    while( iterator. hasMoreElements() ){
+      String current_class = (String) iterator.nextElement();
+      table_info += "Class " + current_class + ":\n";
+      table_info += this.table.get(current_class).toString();
+    }
+    table_info += "---- class table end-------\n";
+    return table_info;
   }
 }

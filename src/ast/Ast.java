@@ -205,6 +205,7 @@ public class Ast
     }
 
     // ArraySelect
+    // array[index]
     public static class ArraySelect extends T
     {
       public T array;
@@ -225,13 +226,13 @@ public class Ast
     }
 
     // Call
-    // A method call? exp.method_id(args)
+    // A method call? exp.id(args)
     public static class Call extends T
     {
       public T exp;
       public String id;
       public java.util.LinkedList<T> args;
-      public String type; // type of first field "exp"
+      public String type; // should be of class type, check and set in elaborator
       public java.util.LinkedList<Type.T> at; // arg's type
       public Type.T rt; //Guess: return type of the method? Not yet included in the token? BUild a table to store?
 
@@ -510,6 +511,7 @@ public class Ast
     }
 
     // assign-array
+    //id[index] = exp
     public static class AssignArray extends T
     {
       public String id;
