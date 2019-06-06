@@ -15,6 +15,11 @@ hey this is a test block comment i add
 abac
  */
 
+//class already declared
+/*class BinarySearch{
+
+}*/
+
 class BS {
 	int[] number;
 	int size;
@@ -24,10 +29,43 @@ class BS {
 	public int Start(int sz) {
 		int aux01;
 		int aux02;
-	/*
-	hey = 1; //use before declare bug
-  aux01 = number; //assign type missmatch
-	*/
+
+
+		int test_add;
+		boolean t;
+		int t_a;
+
+		test_add = t + t_a; //add error
+		t = t_a && test_add; //and error
+		test_add = number[t]; //arraySelect index type error
+		t = this.Search(); //call missing formal
+		t = this.Search(t); //call formal type miss match
+		t_a = this.Search(test_add);//call return type miss match with assign var type
+		hey = 1; //Id use before declare
+		t_a = test_add.length;//length apply to non int-array
+		t = t_a < t;//Lt operates on non int-int
+		number = new int[t]; //new int array size not int
+		t = new NonExistObj();//new object class do not exist
+		test_add = !(test_add); //not do not operates on boolean + assign type missmatch
+		test_add = t - t_a; //sub error
+		test_add = t * t_a; //times error
+		aux01 = number; //assign type missmatch
+		noexist = number; //assign to var not declared
+		test_add = t_a[1]; //TODO:array select operates on non-intArray
+		if(t_a){
+			//if statement condition do not be boolean
+		}else{
+
+		}
+		System.out.println(t);//print var not int
+		while(t_a){
+			//while condition not be boolean
+		}
+
+
+
+
+
 		aux01 = this.Init(sz);
 		aux02 = this.Print();
 		if (this.Search(8)) System.out.println(1);
@@ -49,6 +87,12 @@ class BS {
 
 		return 999;
 	}
+
+	//method already declared
+	/*
+	public int Start(){
+		return 1;
+	}*/
 
 
 	// Search for a specific value (num) using

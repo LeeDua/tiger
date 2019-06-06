@@ -300,9 +300,10 @@ public class Parser
     //DONE
   	Exp.T exp = parseAddSubExp();
     while (current.kind == Kind.TOKEN_ADD || current.kind == Kind.TOKEN_SUB) {
-	    advance();
+	    Token operator = current;
+      advance();
 	    Exp.T right = parseAddSubExp();
-    	if(current.kind == Kind.TOKEN_ADD){
+    	if(operator.kind == Kind.TOKEN_ADD){
 	      exp = new Add(exp, right);
       }
       else{
@@ -347,14 +348,22 @@ public class Parser
   // -> System.out.println ( Exp ) ;
   // -> id = Exp ;
   // -> id [ Exp ]= Exp ;
+  // -> ;
   private Stm.T parseStatement()
   {
     //DONE
     //new util.Todo();
 	  Stm.T stm = null;
-    if(current.kind == Kind.TOKEN_LBRACE){
+	  if(current.kind == Kind.TOKEN_SEMI)
+	    advance();
+    else if(current.kind == Kind.TOKEN_LBRACE){
       advance();
-      stm = new Block(parseStatements());
+      if(current.kind != Kind.TOKEN_RBRACE){
+        stm = new Block(parseStatements());
+      }
+      else{
+        stm = new Block();
+      }
       eatToken(Kind.TOKEN_RBRACE);
     }
     else if(current.kind == Kind.TOKEN_IF){
@@ -424,9 +433,11 @@ public class Parser
   	LinkedList<Stm.T> stms = new Flist<Stm.T>().list();
   	while (current.kind == Kind.TOKEN_LBRACE || current.kind == Kind.TOKEN_IF
         || current.kind == Kind.TOKEN_WHILE
-        || current.kind == Kind.TOKEN_SYSTEM || current.kind == Kind.TOKEN_ID) {
+        || current.kind == Kind.TOKEN_SYSTEM || current.kind == Kind.TOKEN_ID
+        || current.kind == Kind.TOKEN_SEMI) {
       Stm.T stm = parseStatement();
-      stms.addLast(stm);
+      if(stm!=null)
+        stms.addLast(stm);
     }
     return stms;
   }

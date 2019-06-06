@@ -2,6 +2,7 @@ package elaborator;
 
 import java.awt.*;
 import java.time.format.DecimalStyle;
+import java.util.Enumeration;
 import java.util.LinkedList;
 
 import ast.Ast.Dec;
@@ -11,6 +12,7 @@ import util.Todo;
 public class SingleMethodTable
 {
   private java.util.Hashtable<String, Type.T> dec_table;
+  private java.util.Hashtable<String, Boolean> var_usage_table;
   private LinkedList<Type.T> formal_type_list;
   private Type.T retType;
 
@@ -18,6 +20,7 @@ public class SingleMethodTable
   {
     this.retType = null;
     this.dec_table = new java.util.Hashtable<String, Type.T>();
+    this.var_usage_table = new java.util.Hashtable<String,Boolean>();
   }
 
   // Duplication is not allowed
@@ -25,6 +28,7 @@ public class SingleMethodTable
       LinkedList<Dec.T> locals, Type.T retType)
   {
     this.dec_table = new java.util.Hashtable<String, Type.T>();
+    this.var_usage_table = new java.util.Hashtable<String,Boolean>();
     for (Dec.T dec : formals) {
       Dec.DecSingle decc = (Dec.DecSingle) dec;
       if (this.dec_table.get(decc.id) != null) {
@@ -32,6 +36,7 @@ public class SingleMethodTable
         System.exit(1);
       }
       this.dec_table.put(decc.id, decc.type);
+      this.var_usage_table.put(decc.id,false);
     }
 
     for (Dec.T dec : locals) {
@@ -41,6 +46,7 @@ public class SingleMethodTable
         System.exit(1);
       }
       this.dec_table.put(decc.id, decc.type);
+      this.var_usage_table.put(decc.id, false);
     }
 
     LinkedList<Type.T> formal_type_list = new LinkedList<>();
@@ -66,6 +72,22 @@ public class SingleMethodTable
 
   public LinkedList<Type.T> getFormals(){
     return this.formal_type_list;
+  }
+
+  public void mark_var_used(String id){
+    this.var_usage_table.put(id, true);
+  }
+
+  public String NotifyNotUsedVars(){
+    String str = "";
+    Enumeration iterator = this.var_usage_table.keys();
+    while(iterator.hasMoreElements()){
+      String current_key = (String) iterator.nextElement();
+      if(!this.var_usage_table.get(current_key)){
+        str += current_key + " ";
+      }
+    }
+    return str;
   }
 
   public void dump()

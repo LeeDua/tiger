@@ -490,6 +490,7 @@ public class Ast
     }
 
     // assign
+    // id = exp
     public static class Assign extends T
     {
       public String id;
@@ -511,7 +512,7 @@ public class Ast
     }
 
     // assign-array
-    //id[index] = exp
+    //id[index_exp] = exp
     public static class AssignArray extends T
     {
       public String id;
@@ -541,6 +542,7 @@ public class Ast
       {
         this.stms = stms;
       }
+      public Block(){this.stms = new java.util.LinkedList<T>();}
 
       @Override
       public void accept(ast.Visitor v)
@@ -622,7 +624,6 @@ public class Ast
       public String id;
       public LinkedList<Dec.T> formals;
       public LinkedList<Dec.T> locals;
-      //public LinkedList<Stm.T> stms;
       public LinkedList<Stm.T> stms;
       public Exp.T retExp;
 
