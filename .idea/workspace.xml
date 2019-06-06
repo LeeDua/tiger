@@ -6,13 +6,7 @@
     <bookmark url="file://$PROJECT_DIR$/src/slp/Main.java" line="135" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e9e47e04-c7dc-4a75-a034-2c9d95c4882e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/ast/Ast.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/Ast.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elaborator/ElaboratorVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/elaborator/ElaboratorVisitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elaborator/SingleMethodTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/elaborator/SingleMethodTable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/parser/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/Parser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BinarySearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/BinarySearch.java" afterDir="false" />
-    </list>
+    <list default="true" id="e9e47e04-c7dc-4a75-a034-2c9d95c4882e" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/bin/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -39,131 +33,101 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.57063884">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/ast/Ast.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="311">
-                  <caret line="498" lean-forward="true" selection-start-line="498" selection-end-line="498" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/elaborator/ElaboratorVisitor.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="440">
-                  <caret line="482" column="30" selection-start-line="482" selection-start-column="30" selection-end-line="482" selection-end-column="30" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                    <element signature="e#5743#5744#0" expanded="true" />
-                    <element signature="e#5780#5781#0" expanded="true" />
-                    <element signature="e#5821#5822#0" expanded="true" />
-                    <element signature="e#5858#5859#0" expanded="true" />
-                    <element signature="e#11696#11697#0" expanded="true" />
-                    <element signature="e#11716#11717#0" expanded="true" />
-                    <element signature="e#11767#11768#0" expanded="true" />
-                    <element signature="e#11787#11788#0" expanded="true" />
-                    <element signature="e#11832#11833#0" expanded="true" />
-                    <element signature="e#11852#11853#0" expanded="true" />
-                    <element signature="e#11902#11903#0" expanded="true" />
-                    <element signature="e#11922#11923#0" expanded="true" />
-                    <element signature="e#14150#14151#0" expanded="true" />
-                    <element signature="e#14209#14210#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/parser/Parser.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="266">
-                  <caret line="581" column="31" selection-start-line="581" selection-start-column="25" selection-end-line="581" selection-end-column="31" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                    <element signature="e#1911#1912#0" expanded="true" />
-                    <element signature="e#1948#1949#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Tiger.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="610">
-                  <caret line="89" column="22" selection-start-line="89" selection-start-column="18" selection-end-line="89" selection-end-column="22" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/elaborator/SingleMethodTable.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-609">
-                  <caret line="22" column="67" selection-start-line="22" selection-start-column="67" selection-end-line="22" selection-end-column="67" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                    <element signature="e#2152#2153#0" expanded="true" />
-                    <element signature="e#2196#2197#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/elaborator/ClassTable.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="321">
-                  <caret line="72" column="35" lean-forward="true" selection-start-line="72" selection-start-column="35" selection-end-line="72" selection-end-column="35" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                    <element signature="e#231#232#0" expanded="true" />
-                    <element signature="e#301#302#0" expanded="true" />
-                    <element signature="e#1089#1090#0" expanded="true" />
-                    <element signature="e#1131#1132#0" expanded="true" />
-                    <element signature="e#2072#2073#0" expanded="true" />
-                    <element signature="e#2115#2116#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/test/BinarySearch.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-5">
-                  <caret line="42" column="49" lean-forward="true" selection-start-line="42" selection-start-column="49" selection-end-line="42" selection-end-column="49" />
-                  <folding>
-                    <element signature="e#58#59#0" expanded="true" />
-                    <element signature="e#103#104#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/ast/Ast.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="48">
-                  <caret line="270" column="9" selection-start-line="270" selection-start-column="7" selection-end-line="270" selection-end-column="9" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ast/Ast.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="311">
+              <caret line="498" lean-forward="true" selection-start-line="498" selection-end-line="498" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/elaborator/ElaboratorVisitor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="203">
+              <caret line="213" column="9" lean-forward="true" selection-start-line="213" selection-start-column="9" selection-end-line="213" selection-end-column="9" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#5743#5744#0" expanded="true" />
+                <element signature="e#5780#5781#0" expanded="true" />
+                <element signature="e#5821#5822#0" expanded="true" />
+                <element signature="e#5858#5859#0" expanded="true" />
+                <element signature="e#11696#11697#0" expanded="true" />
+                <element signature="e#11716#11717#0" expanded="true" />
+                <element signature="e#11767#11768#0" expanded="true" />
+                <element signature="e#11787#11788#0" expanded="true" />
+                <element signature="e#11832#11833#0" expanded="true" />
+                <element signature="e#11852#11853#0" expanded="true" />
+                <element signature="e#11902#11903#0" expanded="true" />
+                <element signature="e#11922#11923#0" expanded="true" />
+                <element signature="e#14150#14151#0" expanded="true" />
+                <element signature="e#14209#14210#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/parser/Parser.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="262">
+              <caret line="394" column="34" lean-forward="true" selection-start-line="394" selection-start-column="34" selection-end-line="394" selection-end-column="34" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1911#1912#0" expanded="true" />
+                <element signature="e#1948#1949#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Tiger.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="610">
+              <caret line="89" column="22" selection-start-line="89" selection-start-column="18" selection-end-line="89" selection-end-column="22" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/elaborator/SingleMethodTable.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-609">
+              <caret line="22" column="67" selection-start-line="22" selection-start-column="67" selection-end-line="22" selection-end-column="67" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#2152#2153#0" expanded="true" />
+                <element signature="e#2196#2197#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/elaborator/ClassTable.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="321">
+              <caret line="72" column="35" lean-forward="true" selection-start-line="72" selection-start-column="35" selection-end-line="72" selection-end-column="35" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#231#232#0" expanded="true" />
+                <element signature="e#301#302#0" expanded="true" />
+                <element signature="e#1089#1090#0" expanded="true" />
+                <element signature="e#1131#1132#0" expanded="true" />
+                <element signature="e#2072#2073#0" expanded="true" />
+                <element signature="e#2115#2116#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -174,8 +138,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>+</find>
-      <find>TOKEN_SUB</find>
       <find>not</find>
       <find>call</find>
       <find>t_a</find>
@@ -195,7 +157,6 @@
       <find>Exp</find>
       <find>Add</find>
       <find>ArraySel</find>
-      <find>Assign</find>
       <find>mark_var_</find>
       <find>id</find>
       <find>NewObj</find>
@@ -204,6 +165,9 @@
       <find>Id</find>
       <find>arr</find>
       <find>visit(M</find>
+      <find>Assign</find>
+      <find>mark_va</find>
+      <find>Statement</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -249,7 +213,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="85" />
     <option name="y" value="34" />
     <option name="width" value="1748" />
@@ -386,18 +350,18 @@
       <workItem from="1559268607564" duration="16225000" />
       <workItem from="1559612291458" duration="4308000" />
       <workItem from="1559632611949" duration="26777000" />
-      <workItem from="1559733488675" duration="26516000" />
+      <workItem from="1559733488675" duration="26914000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="190716000" />
+    <option name="totallyTimeSpent" value="191114000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-4" y="34" width="1928" height="1050" extended-state="6" />
+    <frame x="-4" y="34" width="1928" height="1050" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13127" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13127" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -407,7 +371,7 @@
       <window_info id="Learn" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.44733986" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49932975" visible="true" weight="0.3213898" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49932975" visible="true" weight="0.4039088" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.31161782" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -915,29 +879,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/BinarySearch.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5">
-          <caret line="42" column="49" lean-forward="true" selection-start-line="42" selection-start-column="49" selection-end-line="42" selection-end-column="49" />
-          <folding>
-            <element signature="e#58#59#0" expanded="true" />
-            <element signature="e#103#104#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/parser/Parser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="581" column="31" selection-start-line="581" selection-start-column="25" selection-end-line="581" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1911#1912#0" expanded="true" />
-            <element signature="e#1948#1949#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Tiger.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="610">
@@ -960,6 +901,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/test/BinarySearch.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2226">
+          <caret line="106" column="10" selection-start-line="106" selection-start-column="8" selection-end-line="106" selection-end-column="10" />
+          <folding>
+            <element signature="e#58#59#0" expanded="true" />
+            <element signature="e#103#104#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/elaborator/ClassTable.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="321">
@@ -976,17 +928,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ast/Ast.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="498" lean-forward="true" selection-start-line="498" selection-end-line="498" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/elaborator/ElaboratorVisitor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="482" column="30" selection-start-line="482" selection-start-column="30" selection-end-line="482" selection-end-column="30" />
+        <state relative-caret-position="203">
+          <caret line="213" column="9" lean-forward="true" selection-start-line="213" selection-start-column="9" selection-end-line="213" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#5743#5744#0" expanded="true" />
@@ -1003,6 +948,25 @@
             <element signature="e#11922#11923#0" expanded="true" />
             <element signature="e#14150#14151#0" expanded="true" />
             <element signature="e#14209#14210#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ast/Ast.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="311">
+          <caret line="498" lean-forward="true" selection-start-line="498" selection-end-line="498" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/parser/Parser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="262">
+          <caret line="394" column="34" lean-forward="true" selection-start-line="394" selection-start-column="34" selection-end-line="394" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1911#1912#0" expanded="true" />
+            <element signature="e#1948#1949#0" expanded="true" />
           </folding>
         </state>
       </provider>
