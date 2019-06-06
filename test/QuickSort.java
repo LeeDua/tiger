@@ -64,8 +64,8 @@ class QS{
 		number[i] = number[j] ;
 		number[j] = t ;
 		//aux03 = i + 1 ;
-		if ( j < (i+1)) cont01 = false ;
-		else cont01 = true ;
+		if ( j < (i+1)) {cont01 = false ;}
+		else {cont01 = true ;}
 	    }
 	    number[j] = number[i] ;
 	    number[i] = number[right] ;

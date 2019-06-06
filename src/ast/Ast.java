@@ -24,6 +24,7 @@ public class Ast
     {
       public Boolean()
       {
+
       }
 
       @Override
@@ -204,6 +205,7 @@ public class Ast
     }
 
     // ArraySelect
+    // array[index]
     public static class ArraySelect extends T
     {
       public T array;
@@ -224,14 +226,15 @@ public class Ast
     }
 
     // Call
+    // A method call? exp.id(args)
     public static class Call extends T
     {
       public T exp;
       public String id;
       public java.util.LinkedList<T> args;
-      public String type; // type of first field "exp"
+      public String type; // should be of class type, check and set in elaborator
       public java.util.LinkedList<Type.T> at; // arg's type
-      public Type.T rt;
+      public Type.T rt; //Guess: return type of the method? Not yet included in the token? BUild a table to store?
 
       public Call(T exp, String id, java.util.LinkedList<T> args)
       {
@@ -239,6 +242,7 @@ public class Ast
         this.id = id;
         this.args = args;
         this.type = null;
+        //return type is set in Elaborator, first read from method table then set to this call
       }
 
       @Override
@@ -270,6 +274,8 @@ public class Ast
       public String id; // name of the id
       public Type.T type; // type of the id
       public boolean isField; // whether or not this is a class field
+	    //is field set in Elaborator, first look up method table
+	    // if null, lookup in class table and set to true if found
 
       public Id(String id)
       {
@@ -484,6 +490,7 @@ public class Ast
     }
 
     // assign
+    // id = exp
     public static class Assign extends T
     {
       public String id;
@@ -505,6 +512,7 @@ public class Ast
     }
 
     // assign-array
+    //id[index_exp] = exp
     public static class AssignArray extends T
     {
       public String id;
@@ -534,6 +542,7 @@ public class Ast
       {
         this.stms = stms;
       }
+      public Block(){this.stms = new java.util.LinkedList<T>();}
 
       @Override
       public void accept(ast.Visitor v)
@@ -647,7 +656,7 @@ public class Ast
 
     public static class ClassSingle extends T
     {
-      public String id;
+    	public String id;
       public String extendss; // null for non-existing "extends"
       public java.util.LinkedList<Dec.T> decs;
       public java.util.LinkedList<ast.Ast.Method.T> methods;
@@ -681,13 +690,16 @@ public class Ast
     {
       public String id;
       public String arg;
-      public Stm.T stm;
+      public LinkedList<Stm.T> stms;
 
-      public MainClassSingle(String id, String arg, Stm.T stm)
+
+      //TODO: arg should be String[]? according to parser limit
+      // Only allow 1 statement?
+      public MainClassSingle(String id, String arg, LinkedList<Stm.T> stms)
       {
         this.id = id;
         this.arg = arg;
-        this.stm = stm;
+        this.stms = stms;
       }
 
       @Override
