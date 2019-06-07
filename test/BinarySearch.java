@@ -30,7 +30,7 @@ class BS {
 		int aux01;
 		int aux02;
 
-
+/*
 		int test_add;
 		boolean t;
 		int t_a;
@@ -63,7 +63,7 @@ class BS {
 		}
 
 
-
+*/
 
 
 		aux01 = this.Init(sz);

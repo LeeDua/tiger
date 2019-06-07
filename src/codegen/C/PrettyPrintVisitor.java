@@ -89,18 +89,32 @@ public class PrettyPrintVisitor implements Visitor
   @Override
   public void visit(Add e)
   {
+    e.left.accept(this);
+    this.say(" + ");
+    e.right.accept(this);
   }
 
   @Override
   public void visit(And e)
   {
+    e.left.accept(this);
+    this.say(" && ");
+    e.right.accept(this);
   }
 
   @Override
   public void visit(ArraySelect e)
   {
+    e.array.accept(this);
+    this.say("[");
+    e.index.accept(this);
+    this.say("]");
   }
 
+  //assign stand for a new var to store the Class ptr
+  //assign = exp.id(args)
+  //e.g: this.ComputeFac(num - 1);
+  //(x_1=this, x_1->vptr->ComputeFac(x_1, num - 1));
   @Override
   public void visit(Call e)
   {
@@ -130,6 +144,10 @@ public class PrettyPrintVisitor implements Visitor
   @Override
   public void visit(Length e)
   {
+    //(sizeof(array)/sizeof(int))
+    this.say("(sizeof(");
+    e.array.accept(this);
+    this.say(")/sizeof(int))");
   }
 
   @Override
@@ -144,8 +162,13 @@ public class PrettyPrintVisitor implements Visitor
   @Override
   public void visit(NewIntArray e)
   {
+    this.say("int[");
+    e.exp.accept(this);
+    this.say("]");
   }
 
+  //e.g: new ClassId()
+  //((struct ClassId *)(Tiger_new (& ClassId_vtable_,sizeof(struct ClassId))))
   @Override
   public void visit(NewObject e)
   {
@@ -157,6 +180,9 @@ public class PrettyPrintVisitor implements Visitor
   @Override
   public void visit(Not e)
   {
+    this.say("!(");
+    e.exp.accept(this);
+    this.say(")");
   }
 
   @Override
@@ -197,18 +223,34 @@ public class PrettyPrintVisitor implements Visitor
     this.printSpaces();
     this.say(s.id + " = ");
     s.exp.accept(this);
-    this.say(";");
+    this.sayln(";");
     return;
   }
 
   @Override
   public void visit(AssignArray s)
   {
+    this.printSpaces();
+    this.say(s.id);
+    this.say("[");
+    s.index.accept(this);
+    this.say("] = ");
+    s.exp.accept(this);
+    this.sayln(";");
   }
 
   @Override
   public void visit(Block s)
   {
+    this.printSpaces();
+    this.sayln("{");
+    this.indent();
+    for (Stm.T stm : s.stms){
+      stm.accept(this);
+    }
+    this.unIndent();
+    this.printSpaces();
+    this.sayln("}");
   }
 
   @Override
@@ -221,12 +263,10 @@ public class PrettyPrintVisitor implements Visitor
     this.indent();
     s.thenn.accept(this);
     this.unIndent();
-    this.sayln("");
     this.printSpaces();
     this.sayln("else");
     this.indent();
     s.elsee.accept(this);
-    this.sayln("");
     this.unIndent();
     return;
   }
@@ -244,6 +284,13 @@ public class PrettyPrintVisitor implements Visitor
   @Override
   public void visit(While s)
   {
+    this.printSpaces();
+    this.say("while(");
+    s.condition.accept(this);
+    this.sayln(")");
+    this.indent();
+    s.body.accept(this);
+    this.unIndent();
   }
 
   // type
@@ -262,15 +309,33 @@ public class PrettyPrintVisitor implements Visitor
   @Override
   public void visit(IntArray t)
   {
+    this.say("int[]");
   }
 
   // dec
   @Override
   public void visit(DecSingle d)
   {
+    d.type.accept(this);
+    this.sayln(" " + d.id + ";");
   }
 
   // method
+  //e.g
+  //public int ComputeFac(int num)
+  //    {
+  //      int num_aux;
+
+  //      return num_aux;
+  //    }
+  //------------------------------
+  //int Fac_ComputeFac(struct Fac * this, int num)
+  //{
+  //  int num_aux;
+  //  struct Fac * x_1;
+  //
+  //  return num_aux;
+  //}
   @Override
   public void visit(MethodSingle m)
   {
@@ -321,6 +386,19 @@ public class PrettyPrintVisitor implements Visitor
     return;
   }
 
+
+  //e.g Fac has 1 func ComputeFac
+  //------------------------
+  // struct Fac_vtable
+  //{
+  //  int (*ComputeFac)();
+  //};
+  //------------------------
+  //struct Fac_vtable Fac_vtable_ =
+  //{
+  //  Fac_ComputeFac,
+  //};
+
   // vtables
   @Override
   public void visit(VtableSingle v)
@@ -349,6 +427,14 @@ public class PrettyPrintVisitor implements Visitor
   }
 
   // class
+  //e.g:
+  //-----------------
+  //struct Fac
+  //{
+  //  struct Fac_vtable *vptr;
+  //  int a;
+  //  int[] b;
+  //};
   @Override
   public void visit(ClassSingle c)
   {

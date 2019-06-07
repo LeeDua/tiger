@@ -150,6 +150,7 @@ public class Ast
       }
     }
 
+    //array[index]
     public static class ArraySelect extends T
     {
       public T array;
@@ -169,7 +170,7 @@ public class Ast
       }
     }
 
-    //TODO: what do these fields stands for?
+    //assign stand for a new var to store the Class ptr
     //assign = exp.id(args)
     public static class Call extends T
     {
@@ -252,6 +253,7 @@ public class Ast
       public T exp;
       // Lab4, exercise 1: this field
       // is used to name the allocation.
+      //TODO: when should this name be used?
       public String name;
 
       public NewIntArray(T exp)
