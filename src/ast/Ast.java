@@ -232,7 +232,7 @@ public class Ast
       public T exp;
       public String id;
       public java.util.LinkedList<T> args;
-      public String type; // should be of class type, check and set in elaborator
+      public String type; // should be the exp's class type, check and set in elaborator
       public java.util.LinkedList<Type.T> at; // arg's type
       public Type.T rt; //Guess: return type of the method? Not yet included in the token? BUild a table to store?
 

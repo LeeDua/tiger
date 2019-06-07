@@ -87,6 +87,8 @@ public class TranslateVisitor implements ast.Visitor
   {
   }
 
+  //exp.id(args)
+  //->assign = exp.id(args)
   @Override
   public void visit(ast.Ast.Exp.Call e)
   {
@@ -294,6 +296,8 @@ public class TranslateVisitor implements ast.Visitor
     }
     m.retExp.accept(this);
     Exp.T retExp = this.exp;
+
+    //TODO: stms accept will generate new locals? how?
     for (Dec.T dec : this.tmpVars) {
       locals.add(dec);
     }
@@ -313,6 +317,8 @@ public class TranslateVisitor implements ast.Visitor
     for (ast.Ast.Method.T m : c.methods) {
       m.accept(this);
       this.methods.add(this.method);
+      //TODO: what's this.methods for?
+      //record all methods in all classes?
     }
     return;
   }
@@ -328,7 +334,11 @@ public class TranslateVisitor implements ast.Visitor
 
     this.tmpVars = new LinkedList<Dec.T>();
 
-    c.stm.accept(this);
+    for (ast.Ast.Stm.T stm:c.stms) {
+      stm.accept(this);
+    }
+    //TODO: why main method may have local vars? because related class vars should be copied?
+    //TODO: currently only make use of the final statement instead of all the statements
     MainMethod.T mthd = new MainMethodSingle(
         this.tmpVars, this.stm);
     this.mainMethod = mthd;

@@ -169,6 +169,8 @@ public class Ast
       }
     }
 
+    //TODO: what do these fields stands for?
+    //assign = exp.id(args)
     public static class Call extends T
     {
       public String assign;
@@ -399,6 +401,7 @@ public class Ast
       }
     }
 
+    //id[index] = exp
     public static class AssignArray extends T
     {
       public String id;
@@ -522,6 +525,7 @@ public class Ast
 
   // /////////////////////////////////////////////
   // vtable
+  // Function table for a class
   public static class Vtable
   {
     public static abstract class T implements codegen.C.Acceptable
@@ -601,6 +605,7 @@ public class Ast
     {
       public LinkedList<Dec.T> locals;
       public Stm.T stm;
+      //TODO: should modify to stms if compatibility is needed with ast.Ast
 
       public MainMethodSingle(LinkedList<Dec.T> locals, Stm.T stm)
       {

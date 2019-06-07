@@ -9,7 +9,7 @@ import codegen.C.Ast.Type;
 public class ClassBinding
 {
   public String extendss; // null for non-existing extends
-  public boolean visited; // whether or not this class has been visited
+  public boolean visited; // whether or not this class has been visited, used in inheritance tree searching
   public LinkedList<Tuple> fields; // all fields
   public ArrayList<Ftuple> methods; // all methods
 

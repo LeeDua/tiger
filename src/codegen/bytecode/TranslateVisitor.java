@@ -332,7 +332,9 @@ public class TranslateVisitor implements ast.Visitor
   @Override
   public void visit(ast.Ast.MainClass.MainClassSingle c)
   {
-    c.stm.accept(this);
+    for (ast.Ast.Stm.T stm:c.stms) {
+      stm.accept(this);
+    }
     this.mainClass = new MainClassSingle(c.id, c.arg, this.stms);
     this.stms = new LinkedList<Stm.T>();
     return;
