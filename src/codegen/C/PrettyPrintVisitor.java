@@ -513,11 +513,13 @@ public class PrettyPrintVisitor implements Visitor
     }
     this.sayln("");
 
+
     this.sayln("// vtables");
     for (Vtable.T v : p.vtables) {
       outputVtable((VtableSingle) v);
     }
     this.sayln("");
+
 
     this.sayln("// main method");
     p.mainMethod.accept(this);
