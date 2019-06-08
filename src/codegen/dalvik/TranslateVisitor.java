@@ -235,9 +235,9 @@ public class TranslateVisitor implements ast.Visitor
     s.type.accept(this);
     Type.T ty = this.type;
     if (ty instanceof Type.Int) {
-      emit(new Move16(s.id, right));
+      emit(new Move16(s.id.id, right));
     } else {
-      emit(new Moveobject16(s.id, right));
+      emit(new Moveobject16(s.id.id, right));
     }
     return;
   }

@@ -218,6 +218,7 @@ public class ElaboratorVisitor implements ast.Visitor {
 				// mark this id as a field id, this fact will be
 				// useful in later phase.
 				e.isField = true;
+				e.classId = this.currentClass;
 			}
 			if (type == null)
 				error(e.id + " not declared");
@@ -330,15 +331,18 @@ public class ElaboratorVisitor implements ast.Visitor {
 		//不需要，程序结构规定了先声明，声明不允许赋值
 		if (method == null)
 			error("Reach assign statement outside of method");
-		Type.T type = method.get(s.id);
+		Type.T type = method.get(s.id.id);
 		// if search failed, then s.id must be a class field.
 		if (type == null) {
-			type = this.classTable.get(this.currentClass, s.id);
+			type = this.classTable.get(this.currentClass, s.id.id);
 		}
 		if (type == null){
 			error("Cant assign to var that has not declared");
 		}
 		else{
+			//construct assign Id as class_field
+			s.id.isField = true;
+			s.id.classId = this.currentClass;
 			s.exp.accept(this);
 			if (!this.type.toString().equals(type.toString())) {
 				error("Assign statement type miss match");
@@ -354,10 +358,10 @@ public class ElaboratorVisitor implements ast.Visitor {
 		SingleMethodTable method = cb.methods.get(this.currentMethod);
 		if (method == null)
 			error("Reach assign array statement outside of method");
-		Type.T type = method.get(s.id);
+		Type.T type = method.get(s.id.id);
 		// if search failed, then s.id must be a class field.
 		if (type == null) {
-			type = this.classTable.get(this.currentClass, s.id);
+			type = this.classTable.get(this.currentClass, s.id.id);
 		}
 		if (type == null) {
 			error("Cant assign int array to var that has not declared");
@@ -365,6 +369,9 @@ public class ElaboratorVisitor implements ast.Visitor {
 			if (!(type instanceof Type.IntArray)) {
 				error("Assign array should operates only on int array var");
 			} else {
+				//construct assign-array id as class_field
+				s.id.isField = true;
+				s.id.classId = this.currentClass;
 				//check index of type Int
 				s.index.accept(this);
 				if (!(this.type instanceof Type.Int))

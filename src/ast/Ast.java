@@ -274,6 +274,7 @@ public class Ast
       public String id; // name of the id
       public Type.T type; // type of the id
       public boolean isField; // whether or not this is a class field
+      public String classId;
 	    //is field set in Elaborator, first look up method table
 	    // if null, lookup in class table and set to true if found
 
@@ -282,13 +283,15 @@ public class Ast
         this.id = id;
         this.type = null;
         this.isField = false;
+        this.classId = null;
       }
 
-      public Id(String id, Type.T type, boolean isField)
+      public Id(String id, Type.T type, boolean isField, String classId)
       {
         this.id = id;
         this.type = type;
         this.isField = isField;
+        this.classId = classId;
       }
 
       @Override
@@ -493,13 +496,20 @@ public class Ast
     // id = exp
     public static class Assign extends T
     {
-      public String id;
+      //public String id;
+      public Exp.Id id;
       public Exp.T exp;
       public Type.T type; // type of the id
 
-      public Assign(String id, Exp.T exp)
+      public Assign(Exp.Id id, Exp.T exp)
       {
         this.id = id;
+        this.exp = exp;
+        this.type = null;
+      }
+      public Assign(String id, Exp.T exp)
+      {
+        this.id = new Exp.Id(id);
         this.exp = exp;
         this.type = null;
       }
@@ -515,13 +525,19 @@ public class Ast
     //id[index_exp] = exp
     public static class AssignArray extends T
     {
-      public String id;
+      public Exp.Id id;
       public Exp.T index;
       public Exp.T exp;
 
-      public AssignArray(String id, Exp.T index, Exp.T exp)
+      public AssignArray(Exp.Id id, Exp.T index, Exp.T exp)
       {
         this.id = id;
+        this.index = index;
+        this.exp = exp;
+      }
+      public AssignArray(String id, Exp.T index, Exp.T exp)
+      {
+        this.id = new Exp.Id(id);
         this.index = index;
         this.exp = exp;
       }

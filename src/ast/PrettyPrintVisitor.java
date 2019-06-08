@@ -215,7 +215,7 @@ public class PrettyPrintVisitor implements Visitor
   public void visit(Assign s)
   {
     this.printSpaces();
-    this.say(s.id + " = ");
+    this.say(s.id.id + " = ");
     s.exp.accept(this);
     this.sayln(";");
     return;
@@ -225,7 +225,7 @@ public class PrettyPrintVisitor implements Visitor
   public void visit(AssignArray s)
   {
     this.printSpaces();
-  	this.say(s.id);
+  	this.say(s.id.id);
     this.say("[");
     s.index.accept(this);
     this.say("] = ");

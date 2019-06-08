@@ -9,7 +9,7 @@ struct BinarySearch
 struct BS
 {
   struct BS_vtable *vptr;
-  int[] number;
+  int* number;
   int size;
 };
 // vtables structures
@@ -44,8 +44,8 @@ int BS_Start(struct BS * this, int sz)
   struct BS * x_9;
   struct BS * x_10;
 
-  aux01 = (x_1=this, x_1->vptr->Init(x_1, sz));
-  aux02 = (x_2=this, x_2->vptr->Print(x_2));
+  this->aux01 = this->aux01;
+  this->aux02 = this->aux02;
   if ((x_3=this, x_3->vptr->Search(x_3, 8)))
     System_out_println (1);
   else
@@ -93,34 +93,34 @@ int BS_Search(struct BS * this, int num)
   struct BS * x_12;
   struct BS * x_13;
 
-  aux01 = 0;
-  bs01 = 0;
-  right = (sizeof(number)/sizeof(int));
-  right = right - 1;
-  left = 0;
-  var_cont = 1;
+  this->aux01 = this->aux01;
+  this->bs01 = this->bs01;
+  this->right = this->right;
+  this->right = this->right;
+  this->left = this->left;
+  this->var_cont = this->var_cont;
   while(var_cont)
     {
-      medium = left + right;
-      medium = (x_11=this, x_11->vptr->Div(x_11, medium));
-      aux01 = number[medium];
+      this->medium = this->medium;
+      this->medium = this->medium;
+      this->aux01 = this->aux01;
       if (num < aux01)
-        right = medium - 1;
+        this->right = this->right;
       else
-        left = medium + 1;
+        this->left = this->left;
       if ((x_12=this, x_12->vptr->Compare(x_12, aux01, num)))
-        var_cont = 0;
+        this->var_cont = this->var_cont;
       else
-        var_cont = 1;
+        this->var_cont = this->var_cont;
       if (right < left)
-        var_cont = 0;
+        this->var_cont = this->var_cont;
       else
-        nt = 0;
+        this->nt = this->nt;
     }
   if ((x_13=this, x_13->vptr->Compare(x_13, aux01, num)))
-    bs01 = 1;
+    this->bs01 = this->bs01;
   else
-    bs01 = 0;
+    this->bs01 = this->bs01;
   return bs01;
 }
 int BS_Div(struct BS * this, int num)
@@ -129,13 +129,13 @@ int BS_Div(struct BS * this, int num)
   int count02;
   int aux03;
 
-  count01 = 0;
-  count02 = 0;
-  aux03 = num - 1;
+  this->count01 = this->count01;
+  this->count02 = this->count02;
+  this->aux03 = this->aux03;
   while(count02 < aux03)
     {
-      count01 = count01 + 1;
-      count02 = count02 + 2;
+      this->count01 = this->count01;
+      this->count02 = this->count02;
     }
   return count01;
 }
@@ -144,26 +144,26 @@ int BS_Compare(struct BS * this, int num1, int num2)
   int retval;
   int aux02;
 
-  retval = 0;
-  aux02 = num2 + 1;
+  this->retval = this->retval;
+  this->aux02 = this->aux02;
   if (num1 < num2)
-    retval = 0;
+    this->retval = this->retval;
   else
     if (!(num1 < aux02))
-      retval = 0;
+      this->retval = this->retval;
     else
-      retval = 1;
+      this->retval = this->retval;
   return retval;
 }
 int BS_Print(struct BS * this)
 {
   int j;
 
-  j = 1;
-  while(j < size)
+  this->j = this->j;
+  while(j < this->size)
     {
-      System_out_println (number[j]);
-      j = j + 1;
+      System_out_println (this->number[j]);
+      this->j = this->j;
     }
   System_out_println (99999);
   return 0;
@@ -175,17 +175,17 @@ int BS_Init(struct BS * this, int sz)
   int aux02;
   int aux01;
 
-  size = sz;
-  number = int[sz];
-  j = 1;
-  k = size + 1;
-  while(j < size)
+  this->size = this->size;
+  this->number = this->number;
+  this->j = this->j;
+  this->k = this->k;
+  while(j < this->size)
     {
-      aux01 = 2 * j;
-      aux02 = k - 3;
-      number[j] = aux01 + aux02;
-      j = j + 1;
-      k = k - 1;
+      this->aux01 = this->aux01;
+      this->aux02 = this->aux02;
+      this->number[j] = aux01 + aux02;
+      this->j = this->j;
+      this->k = this->k;
     }
   return 0;
 }

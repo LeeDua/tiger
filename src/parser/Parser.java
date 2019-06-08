@@ -403,7 +403,7 @@ public class Parser
         advance();
         Exp.T assign_exp = parseExp();
         eatToken(Kind.TOKEN_SEMI);
-        stm = new Assign(id, assign_exp);
+        stm = new Assign(new Id(id), assign_exp);
       }
       else if(current.kind == Kind.TOKEN_LBRACK){
         advance();
@@ -412,7 +412,7 @@ public class Parser
         eatToken(Kind.TOKEN_ASSIGN);
         Exp.T assign_exp = parseExp();
         eatToken(Kind.TOKEN_SEMI);
-        stm = new AssignArray(id,index,assign_exp);
+        stm = new AssignArray(new Id(id),index,assign_exp);
       }
       else{
         error();

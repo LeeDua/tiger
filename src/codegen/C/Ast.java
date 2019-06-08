@@ -198,12 +198,22 @@ public class Ast
     public static class Id extends T
     {
       public String id;
+      public boolean isField;
+      public String classId;
+
 
       public Id(String id)
       {
         this.id = id;
+        this.isField = false;
+        this.classId = null;
       }
-
+      public Id(String id,boolean isField, String classId)
+      {
+        this.id = id;
+        this.isField = isField;
+        this.classId = classId;
+      }
       @Override
       public void accept(Visitor v)
       {
@@ -387,10 +397,10 @@ public class Ast
 
     public static class Assign extends T
     {
-      public String id;
+      public Exp.Id id;
       public Exp.T exp;
 
-      public Assign(String id, Exp.T exp)
+      public Assign(Exp.Id id, Exp.T exp)
       {
         this.id = id;
         this.exp = exp;
@@ -406,11 +416,11 @@ public class Ast
     //id[index] = exp
     public static class AssignArray extends T
     {
-      public String id;
+      public Exp.Id id;
       public Exp.T index;
       public Exp.T exp;
 
-      public AssignArray(String id, Exp.T index, Exp.T exp)
+      public AssignArray(Exp.Id id, Exp.T index, Exp.T exp)
       {
         this.id = id;
         this.index = index;

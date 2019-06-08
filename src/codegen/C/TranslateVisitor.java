@@ -130,7 +130,7 @@ public class TranslateVisitor implements ast.Visitor
   @Override
   public void visit(ast.Ast.Exp.Id e)
   {
-    this.exp = new Id(e.id);
+    this.exp = new Id(e.id,e.isField, e.classId);
     return;
   }
 
@@ -221,7 +221,9 @@ public class TranslateVisitor implements ast.Visitor
   public void visit(ast.Ast.Stm.Assign s)
   {
     s.exp.accept(this);
-    this.stm = new Assign(s.id, this.exp);
+    s.id.accept(this);
+    Exp.Id id = (Exp.Id) this.exp;
+    this.stm = new Assign(id, this.exp);
     return;
   }
 
@@ -232,7 +234,9 @@ public class TranslateVisitor implements ast.Visitor
     Exp.T exp = this.exp;
     s.index.accept(this);
     Exp.T index = this.exp;
-    this.stm = new Stm.AssignArray(s.id, index, exp);
+    s.id.accept(this);
+    Exp.Id id = (Exp.Id) this.exp;
+    this.stm = new Stm.AssignArray(id, index, exp);
   }
 
   @Override
