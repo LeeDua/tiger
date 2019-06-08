@@ -325,6 +325,7 @@ public class ElaboratorVisitor implements ast.Visitor {
 	// statements
 	@Override
 	public void visit(Assign s) {
+		boolean is_field = false;
 		ClassBinding cb = this.classTable.get(this.currentClass);
 		SingleMethodTable method = cb.methods.get(this.currentMethod);
 		//class field assign should assign be allowed out of method?
@@ -334,6 +335,7 @@ public class ElaboratorVisitor implements ast.Visitor {
 		Type.T type = method.get(s.id.id);
 		// if search failed, then s.id must be a class field.
 		if (type == null) {
+			is_field = true;
 			type = this.classTable.get(this.currentClass, s.id.id);
 		}
 		if (type == null){
@@ -341,7 +343,7 @@ public class ElaboratorVisitor implements ast.Visitor {
 		}
 		else{
 			//construct assign Id as class_field
-			s.id.isField = true;
+			s.id.isField = is_field;
 			s.id.classId = this.currentClass;
 			s.exp.accept(this);
 			if (!this.type.toString().equals(type.toString())) {
@@ -354,6 +356,7 @@ public class ElaboratorVisitor implements ast.Visitor {
 	@Override
 	public void visit(AssignArray s) {
 		//id[index] = exp
+		boolean is_field = false;
 		ClassBinding cb = this.classTable.get(this.currentClass);
 		SingleMethodTable method = cb.methods.get(this.currentMethod);
 		if (method == null)
@@ -362,6 +365,7 @@ public class ElaboratorVisitor implements ast.Visitor {
 		// if search failed, then s.id must be a class field.
 		if (type == null) {
 			type = this.classTable.get(this.currentClass, s.id.id);
+			is_field = true;
 		}
 		if (type == null) {
 			error("Cant assign int array to var that has not declared");
@@ -370,7 +374,7 @@ public class ElaboratorVisitor implements ast.Visitor {
 				error("Assign array should operates only on int array var");
 			} else {
 				//construct assign-array id as class_field
-				s.id.isField = true;
+				s.id.isField = is_field;
 				s.id.classId = this.currentClass;
 				//check index of type Int
 				s.index.accept(this);

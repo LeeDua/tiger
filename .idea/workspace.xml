@@ -4,53 +4,12 @@
     <bookmark url="file://$PROJECT_DIR$/src/slp/Main.java" line="84" />
     <bookmark url="file://$PROJECT_DIR$/src/slp/Main.java" line="153" />
     <bookmark url="file://$PROJECT_DIR$/src/slp/Main.java" line="135" />
-    <bookmark url="file://$PROJECT_DIR$/src/codegen/C/TranslateVisitor.java" line="376" />
+    <bookmark url="file://$PROJECT_DIR$/src/codegen/C/TranslateVisitor.java" line="377" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e9e47e04-c7dc-4a75-a034-2c9d95c4882e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/ast/Ast$Class$ClassSingle.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ast/Ast$Class$ClassSingle.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/ast/Ast$Class$T.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ast/Ast$Class$T.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/ast/Ast$Class.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ast/Ast$Class.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/ast/Ast$Exp$Id.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ast/Ast$Exp$Id.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/ast/Ast$Exp$Length.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ast/Ast$Exp$Length.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/ast/Ast$Exp$Lt.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ast/Ast$Exp$Lt.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/ast/Ast$Exp$NewIntArray.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ast/Ast$Exp$NewIntArray.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/ast/Ast$Exp$NewObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ast/Ast$Exp$NewObject.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/ast/Ast$Exp$Not.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ast/Ast$Exp$Not.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/ast/Ast$Exp$Num.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ast/Ast$Exp$Num.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/ast/Ast$Exp$Sub.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ast/Ast$Exp$Sub.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/ast/Ast$Exp$This.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ast/Ast$Exp$This.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/ast/Ast$Exp$Times.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ast/Ast$Exp$Times.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/ast/Ast$Exp$True.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ast/Ast$Exp$True.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/ast/Ast$MainClass$MainClassSingle.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ast/Ast$MainClass$MainClassSingle.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/ast/Ast$MainClass$T.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ast/Ast$MainClass$T.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/ast/Ast$MainClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ast/Ast$MainClass.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/ast/Ast$Method$MethodSingle.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ast/Ast$Method$MethodSingle.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/ast/Ast$Method$T.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ast/Ast$Method$T.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/ast/Ast$Method.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ast/Ast$Method.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/ast/Ast$Program$ProgramSingle.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ast/Ast$Program$ProgramSingle.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/ast/Ast$Program$T.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ast/Ast$Program$T.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/ast/Ast$Program.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ast/Ast$Program.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/ast/Ast$Stm$Assign.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ast/Ast$Stm$Assign.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/ast/Ast$Stm$AssignArray.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ast/Ast$Stm$AssignArray.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/ast/Ast$Stm$Block.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ast/Ast$Stm$Block.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/ast/Ast$Stm$If.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ast/Ast$Stm$If.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/ast/Ast$Stm$Print.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ast/Ast$Stm$Print.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/ast/Ast$Stm$T.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ast/Ast$Stm$T.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/ast/Ast$Stm$While.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ast/Ast$Stm$While.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/ast/Ast$Stm.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ast/Ast$Stm.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/ast/PrettyPrintVisitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ast/PrettyPrintVisitor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/elaborator/ElaboratorVisitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/elaborator/ElaboratorVisitor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/parser/Parser.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/parser/Parser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/Ast.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/Ast.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/PrettyPrintVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/PrettyPrintVisitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/codegen/C/Ast.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/codegen/C/Ast.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/codegen/C/PrettyPrintVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/codegen/C/PrettyPrintVisitor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/codegen/C/TranslateVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/codegen/C/TranslateVisitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/codegen/dalvik/TranslateVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/codegen/dalvik/TranslateVisitor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/elaborator/ElaboratorVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/elaborator/ElaboratorVisitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/parser/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/Parser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/BinarySearch.java.c" beforeDir="false" afterPath="$PROJECT_DIR$/test/BinarySearch.java.c" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/classes/" />
@@ -111,11 +70,11 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/codegen/C/TranslateVisitor.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="271">
-                  <caret line="130" column="34" selection-start-line="130" selection-start-column="32" selection-end-line="130" selection-end-column="34" />
+                <state relative-caret-position="286">
+                  <caret line="233" column="23" lean-forward="true" selection-start-line="233" selection-start-column="23" selection-end-line="233" selection-end-column="23" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -123,7 +82,7 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/codegen/C/PrettyPrintVisitor.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="353">
@@ -143,6 +102,18 @@
       </split-first>
       <split-second>
         <leaf>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/elaborator/ElaboratorVisitor.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="126">
+                  <caret line="320" column="11" lean-forward="true" selection-start-line="320" selection-start-column="11" selection-end-line="320" selection-end-column="11" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/ast/PrettyPrintVisitor.java">
               <provider selected="true" editor-type-id="text-editor">
@@ -160,7 +131,7 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/test/BinarySearch.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-2700">
+                <state relative-caret-position="-2973">
                   <caret line="24" column="10" selection-start-line="24" selection-start-column="6" selection-end-line="24" selection-end-column="10" />
                   <folding>
                     <element signature="e#58#59#0" expanded="true" />
@@ -170,11 +141,11 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/parser/Parser.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="422">
-                  <caret line="414" column="40" selection-start-line="414" selection-start-column="40" selection-end-line="414" selection-end-column="40" />
+                <state relative-caret-position="160">
+                  <caret line="664" selection-start-line="664" selection-end-line="664" />
                   <folding>
                     <element signature="imports" expanded="true" />
                     <element signature="e#1911#1912#0" expanded="true" />
@@ -187,8 +158,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/test/BinarySearch.java.c">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="439">
-                  <caret line="177" column="15" lean-forward="true" selection-start-line="177" selection-start-column="15" selection-end-line="177" selection-end-column="15" />
+                <state relative-caret-position="224">
+                  <caret line="163" column="5" lean-forward="true" selection-start-line="163" selection-start-column="5" selection-end-line="163" selection-end-column="5" />
                 </state>
               </provider>
             </entry>
@@ -232,9 +203,9 @@
       <find>MethodSingle</find>
       <find>this</find>
       <find>id</find>
-      <find>Assign</find>
       <find>Id</find>
       <find>Id e</find>
+      <find>Assign</find>
       <find>size</find>
     </findStrings>
   </component>
@@ -275,11 +246,11 @@
         <option value="$PROJECT_DIR$/src/codegen/C/Ast.java" />
         <option value="$PROJECT_DIR$/src/codegen/C/PrettyPrintVisitor.java" />
         <option value="$PROJECT_DIR$/src/parser/Parser.java" />
-        <option value="$PROJECT_DIR$/src/elaborator/ElaboratorVisitor.java" />
         <option value="$PROJECT_DIR$/src/ast/Ast.java" />
         <option value="$PROJECT_DIR$/src/ast/PrettyPrintVisitor.java" />
-        <option value="$PROJECT_DIR$/src/codegen/C/TranslateVisitor.java" />
         <option value="$PROJECT_DIR$/src/codegen/dalvik/TranslateVisitor.java" />
+        <option value="$PROJECT_DIR$/src/elaborator/ElaboratorVisitor.java" />
+        <option value="$PROJECT_DIR$/src/codegen/C/TranslateVisitor.java" />
       </list>
     </option>
   </component>
@@ -429,12 +400,12 @@
       <workItem from="1559612291458" duration="4308000" />
       <workItem from="1559632611949" duration="26777000" />
       <workItem from="1559733488675" duration="26914000" />
-      <workItem from="1559884582146" duration="34476000" />
+      <workItem from="1559884582146" duration="35216000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="227231000" />
+    <option name="totallyTimeSpent" value="227971000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -449,7 +420,7 @@
     <frame x="-4" y="34" width="1928" height="1050" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49945712" visible="true" weight="0.12598841" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49945712" visible="true" weight="0.12598841" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -459,8 +430,8 @@
       <window_info id="Learn" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.44733986" />
-      <window_info anchor="bottom" x="0" y="50" width="1920" height="1017" id="Run" order="2" sideWeight="0.49932975" visible="true" weight="0.04777416" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4961998" />
+      <window_info anchor="bottom" x="0" y="50" width="1920" height="1017" id="Run" order="2" sideWeight="0.49932975" weight="0.04777416" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.21064061" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -558,6 +529,14 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/src/parser/Parser.java</url>
+          <line>664</line>
+          <properties />
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
       <breakpoints-defaults>
         <breakpoint suspend="THREAD" type="java-line" />
       </breakpoints-defaults>
@@ -984,13 +963,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ast/Ast.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="539" column="33" selection-start-line="539" selection-start-column="33" selection-end-line="539" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/codegen/C/Ast.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="271">
@@ -1034,26 +1006,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/codegen/C/TranslateVisitor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="130" column="34" selection-start-line="130" selection-start-column="32" selection-end-line="130" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/elaborator/ElaboratorVisitor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-26">
-          <caret line="345" column="25" selection-start-line="345" selection-start-column="25" selection-end-line="345" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/elaborator/ClassBinding.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="140">
@@ -1078,16 +1030,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/BinarySearch.java.c">
+    <entry file="file://$PROJECT_DIR$/src/parser/Parser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="439">
-          <caret line="177" column="15" lean-forward="true" selection-start-line="177" selection-start-column="15" selection-end-line="177" selection-end-column="15" />
+        <state relative-caret-position="160">
+          <caret line="664" selection-start-line="664" selection-end-line="664" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1911#1912#0" expanded="true" />
+            <element signature="e#1948#1949#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/BinarySearch.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2700">
+        <state relative-caret-position="-2973">
           <caret line="24" column="10" selection-start-line="24" selection-start-column="6" selection-end-line="24" selection-end-column="10" />
           <folding>
             <element signature="e#58#59#0" expanded="true" />
@@ -1096,14 +1053,36 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/parser/Parser.java">
+    <entry file="file://$PROJECT_DIR$/test/BinarySearch.java.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="422">
-          <caret line="414" column="40" selection-start-line="414" selection-start-column="40" selection-end-line="414" selection-end-column="40" />
+        <state relative-caret-position="224">
+          <caret line="163" column="5" lean-forward="true" selection-start-line="163" selection-start-column="5" selection-end-line="163" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ast/Ast.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="503" column="29" selection-start-line="503" selection-start-column="27" selection-end-line="503" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/elaborator/ElaboratorVisitor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="320" column="11" lean-forward="true" selection-start-line="320" selection-start-column="11" selection-end-line="320" selection-end-column="11" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1911#1912#0" expanded="true" />
-            <element signature="e#1948#1949#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/codegen/C/TranslateVisitor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="233" column="23" lean-forward="true" selection-start-line="233" selection-start-column="23" selection-end-line="233" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

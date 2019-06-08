@@ -221,9 +221,10 @@ public class TranslateVisitor implements ast.Visitor
   public void visit(ast.Ast.Stm.Assign s)
   {
     s.exp.accept(this);
+    Exp.T e = this.exp;
     s.id.accept(this);
     Exp.Id id = (Exp.Id) this.exp;
-    this.stm = new Assign(id, this.exp);
+    this.stm = new Assign(id, e);
     return;
   }
 
