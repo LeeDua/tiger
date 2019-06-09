@@ -38,7 +38,7 @@ class TV {
 		System.out.println(root.Search(16));
 		System.out.println(root.Search(50));
 		System.out.println(root.Search(12));
-		ntb = root.Delete(12);
+		ntb = root.Delete(    );
 		ntb = root.Print();
 		System.out.println(root.Search(12));
 

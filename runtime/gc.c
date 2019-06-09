@@ -12,17 +12,24 @@
       |
       p (returned address)
 */
+
+//e.g: new ClassId()
+//((struct ClassId *)(Tiger_new (& ClassId_vtable_,sizeof(struct ClassId))))
+
 void *Tiger_new (void *vtable, int size)
 {
   // You should write 4 statements for this function.
   // #1: "malloc" a chunk of memory (be careful of the size) :
-  
-  // #2: clear this chunk of memory (zero off it):
-  
-  // #3: set up the "vptr" pointer to the value of "vtable":
-  
-  // #4: return the pointer 
-  
+  void* new_obj = malloc(size);
+  // #2: clear this chunk of memory (zero off it)
+  // #3: set up the "vptr" pointer to the value of "vtable"
+  if(new_obj != NULL){
+    memset(new_obj, 0, size);
+    memcpy(new_obj, vtable, sizeof(void*));
+    int same = memcmp(new_obj, vtable, sizeof(void*));
+  }
+  // #4: return the pointer
+  return new_obj;
 }
 
 // "new" an array of size "length", do necessary

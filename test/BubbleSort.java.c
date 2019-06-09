@@ -26,20 +26,6 @@ struct BBS_vtable
 };
 
 
-// vtables
-struct BubbleSort_vtable BubbleSort_vtable_ = 
-{
-};
-
-struct BBS_vtable BBS_vtable_ = 
-{
-  BBS_Start,
-  BBS_Sort,
-  BBS_Print,
-  BBS_Init,
-};
-
-
 // methods
 int BBS_Start(struct BBS * this, int sz)
 {
@@ -122,6 +108,20 @@ int BBS_Init(struct BBS * this, int sz)
   this->number[9] = 5;
   return 0;
 }
+
+// vtables
+struct BubbleSort_vtable BubbleSort_vtable_ = 
+{
+};
+
+struct BBS_vtable BBS_vtable_ = 
+{
+  BBS_Start,
+  BBS_Sort,
+  BBS_Print,
+  BBS_Init,
+};
+
 
 // main method
 int Tiger_main ()

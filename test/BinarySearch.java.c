@@ -28,22 +28,6 @@ struct BS_vtable
 };
 
 
-// vtables
-struct BinarySearch_vtable BinarySearch_vtable_ = 
-{
-};
-
-struct BS_vtable BS_vtable_ = 
-{
-  BS_Start,
-  BS_Search,
-  BS_Div,
-  BS_Compare,
-  BS_Print,
-  BS_Init,
-};
-
-
 // methods
 int BS_Start(struct BS * this, int sz)
 {
@@ -205,6 +189,22 @@ int BS_Init(struct BS * this, int sz)
     }
   return 0;
 }
+
+// vtables
+struct BinarySearch_vtable BinarySearch_vtable_ = 
+{
+};
+
+struct BS_vtable BS_vtable_ = 
+{
+  BS_Start,
+  BS_Search,
+  BS_Div,
+  BS_Compare,
+  BS_Print,
+  BS_Init,
+};
+
 
 // main method
 int Tiger_main ()
