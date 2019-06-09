@@ -4,6 +4,7 @@
 // Do NOT modify!
 
 // structures
+void *Tiger_new (void *vtable, int size);
 struct Factorial
 {
   struct Factorial_vtable *vptr;
@@ -53,7 +54,8 @@ int Tiger_main ()
   struct Fac * x_0;
   void* ptr = Tiger_new (&Fac_vtable_, sizeof(struct Fac));
   x_0=(struct Fac*)(ptr);
-  System_out_println ( x_0->vptr->ComputeFac(x_0, 10));
+  int result = x_0->vptr->ComputeFac(x_0, 10);
+  System_out_println (result);
 }
 
 

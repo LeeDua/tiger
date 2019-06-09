@@ -10,8 +10,10 @@
     <list default="true" id="e9e47e04-c7dc-4a75-a034-2c9d95c4882e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/codegen/C/PrettyPrintVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/codegen/C/PrettyPrintVisitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BT_backup.c" beforeDir="false" afterPath="$PROJECT_DIR$/test/BT_backup.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/BinaryTree.java.c" beforeDir="false" afterPath="$PROJECT_DIR$/test/BinaryTree.java.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/BinaryTree.java.o" beforeDir="false" afterPath="$PROJECT_DIR$/test/BinaryTree.java.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Factorial.java.c" beforeDir="false" afterPath="$PROJECT_DIR$/test/Factorial.java.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/a.out" beforeDir="false" afterPath="$PROJECT_DIR$/test/a.out" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/bin/" />
@@ -42,13 +44,13 @@
     <favorites_list name="tiger" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.44511458">
+    <splitter split-orientation="horizontal" split-proportion="0.4831122">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/elaborator/ClassBinding.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="140">
+                <state relative-caret-position="20">
                   <caret line="9" column="41" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="41" />
                   <folding>
                     <element signature="imports" expanded="true" />
@@ -60,8 +62,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/codegen/C/PrettyPrintVisitor.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="297">
-                  <caret line="538" column="32" selection-start-line="538" selection-start-column="32" selection-end-line="538" selection-end-column="32" />
+                <state relative-caret-position="141">
+                  <caret line="484" column="56" selection-start-line="484" selection-start-column="56" selection-end-line="484" selection-end-column="56" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -72,8 +74,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/runtime/gc.c">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="160">
-                  <caret line="8" column="14" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
+                <state relative-caret-position="-462">
+                  <caret line="2" selection-start-line="2" selection-end-line="2" selection-end-column="19" />
                 </state>
               </provider>
             </entry>
@@ -108,8 +110,17 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/test/BinaryTree.java.c">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="9680">
-                  <caret line="484" column="22" selection-start-line="484" selection-start-column="21" selection-end-line="484" selection-end-column="22" />
+                <state relative-caret-position="121">
+                  <caret line="481" column="18" selection-start-line="481" selection-start-column="5" selection-end-line="481" selection-end-column="18" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/test/Factorial.java.c">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-480">
+                  <caret line="6" selection-start-line="6" selection-end-line="6" selection-end-column="41" />
                 </state>
               </provider>
             </entry>
@@ -136,24 +147,11 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Method</find>
-      <find>MethodS</find>
-      <find>BS</find>
-      <find>Vtable</find>
-      <find>ClassSing</find>
-      <find>field</find>
-      <find>isField</find>
-      <find>MethodSingle</find>
-      <find>this</find>
-      <find>id</find>
-      <find>Id</find>
-      <find>Id e</find>
       <find>Assign</find>
       <find>NewIN</find>
       <find>size</find>
       <find>ntb</find>
       <find>Tiger_n</find>
-      <find>BT_vtable_</find>
       <find>NewObj</find>
       <find>new</find>
       <find>NewI</find>
@@ -166,6 +164,19 @@
       <find>Tiger_new</find>
       <find>getVtableFunc</find>
       <find>include</find>
+      <find>ma</find>
+      <find>sz</find>
+      <find>ComputeFac</find>
+      <find>BT_vtable</find>
+      <find>return (void</find>
+      <find>BT_</find>
+      <find>BT_vtable_</find>
+      <find>vtable ptr</find>
+      <find>get</find>
+      <find>declVtable</find>
+      <find>== NULL</find>
+      <find>get_</find>
+      <find>BinaryTree_vtable_</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -209,11 +220,11 @@
         <option value="$PROJECT_DIR$/src/codegen/C/TranslateVisitor.java" />
         <option value="$PROJECT_DIR$/test/BinaryTree.java" />
         <option value="$PROJECT_DIR$/test/TreeVisitor.java" />
-        <option value="$PROJECT_DIR$/runtime/gc.c" />
-        <option value="$PROJECT_DIR$/test/Factorial.java.c" />
-        <option value="$PROJECT_DIR$/test/BinaryTree.java.c" />
         <option value="$PROJECT_DIR$/test/BT_backup.c" />
+        <option value="$PROJECT_DIR$/test/Factorial.java.c" />
+        <option value="$PROJECT_DIR$/runtime/gc.c" />
         <option value="$PROJECT_DIR$/src/codegen/C/PrettyPrintVisitor.java" />
+        <option value="$PROJECT_DIR$/test/BinaryTree.java.c" />
       </list>
     </option>
   </component>
@@ -234,6 +245,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -299,7 +311,6 @@
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -370,12 +381,12 @@
       <workItem from="1559733488675" duration="26914000" />
       <workItem from="1559884582146" duration="38254000" />
       <workItem from="1560065048002" duration="14549000" />
-      <workItem from="1560084305282" duration="685000" />
+      <workItem from="1560084305282" duration="9129000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="246243000" />
+    <option name="totallyTimeSpent" value="254687000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -388,9 +399,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-4" y="34" width="1928" height="1050" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49945712" weight="0.12598841" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49945712" visible="true" weight="0.12598841" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -400,16 +410,16 @@
       <window_info id="Learn" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.44733986" />
-      <window_info anchor="bottom" x="0" y="50" width="1920" height="1017" id="Run" order="2" sideWeight="0.49932975" weight="0.2942454" />
+      <window_info anchor="bottom" x="0" y="50" width="1920" height="1017" id="Run" order="2" sideWeight="0.49932975" weight="0.32247558" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.21064061" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32899022" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50067025" side_tool="true" weight="0.04249292" />
       <window_info anchor="bottom" id="Messages" order="9" weight="0.03257329" />
       <window_info anchor="bottom" id="Database Changes" order="10" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.29533115" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.47991315" />
       <window_info anchor="bottom" id="Version Control" order="12" weight="0.35939196" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Database" order="1" show_stripe_button="false" weight="0.32977587" />
@@ -849,19 +859,6 @@
     <entry file="file://$PROJECT_DIR$/test/BubbleSort.java.c">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/runtime/runtime.c">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/runtime/lib.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/runtime/main.c">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/BubbleSort.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -914,34 +911,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/Factorial.java.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="305">
-          <caret line="34" column="32" lean-forward="true" selection-start-line="34" selection-start-column="32" selection-end-line="34" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/BinarySearch.java.c">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2369">
           <caret line="52" column="26" selection-start-line="52" selection-start-column="22" selection-end-line="52" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/elaborator/ClassBinding.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="9" column="41" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/runtime/gc.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="8" column="14" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
         </state>
       </provider>
     </entry>
@@ -966,6 +939,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/elaborator/ClassBinding.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="20">
+          <caret line="9" column="41" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/test/BT_backup.c">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="9780">
@@ -973,20 +956,51 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/BinaryTree.java.c">
+    <entry file="file://$PROJECT_DIR$/test/Factorial.java.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="9680">
-          <caret line="484" column="22" selection-start-line="484" selection-start-column="21" selection-end-line="484" selection-end-column="22" />
+        <state relative-caret-position="-480">
+          <caret line="6" selection-start-line="6" selection-end-line="6" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/runtime/lib.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="4" selection-start-line="4" selection-end-line="4" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/runtime/main.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/runtime/runtime.c">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/runtime/gc.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-462">
+          <caret line="2" selection-start-line="2" selection-end-line="2" selection-end-column="19" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/codegen/C/PrettyPrintVisitor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="538" column="32" selection-start-line="538" selection-start-column="32" selection-end-line="538" selection-end-column="32" />
+        <state relative-caret-position="141">
+          <caret line="484" column="56" selection-start-line="484" selection-start-column="56" selection-end-line="484" selection-end-column="56" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/BinaryTree.java.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="121">
+          <caret line="481" column="18" selection-start-line="481" selection-start-column="5" selection-end-line="481" selection-end-column="18" />
         </state>
       </provider>
     </entry>

@@ -448,7 +448,8 @@ public class PrettyPrintVisitor implements Visitor
 
   private void declVtable(VtableSingle v)
   {
-    this.sayln("struct " + v.id + "_vtable * " + v.id + "_vtable_ = NULL;");
+    this.sayln("struct " + v.id + "_vtable " + v.id + "_vtable_;");
+    this.sayln("struct " + v.id + "_vtable * " + v.id + "_vtable_ptr;");
     this.sayln("void* get_" + v.id + "_vtable_();");
     return;
   }
@@ -457,7 +458,7 @@ public class PrettyPrintVisitor implements Visitor
   {
     this.sayln("void* get_" + v.id + "_vtable_(){");
     this.printSpaces();
-    this.sayln("if(" + v.id + "_vtable_" + "== NULL){");
+    this.sayln("if(" + v.id + "_vtable_ptr" + "== NULL){");
     this.indent();
     this.printSpaces();
     this.sayln("struct " + v.id + "_vtable temp = ");
@@ -474,12 +475,14 @@ public class PrettyPrintVisitor implements Visitor
     this.sayln("};");
     this.unIndent();
     this.printSpaces();
-    this.sayln(v.id + "_vtable_ = &temp;");
+    this.sayln("memcpy(&" + v.id + "_vtable_, &temp, sizeof(temp));");
+    this.printSpaces();
+    this.sayln(v.id + "_vtable_ptr = &" + v.id + "_vtable_;");
     this.unIndent();
     this.printSpaces();
     this.sayln("}");
     this.printSpaces();
-    this.sayln("return (void*)" + v.id + "_vtable_;");
+    this.sayln("return (void*)(" + v.id + "_vtable_ptr);");
     this.sayln("}");
     this.sayln("");
     return;
@@ -537,6 +540,11 @@ public class PrettyPrintVisitor implements Visitor
     this.sayln("// Do NOT modify!");
     this.sayln("#include <stdio.h>");
     this.sayln("#include <stdlib.h>");
+    this.sayln("#include <string.h>");
+    this.sayln("");
+
+    this.sayln("void *Tiger_new (void *vtable, int size);");
+    this.sayln("int System_out_println (int i);");
     this.sayln("");
 
     this.sayln("// structures");

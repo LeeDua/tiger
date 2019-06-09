@@ -2,6 +2,10 @@
 // Do NOT modify!
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+
+void *Tiger_new (void *vtable, int size);
+int System_out_println (int i);
 
 // structures
 struct BinaryTree
@@ -58,11 +62,14 @@ struct Tree_vtable
 
 
 // vtable ptr and init method decls
-struct BinaryTree_vtable * BinaryTree_vtable_ = NULL;
+struct BinaryTree_vtable BinaryTree_vtable_;
+struct BinaryTree_vtable * BinaryTree_vtable_ptr;
 void* get_BinaryTree_vtable_();
-struct BT_vtable * BT_vtable_ = NULL;
+struct BT_vtable BT_vtable_;
+struct BT_vtable * BT_vtable_ptr;
 void* get_BT_vtable_();
-struct Tree_vtable * Tree_vtable_ = NULL;
+struct Tree_vtable Tree_vtable_;
+struct Tree_vtable * Tree_vtable_ptr;
 void* get_Tree_vtable_();
 
 // methods
@@ -461,28 +468,30 @@ int Tree_RecPrint(struct Tree * this, struct Tree * node)
 
 // vtable get methods
 void* get_BinaryTree_vtable_(){
-  if(BinaryTree_vtable_== NULL){
+  if(BinaryTree_vtable_ptr== NULL){
     struct BinaryTree_vtable temp = 
       {
       };
-    BinaryTree_vtable_ = &temp;
+    memcpy(&BinaryTree_vtable_, &temp, sizeof(temp));
+    BinaryTree_vtable_ptr = &BinaryTree_vtable_;
   }
-  return (void*)BinaryTree_vtable_;
+  return (void*)(BinaryTree_vtable_ptr);
 }
 
 void* get_BT_vtable_(){
-  if(BT_vtable_== NULL){
+  if(BT_vtable_ptr== NULL){
     struct BT_vtable temp = 
       {
         BT_Start,
       };
-    BT_vtable_ = &temp;
+    memcpy(&BT_vtable_, &temp, sizeof(temp));
+    BT_vtable_ptr = &BT_vtable_;
   }
-  return (void*)BT_vtable_;
+  return (void*)(BT_vtable_ptr);
 }
 
 void* get_Tree_vtable_(){
-  if(Tree_vtable_== NULL){
+  if(Tree_vtable_ptr== NULL){
     struct Tree_vtable temp = 
       {
         Tree_Init,
@@ -506,9 +515,10 @@ void* get_Tree_vtable_(){
         Tree_Print,
         Tree_RecPrint,
       };
-    Tree_vtable_ = &temp;
+    memcpy(&Tree_vtable_, &temp, sizeof(temp));
+    Tree_vtable_ptr = &Tree_vtable_;
   }
-  return (void*)Tree_vtable_;
+  return (void*)(Tree_vtable_ptr);
 }
 
 
