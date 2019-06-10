@@ -3,3 +3,4 @@ test/Monster.java
 *.class
 *.out
 *.o
+/bin
