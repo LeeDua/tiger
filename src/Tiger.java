@@ -3,6 +3,7 @@ import static control.Control.ConAst.testFac;
 
 import java.io.BufferedInputStream;
 import java.io.FileInputStream;
+import java.io.IOException;
 import java.io.InputStream;
 
 import ast.Ast.Program;
@@ -155,6 +156,11 @@ public class Tiger
     // file, or call java to run the bytecode file,
     // or dalvik to run the dalvik bytecode.
     // Your code here:
+    try {
+      Process p = Runtime.getRuntime().exec("gcc -g -o" + fname + ".out " + fname + ".c runtime/runtime.c");
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
 
     return;
   }

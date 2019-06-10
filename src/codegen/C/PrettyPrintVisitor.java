@@ -477,6 +477,8 @@ public class PrettyPrintVisitor implements Visitor
     this.printSpaces();
     this.sayln("memcpy(&" + v.id + "_vtable_, &temp, sizeof(temp));");
     this.printSpaces();
+    this.sayln("int equal = (int)memcmp(&" + v.id + "_vtable_, &temp, sizeof(temp));");
+    this.printSpaces();
     this.sayln(v.id + "_vtable_ptr = &" + v.id + "_vtable_;");
     this.unIndent();
     this.printSpaces();
