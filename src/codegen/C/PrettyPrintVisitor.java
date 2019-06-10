@@ -400,7 +400,9 @@ public class PrettyPrintVisitor implements Visitor
       this.say(d.id);
       this.sayln(";");
     }
-    m.stm.accept(this);
+    	m.stm.accept(this);
+    	this.printSpaces();
+    this.sayln("return 0;");
     this.sayln("}\n");
     this.inMethod = false;
     return;
@@ -479,6 +481,16 @@ public class PrettyPrintVisitor implements Visitor
     this.printSpaces();
     this.sayln("int equal = (int)memcmp(&" + v.id + "_vtable_, &temp, sizeof(temp));");
     this.printSpaces();
+    this.sayln("if(equal != 0){");
+	 	 this.indent();
+		 this.printSpaces();
+		 this.sayln("printf(\"Memory copy error: buffer polluted\\n\");");
+		 this.printSpaces();
+		 this.sayln("exit(-2);");
+		 this.unIndent();
+		 this.printSpaces();
+		 this.sayln("}");
+		 this.printSpaces();
     this.sayln(v.id + "_vtable_ptr = &" + v.id + "_vtable_;");
     this.unIndent();
     this.printSpaces();
@@ -529,7 +541,7 @@ public class PrettyPrintVisitor implements Visitor
         outputName = Control.ConCodeGen.fileName + ".c";
       else
         outputName = "a.c";
-
+      
       this.writer = new java.io.BufferedWriter(new java.io.OutputStreamWriter(
           new java.io.FileOutputStream(outputName)));
     } catch (Exception e) {

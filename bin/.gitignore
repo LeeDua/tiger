@@ -1,0 +1,8 @@
+/ast/
+/codegen/
+/control/
+/elaborator/
+/lexer/
+/parser/
+/slp/
+/util/

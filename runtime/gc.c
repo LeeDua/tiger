@@ -25,8 +25,13 @@ void *Tiger_new (void *vtable, int size)
   // #3: set up the "vptr" pointer to the value of "vtable"
   if(new_obj != NULL){
     memset(new_obj, 0, size);
-    memcpy(new_obj, vtable, sizeof(void*));
-    int same = memcmp(new_obj, vtable, sizeof(void*));
+    void* table_ptr = &vtable;
+    memcpy(new_obj, table_ptr, sizeof(void*));
+    int same = memcmp(new_obj, table_ptr, sizeof(void*));
+    	if(same != 0){
+    			printf("Memory copy error: buffer polluted\n");
+    			exit(-2);
+    		}
   }
   // #4: return the pointer
   return new_obj;

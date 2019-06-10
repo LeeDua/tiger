@@ -1,5 +1,5 @@
 
 test/Monster.java
 *.class
-*.class
-*.class
+*.out
+*.o

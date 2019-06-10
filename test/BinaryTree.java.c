@@ -473,6 +473,11 @@ void* get_BinaryTree_vtable_(){
       {
       };
     memcpy(&BinaryTree_vtable_, &temp, sizeof(temp));
+    int equal = (int)memcmp(&BinaryTree_vtable_, &temp, sizeof(temp));
+    if(equal != 0){
+      printf("Memory copy error: buffer polluted\n");
+      exit(-2);
+    }
     BinaryTree_vtable_ptr = &BinaryTree_vtable_;
   }
   return (void*)(BinaryTree_vtable_ptr);
@@ -485,6 +490,11 @@ void* get_BT_vtable_(){
         BT_Start,
       };
     memcpy(&BT_vtable_, &temp, sizeof(temp));
+    int equal = (int)memcmp(&BT_vtable_, &temp, sizeof(temp));
+    if(equal != 0){
+      printf("Memory copy error: buffer polluted\n");
+      exit(-2);
+    }
     BT_vtable_ptr = &BT_vtable_;
   }
   return (void*)(BT_vtable_ptr);
@@ -516,6 +526,11 @@ void* get_Tree_vtable_(){
         Tree_RecPrint,
       };
     memcpy(&Tree_vtable_, &temp, sizeof(temp));
+    int equal = (int)memcmp(&Tree_vtable_, &temp, sizeof(temp));
+    if(equal != 0){
+      printf("Memory copy error: buffer polluted\n");
+      exit(-2);
+    }
     Tree_vtable_ptr = &Tree_vtable_;
   }
   return (void*)(Tree_vtable_ptr);
@@ -527,6 +542,7 @@ int Tiger_main ()
 {
   struct BT * x_0;
   System_out_println ((x_0=((struct BT*)(Tiger_new (get_BT_vtable_(), sizeof(struct BT)))), x_0->vptr->Start(x_0)));
+  return 0;
 }
 
 
