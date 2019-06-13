@@ -3,6 +3,8 @@ package elaborator;
 import ast.Ast.Type;
 import util.Todo;
 
+import java.util.Enumeration;
+
 public class ClassTable
 {
   // map each class name (a string), to the class bindings.
@@ -35,10 +37,10 @@ public class ClassTable
   // put a method into this table
   // Duplication is not allowed.
   // Also note that MiniJava does NOT allow overloading.
-  public void put(String c, String id, MethodType type)
+  public void put(String c, String id, MethodType method)
   {
     ClassBinding cb = this.table.get(c);
-    cb.put(id, type);
+    cb.put(id, method);
     return;
   }
 
@@ -66,28 +68,35 @@ public class ClassTable
 
   // get type of some method
   // return null for non-existing method
-  public MethodType getm(String className, String mid)
+  public SingleMethodTable getm(String className, String mid)
   {
     ClassBinding cb = this.table.get(className);
-    MethodType type = cb.methods.get(mid);
-    while (type == null) { // search all parent classes until found or fail
+    SingleMethodTable method = cb.methods.get(mid);
+    while (method == null) { // search all parent classes until found or fail
       if (cb.extendss == null)
-        return type;
-
+        return method;
       cb = this.table.get(cb.extendss);
-      type = cb.methods.get(mid);
+      method = cb.methods.get(mid);
     }
-    return type;
+    return method;
   }
 
   public void dump()
   {
-    new Todo();
+    System.out.print(this.toString());
   }
 
   @Override
   public String toString()
   {
-    return this.table.toString();
+    String table_info =  "-----Class table start---------\n\n";
+    Enumeration iterator = this.table.keys();
+    while( iterator. hasMoreElements() ){
+      String current_class = (String) iterator.nextElement();
+      table_info += "Class " + current_class + ":\n";
+      table_info += this.table.get(current_class).toString();
+    }
+    table_info += "---- class table end-------\n";
+    return table_info;
   }
 }

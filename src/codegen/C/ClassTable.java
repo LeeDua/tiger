@@ -39,10 +39,17 @@ public class ClassTable
 
   public void inherit(String c)
   {
+    // build inherit field and method list from class C (leaf node on inherit tree)
+    // foreach class after inherit scan done, mark visited as true
+    // 不断向上递归，first build p node then child node
     ClassBinding cb = this.table.get(c);
+
+    //对所有类进行继承处理时需要遍历所有叶节点，每个叶节点向上递归一次，下一个叶节点可能会和之前的叶节点有公共父节点
+    //此时父节点已构建完成，无需再次处理，所以直接return
     if (cb.visited)
       return;
 
+    //if have no parent, keep method and fields as current and return
     if (cb.extendss == null) {
       cb.visited = true;
       return;
@@ -62,10 +69,12 @@ public class ClassTable
     newMethods.addAll(pb.methods);
     for (codegen.C.Ftuple t : cb.methods) {
       int index = newMethods.indexOf(t);
+      //if parent binding does not contain child method, add child method
       if (index == -1) {
         newMethods.add(t);
         continue;
       }
+      //else override parent method
       newMethods.set(index, t);
     }
     cb.update(newMethods);

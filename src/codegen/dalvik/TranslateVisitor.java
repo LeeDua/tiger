@@ -235,9 +235,9 @@ public class TranslateVisitor implements ast.Visitor
     s.type.accept(this);
     Type.T ty = this.type;
     if (ty instanceof Type.Int) {
-      emit(new Move16(s.id, right));
+      emit(new Move16(s.id.id, right));
     } else {
-      emit(new Moveobject16(s.id, right));
+      emit(new Moveobject16(s.id.id, right));
     }
     return;
   }
@@ -385,7 +385,9 @@ public class TranslateVisitor implements ast.Visitor
   @Override
   public void visit(ast.Ast.MainClass.MainClassSingle c)
   {
-    c.stm.accept(this);
+    for (ast.Ast.Stm.T stm:c.stms) {
+      stm.accept(this);
+    }
     this.mainClass = new MainClassSingle(c.id, c.arg, this.stms);
     this.stms = new LinkedList<Stm.T>();
     return;

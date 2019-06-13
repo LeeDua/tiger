@@ -2,8 +2,11 @@ import static control.Control.ConAst.dumpAst;
 import static control.Control.ConAst.testFac;
 
 import java.io.BufferedInputStream;
+import java.io.BufferedReader;
 import java.io.FileInputStream;
+import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 
 import ast.Ast.Program;
 import lexer.Lexer;
@@ -149,12 +152,44 @@ public class Tiger
     default:
       break;
     }
-
-    // Lab3, exercise 6: add some glue code to
-    // call gcc to compile the generated C or x86
-    // file, or call java to run the bytecode file,
-    // or dalvik to run the dalvik bytecode.
-    // Your code here:
+    //compile as debug
+    System.out.println("-----Compile as debug------");
+		String compile_command = "gcc -g -o " + fname + ".out " + fname + ".c ./runtime/runtime.c";
+		System.out.println(compile_command);
+    try {
+      Process p = Runtime.getRuntime().exec(compile_command);
+      String s = null;
+      BufferedReader stdInput = new BufferedReader(new InputStreamReader(p.getInputStream()));
+      BufferedReader stdError = new BufferedReader(new InputStreamReader(p.getErrorStream()));
+      while ((s = stdInput.readLine()) != null) {
+        System.out.println(s);
+      }
+      while ((s = stdError.readLine()) != null) {
+        System.out.println(s);
+      }
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+    System.out.println("-----Compile end--------\n");
+    //run
+    System.out.println("--------Run executable file------");
+    String run_command = fname + ".out ";
+    System.out.println(run_command);
+    try {
+      Process p = Runtime.getRuntime().exec(run_command);
+      String s = null;
+      BufferedReader stdInput = new BufferedReader(new InputStreamReader(p.getInputStream()));
+      BufferedReader stdError = new BufferedReader(new InputStreamReader(p.getErrorStream()));
+      while ((s = stdInput.readLine()) != null) {
+        System.out.println(s);
+      }
+      while ((s = stdError.readLine()) != null) {
+        System.out.println(s);
+      }
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+    System.out.print("---------Run executable end----------");
 
     return;
   }

@@ -8,7 +8,7 @@
 //===============================================================//
 // The Java Heap data structure.
 
-/*   
+/*
       ----------------------------------------------------
       |                        |                         |
       ----------------------------------------------------
@@ -54,7 +54,7 @@ void Tiger_heap_init (int heapSize)
   return;
 }
 
-// The "prev" pointer, pointing to the top frame on the GC stack. 
+// The "prev" pointer, pointing to the top frame on the GC stack.
 // (see part A of Lab 4)
 void *prev = 0;
 
@@ -74,9 +74,9 @@ void *prev = 0;
       |--------------|
       | length       | (this field should be empty for normal objects)
       |--------------|
-      | forwarding   | 
+      | forwarding   |
       |--------------|\
-p---->| v_0          | \      
+p---->| v_0          | \
       |--------------|  s
       | ...          |  i
       |--------------|  z
@@ -93,15 +93,34 @@ p---->| v_0          | \
 //   2. if there is no enough space left in the "from" space, then
 //      you should call the function "Tiger_gc()" to collect garbages.
 //      and after the collection, there are still two sub-cases:
-//        a: if there is enough space, you can do allocations just as case 1; 
+//        a: if there is enough space, you can do allocations just as case 1;
 //        b: if there is still no enough space, you can just issue
 //           an error message ("OutOfMemory") and exit.
 //           (However, a production compiler will try to expand
 //           the Java heap.)
+
+//e.g: new ClassId()
+//((struct ClassId *)(Tiger_new (& ClassId_vtable_,sizeof(struct ClassId))))
+
 void *Tiger_new (void *vtable, int size)
 {
-  // Your code here:
-  
+  // You should write 4 statements for this function.
+  // #1: "malloc" a chunk of memory (be careful of the size) :
+  void* new_obj = malloc(size);
+  // #2: clear this chunk of memory (zero off it)
+  // #3: set up the "vptr" pointer to the value of "vtable"
+  if(new_obj != NULL){
+    memset(new_obj, 0, size);
+    void* table_ptr = &vtable;
+    memcpy(new_obj, table_ptr, sizeof(void*));
+    int same = memcmp(new_obj, table_ptr, sizeof(void*));
+    	if(same != 0){
+    			printf("Memory copy error: buffer polluted\n");
+    			exit(-2);
+    		}
+  }
+  // #4: return the pointer
+  return new_obj;
 }
 
 // "new" an array of size "length", do necessary
@@ -114,34 +133,19 @@ void *Tiger_new (void *vtable, int size)
       |--------------|
       | length       |
       |--------------|
-      | forwarding   | 
+      | forwarding   |
       |--------------|\
-p---->| e_0          | \      
+p---->| e_0          | \
       |--------------|  s
       | ...          |  i
       |--------------|  z
       | e_{length-1} | /e
       ----------------/
 */
-// Try to allocate an array object in the "from" space of the Java
-// heap. Read Tiger book chapter 13.3 for details on the
-// allocation.
-// There are two cases to consider:
-//   1. If the "from" space has enough space to hold this array object, then
-//      allocation succeeds, return the apropriate address (look at
-//      the above figure, be careful);
-//   2. if there is no enough space left in the "from" space, then
-//      you should call the function "Tiger_gc()" to collect garbages.
-//      and after the collection, there are still two sub-cases:
-//        a: if there is enough space, you can do allocations just as case 1; 
-//        b: if there is still no enough space, you can just issue
-//           an error message ("OutOfMemory") and exit.
-//           (However, a production compiler will try to expand
-//           the Java heap.)
 void *Tiger_new_array (int length)
 {
   // Your code here:
-  
+
 }
 
 //===============================================================//
@@ -154,4 +158,3 @@ static void Tiger_gc ()
   // Your code here:
   
 }
-

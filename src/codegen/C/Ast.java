@@ -150,6 +150,7 @@ public class Ast
       }
     }
 
+    //array[index]
     public static class ArraySelect extends T
     {
       public T array;
@@ -169,6 +170,8 @@ public class Ast
       }
     }
 
+    //assign stand for a new var to store the Class ptr
+    //assign = exp.id(args)
     public static class Call extends T
     {
       public String assign;
@@ -195,12 +198,22 @@ public class Ast
     public static class Id extends T
     {
       public String id;
+      public boolean isField;
+      public String classId;
+
 
       public Id(String id)
       {
         this.id = id;
+        this.isField = false;
+        this.classId = null;
       }
-
+      public Id(String id,boolean isField, String classId)
+      {
+        this.id = id;
+        this.isField = isField;
+        this.classId = classId;
+      }
       @Override
       public void accept(Visitor v)
       {
@@ -250,6 +263,7 @@ public class Ast
       public T exp;
       // Lab4, exercise 1: this field
       // is used to name the allocation.
+      //TODO: when should this name be used?
       public String name;
 
       public NewIntArray(T exp)
@@ -383,10 +397,10 @@ public class Ast
 
     public static class Assign extends T
     {
-      public String id;
+      public Exp.Id id;
       public Exp.T exp;
 
-      public Assign(String id, Exp.T exp)
+      public Assign(Exp.Id id, Exp.T exp)
       {
         this.id = id;
         this.exp = exp;
@@ -399,13 +413,14 @@ public class Ast
       }
     }
 
+    //id[index] = exp
     public static class AssignArray extends T
     {
-      public String id;
+      public Exp.Id id;
       public Exp.T index;
       public Exp.T exp;
 
-      public AssignArray(String id, Exp.T index, Exp.T exp)
+      public AssignArray(Exp.Id id, Exp.T index, Exp.T exp)
       {
         this.id = id;
         this.index = index;
@@ -522,6 +537,7 @@ public class Ast
 
   // /////////////////////////////////////////////
   // vtable
+  // Function table for a class
   public static class Vtable
   {
     public static abstract class T implements codegen.C.Acceptable
@@ -601,6 +617,7 @@ public class Ast
     {
       public LinkedList<Dec.T> locals;
       public Stm.T stm;
+      //TODO: should modify to stms if compatibility is needed with ast.Ast
 
       public MainMethodSingle(LinkedList<Dec.T> locals, Stm.T stm)
       {

@@ -75,18 +75,35 @@ public class TranslateVisitor implements ast.Visitor
   @Override
   public void visit(ast.Ast.Exp.Add e)
   {
+    e.left.accept(this);
+    Exp.T left = this.exp;
+    e.right.accept(this);
+    Exp.T right = this.exp;
+    this.exp = new Exp.Add(left, right);
   }
 
   @Override
   public void visit(ast.Ast.Exp.And e)
   {
+    e.left.accept(this);
+    Exp.T left = this.exp;
+    e.right.accept(this);
+    Exp.T right = this.exp;
+    this.exp = new Exp.And(left, right);
   }
 
   @Override
   public void visit(ast.Ast.Exp.ArraySelect e)
   {
+    e.array.accept(this);
+    Exp.T array = this.exp;
+    e.index.accept(this);
+    Exp.T index = this.exp;
+    this.exp = new Exp.ArraySelect(array, index);
   }
 
+  //exp.id(args)
+  //->assign = exp.id(args)
   @Override
   public void visit(ast.Ast.Exp.Call e)
   {
@@ -106,18 +123,22 @@ public class TranslateVisitor implements ast.Visitor
   @Override
   public void visit(ast.Ast.Exp.False e)
   {
+    //c does not have boolean, use int 0 as false
+    this.exp = new Num(0);
   }
 
   @Override
   public void visit(ast.Ast.Exp.Id e)
   {
-    this.exp = new Id(e.id);
+    this.exp = new Id(e.id,e.isField, e.classId);
     return;
   }
 
   @Override
   public void visit(ast.Ast.Exp.Length e)
   {
+    e.array.accept(this);
+    this.exp = new Exp.Length(this.exp);
   }
 
   @Override
@@ -134,6 +155,8 @@ public class TranslateVisitor implements ast.Visitor
   @Override
   public void visit(ast.Ast.Exp.NewIntArray e)
   {
+    e.exp.accept(this);
+    this.exp = new Exp.NewIntArray(this.exp);
   }
 
   @Override
@@ -146,6 +169,8 @@ public class TranslateVisitor implements ast.Visitor
   @Override
   public void visit(ast.Ast.Exp.Not e)
   {
+    e.exp.accept(this);
+    this.exp = new Exp.Not(this.exp);
   }
 
   @Override
@@ -187,6 +212,7 @@ public class TranslateVisitor implements ast.Visitor
   @Override
   public void visit(ast.Ast.Exp.True e)
   {
+    this.exp = new Num(1);
   }
 
   // //////////////////////////////////////////////
@@ -195,18 +221,34 @@ public class TranslateVisitor implements ast.Visitor
   public void visit(ast.Ast.Stm.Assign s)
   {
     s.exp.accept(this);
-    this.stm = new Assign(s.id, this.exp);
+    Exp.T e = this.exp;
+    s.id.accept(this);
+    Exp.Id id = (Exp.Id) this.exp;
+    this.stm = new Assign(id, e);
     return;
   }
 
   @Override
   public void visit(ast.Ast.Stm.AssignArray s)
   {
+    s.exp.accept(this);
+    Exp.T exp = this.exp;
+    s.index.accept(this);
+    Exp.T index = this.exp;
+    s.id.accept(this);
+    Exp.Id id = (Exp.Id) this.exp;
+    this.stm = new Stm.AssignArray(id, index, exp);
   }
 
   @Override
   public void visit(ast.Ast.Stm.Block s)
   {
+    LinkedList<Stm.T> stm_list = new java.util.LinkedList<Stm.T>();
+    for (ast.Ast.Stm.T single_s:s.stms) {
+      single_s.accept(this);
+      stm_list.addLast(this.stm);
+    }
+    this.stm = new Stm.Block(stm_list);
   }
 
   @Override
@@ -233,6 +275,11 @@ public class TranslateVisitor implements ast.Visitor
   @Override
   public void visit(ast.Ast.Stm.While s)
   {
+    s.condition.accept(this);
+    Exp.T condition = this.exp;
+    s.body.accept(this);
+    Stm.T body = this.stm;
+    this.stm = new Stm.While(condition, body);
   }
 
   // ///////////////////////////////////////////
@@ -240,11 +287,13 @@ public class TranslateVisitor implements ast.Visitor
   @Override
   public void visit(ast.Ast.Type.Boolean t)
   {
+    this.type = new Type.Int();
   }
 
   @Override
   public void visit(ast.Ast.Type.ClassType t)
   {
+    this.type = new Type.ClassType(t.id);
   }
 
   @Override
@@ -256,6 +305,7 @@ public class TranslateVisitor implements ast.Visitor
   @Override
   public void visit(ast.Ast.Type.IntArray t)
   {
+    this.type = new Type.IntArray();
   }
 
   // ////////////////////////////////////////////////
@@ -294,6 +344,10 @@ public class TranslateVisitor implements ast.Visitor
     }
     m.retExp.accept(this);
     Exp.T retExp = this.exp;
+
+    //stms accept will generate new locals
+    //Copy class struct ptr to call methods,use tmpVars to store
+    //these temp generated ptr vars
     for (Dec.T dec : this.tmpVars) {
       locals.add(dec);
     }
@@ -313,6 +367,8 @@ public class TranslateVisitor implements ast.Visitor
     for (ast.Ast.Method.T m : c.methods) {
       m.accept(this);
       this.methods.add(this.method);
+      //TODO: what's this.methods for?
+      //record all methods in all classes?
     }
     return;
   }
@@ -328,7 +384,13 @@ public class TranslateVisitor implements ast.Visitor
 
     this.tmpVars = new LinkedList<Dec.T>();
 
-    c.stm.accept(this);
+    for (ast.Ast.Stm.T stm:c.stms) {
+      stm.accept(this);
+    }
+    // why main method may have local vars
+    // -- because related class vars should be copied to main
+    // -- to be specific, the root struct of other class should be copied
+    //TODO: currently only make use of the final statement instead of all the statements
     MainMethod.T mthd = new MainMethodSingle(
         this.tmpVars, this.stm);
     this.mainMethod = mthd;
