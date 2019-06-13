@@ -8,125 +8,166 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e9e47e04-c7dc-4a75-a034-2c9d95c4882e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/a.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/MonsterGen.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/Tiger.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/ast/Acceptable.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/ast/Ast$Class$ClassSingle.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/ast/Ast$Class$T.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/ast/Ast$Class.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/ast/Ast$Dec$DecSingle.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/ast/Ast$Dec$T.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/ast/Ast$Dec.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/ast/Ast$Exp$Add.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/ast/Ast$Exp$And.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/ast/Ast$Exp$ArraySelect.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/ast/Ast$Exp$Call.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/ast/Ast$Exp$False.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/ast/Ast$Exp$Id.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/ast/Ast$Exp$Length.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/ast/Ast$Exp$Lt.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/ast/Ast$Exp$NewIntArray.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/ast/Ast$Exp$NewObject.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/ast/Ast$Exp$Not.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/ast/Ast$Exp$Num.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/ast/Ast$Exp$Sub.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/ast/Ast$Exp$T.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/ast/Ast$Exp$This.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/ast/Ast$Exp$Times.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/ast/Ast$Exp$True.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/ast/Ast$Exp.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/ast/Ast$MainClass$MainClassSingle.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/ast/Ast$MainClass$T.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/ast/Ast$MainClass.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/ast/Ast$Method$MethodSingle.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/ast/Ast$Method$T.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/ast/Ast$Method.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/ast/Ast$Program$ProgramSingle.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/ast/Ast$Program$T.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/ast/Ast$Program.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/ast/Ast$Stm$Assign.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/ast/Ast$Stm$AssignArray.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/ast/Ast$Stm$Block.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/ast/Ast$Stm$If.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/ast/Ast$Stm$Print.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/ast/Ast$Stm$T.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/ast/Ast$Stm$While.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/ast/Ast$Stm.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/ast/Ast$Type$Boolean.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/ast/Ast$Type$ClassType.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/ast/Ast$Type$Int.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/ast/Ast$Type$IntArray.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/ast/Ast$Type$T.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/ast/Ast$Type.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/ast/Ast.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/ast/Fac.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/ast/PrettyPrintVisitor.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/ast/Sum_tree_repre.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/ast/Visitor.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/control/CommandLine$Arg.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/control/CommandLine$F.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/control/CommandLine$Kind.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/control/CommandLine.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/control/Control$ConAst.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/control/Control$ConLexer.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/control/Control$ConSlp$T.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/control/Control$ConSlp.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/control/Control.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/elaborator/ClassBinding.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/elaborator/ClassTable.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/elaborator/ElaboratorVisitor.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/elaborator/MethodType.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/elaborator/SingleMethodTable.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/lexer/Lexer.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/lexer/Token$Kind.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/lexer/Token.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/parser/Parser.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/slp/Linklist$Node.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/slp/Linklist.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/slp/Main.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/slp/Samples.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/slp/Slp$Exp$Eseq.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/slp/Slp$Exp$Id.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/slp/Slp$Exp$Num.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/slp/Slp$Exp$OP_T.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/slp/Slp$Exp$Op.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/slp/Slp$Exp$T.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/slp/Slp$Exp.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/slp/Slp$ExpList$Last.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/slp/Slp$ExpList$Pair.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/slp/Slp$ExpList$T.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/slp/Slp$ExpList.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/slp/Slp$Stm$Assign.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/slp/Slp$Stm$Compound.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/slp/Slp$Stm$Print.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/slp/Slp$Stm$T.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/slp/Slp$Stm.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/slp/Slp.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/util/Bug.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/util/Flist.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/util/Label.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/util/Todo.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/result" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/MonsterGen.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ast/Sum_tree_repre.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/elaborator/SingleMethodTable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/slp/Linklist.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/BT_backup.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/BinarySearch.java.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/BinaryTree.java.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/BubbleSort.java.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/BubbleSort.java.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/Factorial.java.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/LinearSearch.java.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/LinearSearch.java.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/LinkedList.java.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/Monster.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/Monster.java.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/QuickSort.java.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/QuickSort.java.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/Sum-infinite.java.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/Sum-infinite.java.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/Sum.java.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/Sum.java.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/TreeVisitor.java.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/a.out" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tiger.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.classpath" beforeDir="false" afterPath="$PROJECT_DIR$/.classpath" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/META-INF/tiger.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/MonsterGen.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/MonsterGen.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Tiger.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Tiger.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/ast/Acceptable.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ast/Acceptable.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/ast/Ast$Class$ClassSingle.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ast/Ast$Class$ClassSingle.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/ast/Ast$Class$T.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ast/Ast$Class$T.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/ast/Ast$Class.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ast/Ast$Class.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/ast/Ast$Dec$DecSingle.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ast/Ast$Dec$DecSingle.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/ast/Ast$Dec$T.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ast/Ast$Dec$T.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/ast/Ast$Dec.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ast/Ast$Dec.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/ast/Ast$Exp$Add.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ast/Ast$Exp$Add.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/ast/Ast$Exp$And.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ast/Ast$Exp$And.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/ast/Ast$Exp$ArraySelect.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ast/Ast$Exp$ArraySelect.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/ast/Ast$Exp$Call.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ast/Ast$Exp$Call.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/ast/Ast$Exp$False.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ast/Ast$Exp$False.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/ast/Ast$Exp$Id.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ast/Ast$Exp$Id.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/ast/Ast$Exp$Length.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ast/Ast$Exp$Length.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/ast/Ast$Exp$Lt.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ast/Ast$Exp$Lt.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/ast/Ast$Exp$NewIntArray.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ast/Ast$Exp$NewIntArray.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/ast/Ast$Exp$NewObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ast/Ast$Exp$NewObject.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/ast/Ast$Exp$Not.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ast/Ast$Exp$Not.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/ast/Ast$Exp$Num.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ast/Ast$Exp$Num.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/ast/Ast$Exp$Sub.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ast/Ast$Exp$Sub.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/ast/Ast$Exp$T.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ast/Ast$Exp$T.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/ast/Ast$Exp$This.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ast/Ast$Exp$This.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/ast/Ast$Exp$Times.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ast/Ast$Exp$Times.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/ast/Ast$Exp$True.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ast/Ast$Exp$True.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/ast/Ast$Exp.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ast/Ast$Exp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/ast/Ast$MainClass$MainClassSingle.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ast/Ast$MainClass$MainClassSingle.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/ast/Ast$MainClass$T.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ast/Ast$MainClass$T.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/ast/Ast$MainClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ast/Ast$MainClass.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/ast/Ast$Method$MethodSingle.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ast/Ast$Method$MethodSingle.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/ast/Ast$Method$T.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ast/Ast$Method$T.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/ast/Ast$Method.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ast/Ast$Method.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/ast/Ast$Program$ProgramSingle.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ast/Ast$Program$ProgramSingle.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/ast/Ast$Program$T.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ast/Ast$Program$T.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/ast/Ast$Program.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ast/Ast$Program.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/ast/Ast$Stm$Assign.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ast/Ast$Stm$Assign.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/ast/Ast$Stm$AssignArray.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ast/Ast$Stm$AssignArray.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/ast/Ast$Stm$Block.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ast/Ast$Stm$Block.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/ast/Ast$Stm$If.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ast/Ast$Stm$If.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/ast/Ast$Stm$Print.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ast/Ast$Stm$Print.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/ast/Ast$Stm$T.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ast/Ast$Stm$T.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/ast/Ast$Stm$While.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ast/Ast$Stm$While.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/ast/Ast$Stm.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ast/Ast$Stm.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/ast/Ast$Type$Boolean.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ast/Ast$Type$Boolean.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/ast/Ast$Type$ClassType.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ast/Ast$Type$ClassType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/ast/Ast$Type$Int.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ast/Ast$Type$Int.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/ast/Ast$Type$IntArray.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ast/Ast$Type$IntArray.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/ast/Ast$Type$T.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ast/Ast$Type$T.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/ast/Ast$Type.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ast/Ast$Type.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/ast/Ast.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ast/Ast.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/ast/Fac.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ast/Fac.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/ast/PrettyPrintVisitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ast/PrettyPrintVisitor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/ast/Sum_tree_repre.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ast/Sum_tree_repre.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/ast/Visitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ast/Visitor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/control/CommandLine$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/control/CommandLine$Arg.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/control/CommandLine$Arg.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/control/CommandLine$F.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/control/CommandLine$F.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/control/CommandLine$Kind.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/control/CommandLine$Kind.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/control/CommandLine.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/control/CommandLine.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/control/Control$ConAst.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/control/Control$ConAst.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/control/Control$ConLexer.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/control/Control$ConLexer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/control/Control$ConSlp$T.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/control/Control$ConSlp$T.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/control/Control$ConSlp.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/control/Control$ConSlp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/control/Control.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/control/Control.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/elaborator/ClassBinding.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/elaborator/ClassBinding.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/elaborator/ClassTable.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/elaborator/ClassTable.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/elaborator/ElaboratorVisitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/elaborator/ElaboratorVisitor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/elaborator/MethodType.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/elaborator/MethodType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/elaborator/SingleMethodTable.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/elaborator/SingleMethodTable.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/lexer/Lexer.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/lexer/Lexer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/lexer/Token$Kind.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/lexer/Token$Kind.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/lexer/Token.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/lexer/Token.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/parser/Parser$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/parser/Parser.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/parser/Parser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/slp/Linklist$Node.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/slp/Linklist$Node.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/slp/Linklist.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/slp/Linklist.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/slp/Main$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/slp/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/slp/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/slp/Samples.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/slp/Samples.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/slp/Slp$Exp$Eseq.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/slp/Slp$Exp$Eseq.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/slp/Slp$Exp$Id.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/slp/Slp$Exp$Id.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/slp/Slp$Exp$Num.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/slp/Slp$Exp$Num.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/slp/Slp$Exp$OP_T.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/slp/Slp$Exp$OP_T.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/slp/Slp$Exp$Op.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/slp/Slp$Exp$Op.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/slp/Slp$Exp$T.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/slp/Slp$Exp$T.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/slp/Slp$Exp.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/slp/Slp$Exp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/slp/Slp$ExpList$Last.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/slp/Slp$ExpList$Last.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/slp/Slp$ExpList$Pair.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/slp/Slp$ExpList$Pair.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/slp/Slp$ExpList$T.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/slp/Slp$ExpList$T.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/slp/Slp$ExpList.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/slp/Slp$ExpList.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/slp/Slp$Stm$Assign.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/slp/Slp$Stm$Assign.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/slp/Slp$Stm$Compound.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/slp/Slp$Stm$Compound.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/slp/Slp$Stm$Print.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/slp/Slp$Stm$Print.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/slp/Slp$Stm$T.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/slp/Slp$Stm$T.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/slp/Slp$Stm.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/slp/Slp$Stm.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/slp/Slp.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/slp/Slp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/util/Bug.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/util/Bug.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/util/Flist.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/util/Flist.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/util/Label.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/util/Label.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/util/Todo.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/util/Todo.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/runtime/gc.c" beforeDir="false" afterPath="$PROJECT_DIR$/runtime/gc.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Tiger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tiger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/Ast.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/Ast.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/Fac.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/Fac.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/PrettyPrintVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/PrettyPrintVisitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/codegen/C/Ast.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/codegen/C/Ast.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/codegen/C/ClassBinding.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/codegen/C/ClassBinding.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/codegen/C/ClassTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/codegen/C/ClassTable.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/codegen/C/PrettyPrintVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/codegen/C/PrettyPrintVisitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BinarySearch.java.c" beforeDir="false" afterPath="$PROJECT_DIR$/test/BinarySearch.java.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BinarySearch.java.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BinaryTree.java.c" beforeDir="false" afterPath="$PROJECT_DIR$/test/BinaryTree.java.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BinaryTree.java.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BinaryTree.out" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BubbleSort.java.c" beforeDir="false" afterPath="$PROJECT_DIR$/test/BubbleSort.java.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/Factorial.java.c" beforeDir="false" afterPath="$PROJECT_DIR$/test/Factorial.java.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/LinearSearch.java.c" beforeDir="false" afterPath="$PROJECT_DIR$/test/LinearSearch.java.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/LinkedList.java.c" beforeDir="false" afterPath="$PROJECT_DIR$/test/LinkedList.java.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/QuickSort.java.c" beforeDir="false" afterPath="$PROJECT_DIR$/test/QuickSort.java.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/Sum-infinite.java.c" beforeDir="false" afterPath="$PROJECT_DIR$/test/Sum-infinite.java.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/Sum.java.c" beforeDir="false" afterPath="$PROJECT_DIR$/test/Sum.java.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/TreeVisitor.java.c" beforeDir="false" afterPath="$PROJECT_DIR$/test/TreeVisitor.java.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/codegen/C/TranslateVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/codegen/C/TranslateVisitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/codegen/bytecode/TranslateVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/codegen/bytecode/TranslateVisitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/codegen/dalvik/TranslateVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/codegen/dalvik/TranslateVisitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elaborator/ClassBinding.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/elaborator/ClassBinding.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elaborator/ClassTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/elaborator/ClassTable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elaborator/ElaboratorVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/elaborator/ElaboratorVisitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elaborator/MethodTable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elaborator/MethodType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/elaborator/MethodType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lexer/Lexer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lexer/Lexer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lexer/Token.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lexer/Token.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/parser/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/Parser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/slp/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/slp/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/slp/Slp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/slp/Slp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/util/Flist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/Flist.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/BinarySearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/BinarySearch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/BinaryTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/BinaryTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/QuickSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/QuickSort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/TreeVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/TreeVisitor.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/bin/" />
@@ -163,7 +204,7 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/elaborator/ClassBinding.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state>
+                <state relative-caret-position="140">
                   <caret line="9" column="41" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="41" />
                   <folding>
                     <element signature="imports" expanded="true" />
@@ -184,11 +225,11 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/Tiger.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="354">
-                  <caret line="191" column="29" selection-start-line="191" selection-start-column="29" selection-end-line="191" selection-end-column="29" />
+                <state relative-caret-position="52">
+                  <caret line="142" column="39" selection-start-line="142" selection-start-column="39" selection-end-line="142" selection-end-column="39" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -199,7 +240,7 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/test/Factorial.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="40">
+                <state relative-caret-position="20">
                   <caret line="2" column="50" selection-start-line="2" selection-start-column="50" selection-end-line="2" selection-end-column="50" />
                   <folding>
                     <element signature="e#56#57#0" expanded="true" />
@@ -212,8 +253,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/test/Sum.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="180">
-                  <caret line="9" column="14" lean-forward="true" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
+                <state relative-caret-position="140">
+                  <caret line="9" column="14" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
                   <folding>
                     <element signature="e#50#51#0" expanded="true" />
                     <element signature="e#106#107#0" expanded="true" />
@@ -222,11 +263,11 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/test/Sum-infinite.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="360">
-                  <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+                <state relative-caret-position="320">
+                  <caret line="18" selection-start-line="18" selection-end-line="18" />
                   <folding>
                     <element signature="e#50#51#0" expanded="true" />
                     <element signature="e#106#107#0" expanded="true" />
@@ -238,8 +279,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/runtime/gc.c">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="40">
-                  <caret line="2" selection-start-line="2" selection-end-line="2" selection-end-column="19" />
+                <state relative-caret-position="500">
+                  <caret line="123" column="1" selection-start-line="123" selection-start-column="1" selection-end-line="123" selection-end-column="1" />
                 </state>
               </provider>
             </entry>
@@ -385,10 +426,10 @@
         <option value="$PROJECT_DIR$/test/TreeVisitor.java" />
         <option value="$PROJECT_DIR$/test/BT_backup.c" />
         <option value="$PROJECT_DIR$/test/Factorial.java.c" />
-        <option value="$PROJECT_DIR$/runtime/gc.c" />
         <option value="$PROJECT_DIR$/src/codegen/C/PrettyPrintVisitor.java" />
         <option value="$PROJECT_DIR$/test/BinaryTree.java.c" />
         <option value="$PROJECT_DIR$/src/Tiger.java" />
+        <option value="$PROJECT_DIR$/runtime/gc.c" />
       </list>
     </option>
   </component>
@@ -398,7 +439,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="81" />
     <option name="y" value="34" />
     <option name="width" value="1756" />
@@ -564,7 +605,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-4" y="34" width="1928" height="1050" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49945712" visible="true" weight="0.12598841" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -586,7 +626,7 @@
       <window_info anchor="bottom" id="Messages" order="9" weight="0.03257329" />
       <window_info anchor="bottom" id="Database Changes" order="10" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.3615635" />
-      <window_info anchor="bottom" id="Version Control" order="12" weight="0.35939196" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="12" visible="true" weight="0.35939196" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Database" order="1" show_stripe_button="false" weight="0.32977587" />
       <window_info anchor="right" id="Ant Build" order="2" show_stripe_button="false" weight="0.2497332" />
